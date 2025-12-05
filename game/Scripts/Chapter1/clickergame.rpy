@@ -1,0 +1,185 @@
+default score = 0
+default misclick_count = 0
+# How often the target auto-moves Lower = faster.
+default relocate_interval_seconds = 1.0
+#Target box size
+default target_size_pixels = 100
+
+# Where the slide starts
+default start_normalized_x = 0.5
+default start_normalized_y = 0.5
+# Where the slide wants to end
+default destination_normalized_x = 0.5
+default destination_normalized_y = 0.5
+# Slide progress from 0 (start) to 1 (done).
+default slide_progress = 0.0
+# Is the target currently moving?
+default is_sliding = False
+# The live normalized position used to render the target.
+default target_normalized_x = 0.5
+default target_normalized_y = 0.5
+
+init python:
+    import random, math
+
+    def random_normalized_coordinate(margin):
+        # Pick a 0..1 coordinate that keeps the target fully on-screen.
+        return random.uniform(margin, 1.0 - margin)
+
+    def respawn_target():
+        # this allows a new destination and start sliding toward it.
+        # Keeps the target inside the screen bounds.
+        global start_normalized_x, start_normalized_y
+        global destination_normalized_x, destination_normalized_y
+        global slide_progress, is_sliding, slide_duration
+        global target_normalized_x, target_normalized_y, target_size_pixels
+
+        sw = float(config.screen_width)
+        sh = float(config.screen_height)
+
+        # Leave a little padding so the square never clips off-screen.
+        margin_x = max(0.0, (target_size_pixels / sw) * 0.5)
+        margin_y = max(0.0, (target_size_pixels / sh) * 0.5)
+
+        # Start
+        start_normalized_x = target_normalized_x
+        start_normalized_y = target_normalized_y
+        # Fresh destination inside the safe area.
+        destination_normalized_x = random_normalized_coordinate(margin_x)
+        destination_normalized_y = random_normalized_coordinate(margin_y)
+
+        # Reset animation state.
+        slide_progress = 0.0
+        is_sliding = True
+
+        # Time the slide by distance: short hops feel snappy, long ones don’t drag.
+        dx = destination_normalized_x - start_normalized_x
+        dy = destination_normalized_y - start_normalized_y
+        dist = math.hypot(dx, dy)
+        slide_duration = max(0.25, min(0.8, dist * 1.2))
+
+    def update_slide_animation():
+        # this uses the timer to simulate the frames update for x and y position
+        # of an object
+        global slide_progress, is_sliding
+        global target_normalized_x, target_normalized_y
+        global start_normalized_x, start_normalized_y
+        global destination_normalized_x, destination_normalized_y, slide_duration
+
+        if not is_sliding:
+            return
+
+        # Called about every 0.05s by a timer.
+        step = 0.05 / slide_duration
+        slide_progress = min(1.0, slide_progress + step)
+
+        t = slide_progress
+        t = t * t * (3.0 - 2.0 * t)
+
+        target_normalized_x = start_normalized_x + (destination_normalized_x - start_normalized_x) * t
+        target_normalized_y = start_normalized_y + (destination_normalized_y - start_normalized_y) * t
+
+        if slide_progress >= 1.0:
+            is_sliding = False
+            target_normalized_x = destination_normalized_x
+            target_normalized_y = destination_normalized_y
+
+    def handle_target_hit():
+        # Nice shot: +1 score, a bit faster, a bit smaller, then move again.
+        global score, relocate_interval_seconds, target_size_pixels
+        score += 1
+        relocate_interval_seconds = max(0.60, relocate_interval_seconds * 0.97)
+        target_size_pixels = max(30, int(target_size_pixels * 0.95))
+        respawn_target()
+
+    def handle_miss_click():
+        # Clicked the background? Count a miss.
+        global misclick_count
+        misclick_count += 1
+
+    def initialize_clicker(score0=0, misclicks0=0, interval0=1.0, target_size0=100):
+        # Reset everything to clean defaults before the screen opens.
+        global score, misclick_count, relocate_interval_seconds, target_size_pixels
+        global start_normalized_x, start_normalized_y
+        global destination_normalized_x, destination_normalized_y
+        global slide_progress, is_sliding
+        global target_normalized_x, target_normalized_y
+
+        score = score0
+        misclick_count = misclicks0
+        relocate_interval_seconds = interval0
+        target_size_pixels = target_size0
+
+        # Center the target.
+        target_normalized_x = 0.5
+        target_normalized_y = 0.5
+
+        # Start and end both at the center.
+        start_normalized_x = target_normalized_x
+        start_normalized_y = target_normalized_y
+        destination_normalized_x = target_normalized_x
+        destination_normalized_y = target_normalized_y
+
+        #initialize slide state with no movement.
+        slide_progress = 0.0
+        is_sliding = False
+
+# Clicker mini-game screen.
+screen clicker_minigame():
+    modal True
+
+    # End the mini-game after 3 misses; show a quick summary and return the score.
+    if misclick_count >= 3:
+        add "bg room"
+        frame:
+            xalign 0.5
+            yalign 0.4
+            padding (20, 20)
+            text "Game Over" size 60 xalign 0.5
+            text "Score: [score]" size 40 xalign 0.5
+        timer 0.1 action Return(score)
+    else:
+        # Backdrop (swap 'bg room' with your own background if you like).
+        add "bg room"
+
+        # Tiny HUD for score, misses, and auto-move speed.
+        frame:
+            xalign 0.02
+            yalign 0.02
+            padding (12, 8)
+            has hbox
+            text "Score: [score]" size 26
+            text "Miss clicked: [misclick_count]/3" size 26
+
+        # Auto-move the target on a schedule.
+        timer relocate_interval_seconds repeat True action Function(respawn_target)
+        # Drive the in-between motion (~20 FPS).
+        timer 0.05 repeat True action Function(update_slide_animation)
+
+        # Click anywhere that's not the target to record a miss.
+        button:
+            xfill True
+            yfill True
+            background None
+            action Function(handle_miss_click)
+
+        # The target button: positioned by normalized coords, sized in pixels, optional sprite overlay.
+        button:
+            align (target_normalized_x, target_normalized_y)
+            xsize target_size_pixels
+            ysize target_size_pixels
+            background Solid("#f66")
+            hover_background Solid("#f22")
+            if renpy.loadable("images/axenobg.png"):
+                # Use the sprite if available, scaled to fit.
+                add im.Scale("images/axenobg.png", target_size_pixels, target_size_pixels)
+            else:
+                # Simple fallback if the sprite is missing.
+                add Solid("#fdd")
+            action Function(handle_target_hit)
+
+# Wrapper label: call this to run the mini-game and get the final score back.
+label clickergame:
+    $ initialize_clicker()
+    call screen clicker_minigame
+    return _return

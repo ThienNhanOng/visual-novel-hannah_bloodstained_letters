@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 87: expected an indented block after function definition on line 86
+    def __init__(self):
+                           ^
+
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Tue Dec  2 21:45:14 2025

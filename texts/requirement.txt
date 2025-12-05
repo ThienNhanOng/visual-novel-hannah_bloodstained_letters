@@ -1,0 +1,39 @@
+4 additional games
+
+1: jumper
+2: black jack
+3: (working on will be top down maze wasd)
+4: shop 
+
+
+finish art for map 1-2
+and all of chapter 1. with music 
+
+
+use data structures and design patterns.
+--------------
+
+map:
+uses factory pattern to create rooms 
+and command pattern to call the rooms
+
+
+most games: 
+contains restart/replayable
+convert point system into global variable: global money.
+
+blackjack: 
+heavily relies on dictionary/lists for the cards
+the deck is a stack that pops cards in hand when drawn
+contain global variables like money and operative 
+if want to stretch, the screen language ui acts as a state 
+
+jumping game:
+uses a 2d vector and gravity.
+velocity determines speed of jump. 
+has a game state and i plan to implement a singleton for this game
+has objects such as enemies.
+contain randomizations for object spawn
+collision checks
+relies on a in renpy timer to update frames for enemy movement.
+

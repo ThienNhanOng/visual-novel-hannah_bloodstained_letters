@@ -1,0 +1,13 @@
+label sceneName:
+
+    #summary: 
+    
+
+    #location: funeral scene
+    
+    #set background:
+    scene church trees
+
+    #character image
+    show characterName ImageName
+    return

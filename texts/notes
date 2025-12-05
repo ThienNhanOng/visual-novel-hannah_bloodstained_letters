@@ -1,0 +1,30 @@
+mini games notes
+
+1: clicker:
+
+2: puzzle sliding:
+
+
+3:
+blackjack:
+data structures usage:
+lists for the deck and hand generation
+
+dictionary for each card. this is so each card contain its correct rank suite and value
+
+design pattern:
+the screen act as the facade/controller allowing user to manipulate the game state.
+
+4:
+
+5:
+
+6:
+------------------
+hud/interactive map for school:
+factory pattern to create each room.
+command pattern to open/call each room (themself)
+(might make it programmed as a singleton)
+
+
+
