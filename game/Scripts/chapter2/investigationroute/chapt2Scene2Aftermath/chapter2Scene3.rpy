@@ -10,7 +10,7 @@ label Chapter2Scene3_fishing:
     "However as she was about to give up, she bumped into the detective casually fishing."
     
     "And singing?"
-
+    $Theo_counter += 2
     Player "I walk up to the detective. I paid no minds to his presence. afterall, it's a populated place that is open to the public."
     Player "A beautiful day isn't it detective?"
     Theo "It is indeed, [Player]. Just another day in the life of a detective."
@@ -19,6 +19,12 @@ label Chapter2Scene3_fishing:
     Theo "Where silent prey await a hunter's cast."
     Player "*confuse by his weird wording as always* \n well what did this 'hunter' catch?"
 
+    #theo hands me a rod and tell me to test the experience myself.
+    ##add fishing mini game
+    #
+    #if i catch 3 fish detective will warn me of danger. otherwise tell me maybe leave the investigation to him.
+    #and in the meantime, look more into yourself. 
+    #this will reroute to mia and route towards the school peaceful route.
     window hide
     show text "The sleuth proclaims another curious find\nOf Mia’s tale, where whispers darkly bind." at fade_out
     pause 4.0
@@ -29,10 +35,10 @@ label Chapter2Scene3_fishing:
     hide text
     window show
 
+
     centered "Theo grabbed his stuff and walked away like usual."
     Player "Man... REALLY want to kick your ass into this lake right now."
     "[Player] walks away, muttering under her breath."
-#this is part of the school route
 
     "Suddenly, [Player] got a call from Silas." 
     centered "Ringing..."

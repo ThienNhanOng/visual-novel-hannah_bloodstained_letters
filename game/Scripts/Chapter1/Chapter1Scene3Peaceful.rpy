@@ -1,3 +1,6 @@
+#in this scene the detective does not get introduced.
+
+
 label chapter1scene3Peaceful:
 #summary this scene focus on transitioning the player to a peaceful route with her going to school and moving on with her life.
     play music "audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 1.0 loop

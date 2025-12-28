@@ -67,12 +67,7 @@ label InteractiveMiaRoom:
                 "[Player] and Mia continue to talk about Hannah and her past; however, Mia never brought up the incident with the auction."
                 $ mapDecisionMiafirstEncounter = True
 
-                #insert map game to look around for clues
-                #player notice a picture of a party. and behind it was a rescue buoy
-                #player also notice a 
 
-
-                #$ mapDecisionMiafirstEncounter = true 
     elif(MapDecision_counter >= 1 and mapDecisionMiafirstEncounter == True):
             Mia "hello again [Player]! did you forget something? \n Stay safe on your way home!"
 

@@ -1,9 +1,9 @@
-default score = 0
+default axescore = 0
 default misclick_count = 0
 # How often the target auto-moves Lower = faster.
-default relocate_interval_seconds = 1.0
-#Target box size
-default target_size_pixels = 100
+default relocate_interval_seconds = 1.8
+# Target box size
+default target_size_pixels = 140
 
 # Where the slide starts
 default start_normalized_x = 0.5
@@ -56,7 +56,8 @@ init python:
         dx = destination_normalized_x - start_normalized_x
         dy = destination_normalized_y - start_normalized_y
         dist = math.hypot(dx, dy)
-        slide_duration = max(0.25, min(0.8, dist * 1.2))
+        # Slow the slide so the axe drifts instead of snapping.
+        slide_duration = max(0.35, min(1.2, dist * 1.8))
 
     def update_slide_animation():
         # this uses the timer to simulate the frames update for x and y position
@@ -86,10 +87,13 @@ init python:
 
     def handle_target_hit():
         # Nice shot: +1 score, a bit faster, a bit smaller, then move again.
-        global score, relocate_interval_seconds, target_size_pixels
-        score += 1
-        relocate_interval_seconds = max(0.60, relocate_interval_seconds * 0.97)
-        target_size_pixels = max(30, int(target_size_pixels * 0.95))
+        global axescore, relocate_interval_seconds, target_size_pixels
+        axescore += 1
+        # Play the hit bell; using renpy.sound in Python context.
+        renpy.sound.play("audio/MusicAndSoundtracks/bell.wav", channel="sound")
+        # Keep moves slower and tighten the decay so the axe lingers longer.
+        relocate_interval_seconds = max(2.0, relocate_interval_seconds * 0.99)
+        target_size_pixels = max(120, int(target_size_pixels * 0.95))
         respawn_target()
 
     def handle_miss_click():
@@ -97,15 +101,15 @@ init python:
         global misclick_count
         misclick_count += 1
 
-    def initialize_clicker(score0=0, misclicks0=0, interval0=1.0, target_size0=100):
+    def initialize_clicker(axescore0=0, misclicks0=0, interval0=1.0, target_size0=100):
         # Reset everything to clean defaults before the screen opens.
-        global score, misclick_count, relocate_interval_seconds, target_size_pixels
+        global axescore, misclick_count, relocate_interval_seconds, target_size_pixels
         global start_normalized_x, start_normalized_y
         global destination_normalized_x, destination_normalized_y
         global slide_progress, is_sliding
         global target_normalized_x, target_normalized_y
 
-        score = score0
+        axescore = axescore0
         misclick_count = misclicks0
         relocate_interval_seconds = interval0
         target_size_pixels = target_size0
@@ -130,17 +134,17 @@ screen clicker_minigame():
 
     # End the mini-game after 3 misses; show a quick summary and return the score.
     if misclick_count >= 3:
-        add "bg room"
+        add "images/chapter2/forestroompictures/need remove bg/axe.jpeg"
         frame:
             xalign 0.5
             yalign 0.4
             padding (20, 20)
             text "Game Over" size 60 xalign 0.5
-            text "Score: [score]" size 40 xalign 0.5
-        timer 0.1 action Return(score)
+            text "Score: [axescore]" size 40 xalign 0.5
+        timer 0.1 action Return(axescore)
     else:
-        # Backdrop (swap 'bg room' with your own background if you like).
-        add "bg room"
+        # Backdrop
+        add "bg black"
 
         # Tiny HUD for score, misses, and auto-move speed.
         frame:
@@ -148,7 +152,7 @@ screen clicker_minigame():
             yalign 0.02
             padding (12, 8)
             has hbox
-            text "Score: [score]" size 26
+            text "Score: [axescore]" size 26
             text "Miss clicked: [misclick_count]/3" size 26
 
         # Auto-move the target on a schedule.
@@ -168,18 +172,24 @@ screen clicker_minigame():
             align (target_normalized_x, target_normalized_y)
             xsize target_size_pixels
             ysize target_size_pixels
-            background Solid("#f66")
-            hover_background Solid("#f22")
+            background None
+            hover_background None
             if renpy.loadable("images/axenobg.png"):
-                # Use the sprite if available, scaled to fit.
+                # Render only the axe sprite; button still captures clicks in its bounds.
                 add im.Scale("images/axenobg.png", target_size_pixels, target_size_pixels)
             else:
-                # Simple fallback if the sprite is missing.
-                add Solid("#fdd")
+                # Transparent fallback keeps the hitbox without showing a red box.
+                add Solid("#0000")
             action Function(handle_target_hit)
 
 # Wrapper label: call this to run the mini-game and get the final score back.
 label clickergame:
     $ initialize_clicker()
     call screen clicker_minigame
+
+    if axescore >= 5 and axescore <= 10:
+        $ Mia_counter += 1
+    elif axescore >= 10:
+        $ Theo_counter += 1
+    "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]|"
     return _return

@@ -1,44 +1,20 @@
-2025-12-03 02:43:03 UTC
+2025-12-28 20:23:56 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.0.25111603
 
-Early init took 61 ms
-Loading error handling took 33 ms
-Loading script took 237 ms
-Loading save slot metadata took 56 ms
+Early init took 62 ms
+Loading error handling took 25 ms
+Loading script took 227 ms
+Loading save slot metadata took 61 ms
 Loading persistent took 0 ms
 
-Full traceback:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 2, in script
-    init -90 python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1273, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 84, in <module>
-    addroom(Gameroom())
-            ~~~~~~~~^^ 
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 74, in __init__
-    name=room_id,
-         ^^^^^^^ 
-NameError: name 'room_id' is not defined
-
-While running game code:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 2, in script
-    init -90 python:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 84, in <module>
-    addroom(Gameroom())
-            ~~~~~~~~^^ 
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 74, in __init__
-    name=room_id,
-         ^^^^^^^ 
-NameError: name 'room_id' is not defined
+File "game/script.rpy", line 47: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    stop music fadeout 2.0
+    ^
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Interface start took 651 ms
+Interface start took 1236 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)
@@ -51,59 +27,31 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
 Maximum texture size: 4096x4096
 controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 Resetting cache.
 Early init took 13 ms
 Loading error handling took 21 ms
-Loading script took 157 ms
-Loading save slot metadata took 44 ms
+Loading script took 147 ms
+Loading save slot metadata took 45 ms
 Loading persistent took 0 ms
-
-File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 87: expected an indented block after function definition on line 86
-    def __init__(self):
-                           ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 300 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 560.94'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
-Maximum texture size: 4096x4096
-controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
-Resetting cache.
-Early init took 12 ms
-Loading error handling took 22 ms
-Loading script took 149 ms
-Loading save slot metadata took 47 ms
-Loading persistent took 0 ms
-Running init code took 52 ms
-Loading analysis data took 3 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 44 ms
-Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
-Dump and make backups took 68 ms
+Running init code took 60 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 41 ms
+Dump and make backups took 54 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 56 ms
+Initial gc took 50 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 216 ms
-Init translation took 1 ms
+Creating interface object took 203 ms
+Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 12 ms
-Save screen analysis took 12 ms
+Load screen analysis took 23 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
-Save bytecode took 2 ms
+Save bytecode took 0 ms
 Running _start took 1 ms
 Interface start took 254 ms
 
@@ -121,129 +69,51 @@ controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 
 Full traceback:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "renpy/ast.py", line 2241, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2117, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2655, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2655, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
+  File "game/script.rpy", line 83, in script call
+    call chapter2scene2
+  File "renpy/ast.py", line 1622, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 83, in script call
+    call chapter2scene2
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter2scene2'. Did you mean: 'Chapter2Scene2'?
 
 While running game code:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
+  File "game/script.rpy", line 83, in script call
+    call chapter2scene2
+  File "game/script.rpy", line 83, in script call
+    call chapter2scene2
+renpy.script.LabelNotFound: could not find label 'chapter2scene2'. Did you mean: 'Chapter2Scene2'?
 Resetting cache.
-Early init took 15 ms
-Loading error handling took 14 ms
-Loading script took 147 ms
-Loading save slot metadata took 46 ms
+Early init took 16 ms
+Loading error handling took 21 ms
+Loading script took 202 ms
+Loading save slot metadata took 47 ms
 Loading persistent took 0 ms
-Running init code took 41 ms
-Loading analysis data took 11 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 42 ms
-Dump and make backups took 53 ms
+Running init code took 50 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 40 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 66 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 60 ms
+Making clean stores took 0 ms
+Initial gc took 67 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 212 ms
-Init translation took 0 ms
-Cleaning stores took 1 ms
-Load screen analysis took 24 ms
-Analyze screens took 1 ms
-Save screen analysis took 0 ms
+Creating interface object took 231 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 15 ms
+Save screen analysis took 14 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
 Running _start took 1 ms
-Interface start took 274 ms
+Interface start took 281 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)
@@ -259,318 +129,68 @@ controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 
 Full traceback:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "renpy/ast.py", line 2241, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2117, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2655, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2655, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "renpy/ast.py", line 1622, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'Chapter2Scene2_Aftermath'.
 
 While running game code:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
-Resetting cache.
-Early init took 15 ms
-Loading error handling took 13 ms
-Loading script took 155 ms
-Loading save slot metadata took 45 ms
-Loading persistent took 0 ms
-Running init code took 43 ms
-Loading analysis data took 14 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 46 ms
-Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
-Dump and make backups took 62 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 68 ms
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 207 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 13 ms
-Save screen analysis took 13 ms
-Save pyanalysis took 0 ms
-Save bytecode took 1 ms
-Running _start took 1 ms
-Interface start took 272 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 560.94'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
-Maximum texture size: 4096x4096
-controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+renpy.script.LabelNotFound: could not find label 'Chapter2Scene2_Aftermath'.
 
 Full traceback:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "renpy/ast.py", line 2241, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2117, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2655, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2655, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "renpy/ast.py", line 1622, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'Chapter2Scene2_Aftermath'.
 
 While running game code:
-  File "game/script.rpy", line 42, in script
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 8, in execute
-    screen schoolmapScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 20, in execute
-    for room in SchoolmapRooms.values():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 22, in execute
-    if room.idle:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in execute
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 23, in keywords
-    imagebutton:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 28, in <module>
-    action Function(room.command.execute)
-                    ^^^^^^^^^^^^         
-AttributeError: 'Gameroom' object has no attribute 'command'
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+  File "game/script.rpy", line 90, in script call
+    call Chapter2Scene2_Aftermath
+renpy.script.LabelNotFound: could not find label 'Chapter2Scene2_Aftermath'.
 Resetting cache.
-Early init took 14 ms
-Loading error handling took 14 ms
-Loading script took 154 ms
+Early init took 16 ms
+Loading error handling took 21 ms
+Loading script took 179 ms
 Loading save slot metadata took 47 ms
 Loading persistent took 0 ms
-
-Full traceback:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 2, in script
-    init -90 python:
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1273, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 84, in <module>
-    addroom(Gameroom())
-            ~~~~~~~~^^ 
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 74, in __init__
-    name=room_id,
-         ^^^^^^^ 
-NameError: name 'room_id' is not defined
-
-While running game code:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 2, in script
-    init -90 python:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 84, in <module>
-    addroom(Gameroom())
-            ~~~~~~~~^^ 
-  File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 74, in __init__
-    name=room_id,
-         ^^^^^^^ 
-NameError: name 'room_id' is not defined
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 435 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 560.94'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
-Maximum texture size: 4096x4096
-controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Resetting cache.
-Early init took 14 ms
-Loading error handling took 12 ms
-Loading script took 156 ms
-Loading save slot metadata took 45 ms
-Loading persistent took 0 ms
-Running init code took 86 ms
+Running init code took 53 ms
 Loading analysis data took 4 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 43 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 42 ms
 Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
-Dump and make backups took 62 ms
+Dump and make backups took 61 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 61 ms
+Initial gc took 73 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 199 ms
-Init translation took 1 ms
+Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
 Analyze screens took 13 ms
 Save screen analysis took 12 ms
 Save pyanalysis took 0 ms
-Save bytecode took 2 ms
+Save bytecode took 0 ms
 Running _start took 1 ms
 Interface start took 262 ms
 
@@ -586,32 +206,262 @@ Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
 Maximum texture size: 4096x4096
 controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 93, in script
+    jump chapter2Scene3_fishing
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+While running game code:
+  File "game/script.rpy", line 93, in script
+    jump chapter2Scene3_fishing
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
 Resetting cache.
-Early init took 14 ms
-Loading error handling took 16 ms
-Loading script took 181 ms
+Early init took 16 ms
+Loading error handling took 21 ms
+Loading script took 163 ms
 Loading save slot metadata took 46 ms
 Loading persistent took 1 ms
-Running init code took 43 ms
-Loading analysis data took 14 ms
+Running init code took 51 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 42 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 61 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 231 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 12 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 293 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 25, in script
+    return
+  File "renpy/ast.py", line 1703, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^ 
+  File "renpy/execution.py", line 799, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+
+While running game code:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 25, in script
+    return
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+Resetting cache.
+Early init took 13 ms
+Loading error handling took 21 ms
+Loading script took 177 ms
+Loading save slot metadata took 47 ms
+Loading persistent took 0 ms
+Running init code took 51 ms
+Loading analysis data took 4 ms
 Analyze and compile ATL took 2 ms
 Reloading save slot metadata took 44 ms
 Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
 Dump and make backups took 63 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 80 ms
+Initial gc took 69 ms
 DPI scale factor: 1.000000
-Creating interface object took 0 ms
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 192 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 12 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 262 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 24, in script
+    #jump Chapter2Scene3_fishing
+  File "renpy/ast.py", line 1703, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^ 
+  File "renpy/execution.py", line 799, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+
+While running game code:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 24, in script
+    #jump Chapter2Scene3_fishing
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+
+Full traceback:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 24, in script
+    #jump Chapter2Scene3_fishing
+  File "renpy/ast.py", line 1703, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^ 
+  File "renpy/execution.py", line 799, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+
+While running game code:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene2_.rpy", line 24, in script
+    #jump Chapter2Scene3_fishing
+Exception: Could not find return label ('game/script.rpy', 601631877, 2012).
+Resetting cache.
+Early init took 13 ms
+Loading error handling took 13 ms
+Loading script took 167 ms
+Loading save slot metadata took 48 ms
+Loading persistent took 0 ms
+Running init code took 43 ms
+Loading analysis data took 13 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 43 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 64 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 64 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 203 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 1 ms
-Analyze screens took 14 ms
-Save screen analysis took 15 ms
+Analyze screens took 12 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 263 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+While running game code:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+Full traceback:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+While running game code:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+Full traceback:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+
+While running game code:
+  File "game/script.rpy", line 92, in script
+    #will continue to Chapter2Scene4_helpingSilas
+renpy.script.LabelNotFound: could not find label 'chapter2Scene3_fishing'. Did you mean: 'Chapter2Scene3_fishing'?
+Resetting cache.
+Early init took 17 ms
+Loading error handling took 13 ms
+Loading script took 204 ms
+Loading save slot metadata took 49 ms
+Loading persistent took 0 ms
+Running init code took 44 ms
+Loading analysis data took 13 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 44 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 65 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 74 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 201 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 12 ms
+Save screen analysis took 14 ms
 Save pyanalysis took 0 ms
 Save bytecode took 1 ms
-Running _start took 1 ms
-Interface start took 278 ms
+Running _start took 0 ms
+Interface start took 301 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)

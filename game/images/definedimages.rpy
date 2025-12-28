@@ -18,6 +18,7 @@ image bg church_animated = Movie(
 
 
 
+
 # Characters
 
 # Player images
@@ -40,5 +41,38 @@ init:
 # Full-screen crowd funeral image
 image crowd_funeral:
     "images/chapter1/forest scene/forest1.jpg"
-    xysize (1920, 1080)  # Adjust to your game's resolution
+    xysize (config.screen_width, config.screen_height)
 
+#-----------------------------------TALK BETWEEN MC AND silas-----------------------------------
+image scene2bgSilas:
+    "images/chapter1/interaction with silas/silastownbackground.jpeg"
+    xysize (config.screen_width, config.screen_height)
+
+image scene2bgSilasSit:
+    "images/chapter1/interaction with silas/ch2silassit.png"
+    xysize (config.screen_width, config.screen_height)
+#-----------------------------------mc and detective-----------------------------------
+image scene2detective1: #shadow image
+    "images/chapter1/detective/detectivebgremoved.png"
+    xysize (1655, 1150)
+    xpos .93
+
+image scene2detective2: #smoking middle image
+    "images/chapter1/detective/detectivesmoking.png"
+    xysize (1655, 1150)
+    xpos .52
+
+#overlay to talking detective
+image detectivefaceleft: 
+    "images/chapter1/detective/detectivefaceleft.png"
+    xysize (400, 500)
+    xpos .1
+    #onlayer overlay cant be defined only called
+
+image Player_L1overlay:
+    "images/chapter1/forest scene/player/player right view.png"
+    xysize (600, 350)
+    xpos 0.15
+    ypos 1.0
+
+        

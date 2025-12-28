@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/roomdata.rpy", line 87: expected an indented block after function definition on line 86
-    def __init__(self):
-                           ^
+File "game/script.rpy", line 47: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    stop music fadeout 2.0
+    ^
 
 Ren'Py Version: Ren'Py 8.5.0.25111603
-Tue Dec  2 21:45:14 2025
+Sun Dec 28 15:23:56 2025

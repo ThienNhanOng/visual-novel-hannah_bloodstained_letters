@@ -43,7 +43,7 @@ init python:
 
         # move enemy
         def update(self, screen_width):
-            self.Enemy_X += self.Enemy_speed
+            self.Enemy_X += self.Enemy_velocity_X
 
             # if enemy goes off screen, respawn on the right
             if self.Enemy_X + self.EnemyWidth < 0:

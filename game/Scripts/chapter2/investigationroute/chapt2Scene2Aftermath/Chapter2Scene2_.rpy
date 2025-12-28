@@ -1,4 +1,4 @@
-label Chapter2Scene2_Aftermath:
+label Chapter2Scene2:
     
     "After the intense confrontation, [Player] felt a mix of emotions."
     "[Player] knew they had to find the truth about Hannah, no matter the cost."
@@ -21,8 +21,8 @@ label Chapter2Scene2_Aftermath:
     "[Player] got out of bed and hopped on her bike."
     "She decided to look into mia's word to see if she can find the client that live across the lake"
     stop music fadeout 5.0
-    jump Chapter2Scene3_fishing
-return
+    #jump Chapter2Scene3_fishing
+#return
 
 
 

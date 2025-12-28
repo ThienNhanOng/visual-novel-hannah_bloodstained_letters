@@ -111,7 +111,7 @@ label Chapter1Scene1:
         "no":
             Player "I need a moment. first"
 
-    hide silas_comfort with fade
-    hide black with fade
+    hide silas_comfort
+    hide black
 
 return

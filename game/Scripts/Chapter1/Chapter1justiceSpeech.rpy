@@ -1,18 +1,28 @@
 label Chapter1JusticeSpeech:
+    stop music fadeout 1.0
+    play music "audio/speech/speech1revenge.mp3" fadein 1.0 
+
+    $ renpy.pause(15, hard=True)
     Player "My sister was my entire world." 
     "Hannah she...she always knew what to say."
     Player "she always knew how to comfort others." 
+    #29-40
+    $ renpy.pause(1, hard=True)
     "I remember when we were kids, we took care of a stray cat we named Sunny." 
     "however our parents didnt let us keep her. on the contrary my dad took a gun and put her down."
     #show Player crying
+    $ renpy.pause(2, hard=True)
     "I was devastated. I was crying so hard I couldn't breathe. I couldve do anything but grieve."
     "Hannah sat beside me for hours through that whole moment"
     #show audience
+    $ renpy.pause(2, hard=True)
     Player"I know she has helped others too. as can be seen by the people here"
+
     Player"today to pay their respect and love for Hannah."
     Player"And yet, for all the love she gave, life gave her so little back." 
     Player"Before last week, I was still convincing myself we’d find her." 
     Player"That she’d come back home." 
+    $ renpy.pause(3, hard=True)
     Player "But now… now I have to accept this. Or is expected to."
     Player "but I know there is more to this story. And I refuse to accept ok shes gone nothing we can do."
     "I pause and take a steady breath. My voice hardens just a little."
@@ -22,6 +32,7 @@ label Chapter1JusticeSpeech:
     #show Player sob
     Player "{b}I vow to uncover the truth {/b}. the whole, unshakable truth—about what happened to my sister" 
     "Whether it leads to justice for her death, \n or reveals a reason behind her disappearance" 
+    $ renpy.pause(1, hard=True)
     Player "one way or another... I won’t rest until I know."
 
     "The room falls into a hush. 
@@ -31,6 +42,12 @@ label Chapter1JusticeSpeech:
     window hide
     centered "Thank you..."
     window show
-
-    Silas "starts clapping. slowly for [Player]. he was the only one that clapped."
+    $ renpy.pause(1, hard=True)
+    show silas_sad at left with fade 
+    play sound "audio/MusicAndSoundtracks/crowd_clapping.mp3"
+    Silas "starts clapping."
+    "there were others that clapped too"
+    hide silas_sad
+    "but at that moment, for me, he was the only one that clapped."
+    stop music
 return

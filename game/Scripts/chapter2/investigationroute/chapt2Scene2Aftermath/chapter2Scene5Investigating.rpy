@@ -17,7 +17,7 @@ label investigating_the_school:
     $ Player = Character("Player", color="#25ffed", what_size=talkFont)
     "Player plan to return back to town. but first she made a stop at Silas dormitory."
     #todo play knocking sounds
-    "{b}{center}knock knock{/center}{/b}"
+    centered "{b}knock knock{/b}"
     "Silas opened the door."
     Silas "FOR THE LAST TIME, I DONT WANT ANY..."
     Silas "oh..OH! COME IN! Come in!"
@@ -32,6 +32,10 @@ label investigating_the_school:
     "Is it a coincidence that Sylas is doing an assignment based on the jewelry store? Or is there more to it?"
     "I need to find out more about this."
     
-    'test'
+    'end of chapter 2'
+    #end of chapter2. 
+    #continuation chapter3 will include meeting back up with theo and discussing about her findings.
+    #this will ultimately lead to chapter 3 and 4 where more notes will show up leading to the 
+    #confrontation with the mystery man. 
 return
 

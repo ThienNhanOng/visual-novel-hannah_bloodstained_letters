@@ -31,7 +31,7 @@ if(Global_Money >= 999):
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
-default StoryDecision_Chapter1_Investigate = 0 # 0 = investigate, 1 = move on
+default StoryDecision_Chapter1_Investigate = False #false = peaceful route
 default StoryDecision_Chapter1_Schoolname = "school"
 #start of game
 label start:
@@ -39,7 +39,7 @@ label start:
 
 #testing
 
-    call screen schoolmapScreen
+    #call screen schoolmapScreen
 
 #testing end
 
@@ -63,35 +63,50 @@ label start:
 #starting story.     
     call Chapter1Scene1
     #couunter debug
-    "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]"
+    scene bg forestroom with fade
+    "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]|"
+    
     #jump to scene 2: the school scene
     call Chapter1Scene2
     #couunter debug
-    "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]"
+    "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]|"
     
     "[Player] went home to rest."
     "Rolling throughout the night, [Player] was unable to sleep, wondering if she should try to find the whereabouts of her sister or take Mia's word to heart."
     stop music
 #debug for first decision
 #and call the appropriate chapter
-    if StoryDecision_Chapter1_Investigate == 0:
-        "chapter1 decision: choice -> investigate (0)" #debug
+    if StoryDecision_Chapter1_Investigate == True:
         
+        "chapter1 concluded. decision: Justice" #debug
+        "entering chapter2: investigation route"
+        call Chapter2Scene2
         "[Player] decided to not give up and walk around town to see if maybe if she can learn anything regarding mia’s job and if it connects to hannah being missing"
+        
+        
+        
         #jump #chapter2 investigate route
         call screen MapScreen
-        call Chapter2Scene2_Aftermath
+        call Chapter2Scene3_fishing
 
-    else:
-        "chapter1 decision: choice -> move on (1)" #debug
+        #will continue to Chapter2Scene4_helpingSilas
+        #continue to afterpuzzle which has 2 possiblel lead. 1 reroute to peaceful route. 
+        #or 2 continue investigation route base on Theo counters.
+
+        #current spot afterpuzzle: chapter2scene5
+
+
+    else: #peaceful school route
+        "chapter1 decision: Reflection" #debug
 
         "Throughout the night, [Player] decided to heed Mia's warning and considered enrolling into [StoryDecision_Chapter1_Schoolname] "
 
-    call Chapter2Scene2_Aftermath
 
-    call Chapter2Scene3_fishing
+    #call Chapter2Scene2_Aftermath
+
+    #call Chapter2Scene3_fishing
         
-    call testlabel
+    call testlabel #has return completely
     
         
 

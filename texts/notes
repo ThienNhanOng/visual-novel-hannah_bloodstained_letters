@@ -1,6 +1,16 @@
+visual novel notes:
+added layering
+voice overs
+font dynamic
+
+
+
 mini games notes
 
 1: clicker:
+redesign to include a state pattern
+
+
 
 2: puzzle sliding:
 
@@ -9,8 +19,10 @@ mini games notes
 blackjack:
 data structures usage:
 lists for the deck and hand generation
-
 dictionary for each card. this is so each card contain its correct rank suite and value
+uses a stack for drawing from top of deck once generated (lifo) 
+
+
 
 design pattern:
 the screen act as the facade/controller allowing user to manipulate the game state.
@@ -25,6 +37,8 @@ hud/interactive map for school:
 factory pattern to create each room.
 command pattern to open/call each room (themself)
 (might make it programmed as a singleton)
+state
+
 
 
 
