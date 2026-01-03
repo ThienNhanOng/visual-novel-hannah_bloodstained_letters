@@ -23,7 +23,7 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 25 # Player's start money
+define Global_Money = 1 # Player's start money
 
 #money limit to limit text overflowing
 if(Global_Money >= 999):
@@ -33,13 +33,14 @@ if(Global_Money >= 999):
 #1: chapter 1 player determine player choose investigate or move on
 default StoryDecision_Chapter1_Investigate = False #false = peaceful route
 default StoryDecision_Chapter1_Schoolname = "school"
+default chapter2continue = False #flag to continue chapter 2 after peaceful reroute.
 #start of game
 label start:
 
 
 #testing
-
-    #call screen schoolmapScreen
+    
+    call screen schoolmapScreen
 
 #testing end
 
@@ -94,14 +95,15 @@ label start:
         #or 2 continue investigation route base on Theo counters.
 
         #current spot afterpuzzle: chapter2scene5
-
-
     else: #peaceful school route
         "chapter1 decision: Reflection" #debug
 
         "Throughout the night, [Player] decided to heed Mia's warning and considered enrolling into [StoryDecision_Chapter1_Schoolname] "
-
-
+        Player "maybe it is time to just move on and try to live a normal life again."
+        Player "well here we are...first day of school."
+        window hide
+        call screen schoolmapScreen
+        
     #call Chapter2Scene2_Aftermath
 
     #call Chapter2Scene3_fishing

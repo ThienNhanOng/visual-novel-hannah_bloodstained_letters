@@ -15,7 +15,8 @@ label chapter1scene3Peaceful:
 
     Player "WHAT DO YOU KNOW?!"
 
-    Player "(breathing heavy, voice rising) You all gave up the second they found that arm. Just a damn arm! No trail, no evidence, no answers!
+    Player "(breathing heavy, voice rising) You all gave up the second they found that arm. Just a damn arm!" 
+    "No trail, no evidence, no answers!
     They said it was hers, and everyone just... accepted it. Closed the case. Buried an empty casket. Moved on.
     What if she’s not dead? What if there is more to this?"
 
@@ -67,10 +68,13 @@ label chapter1scene3Peaceful:
     "Mia and [Player] arrive at [Player]'s house."
 
     Mia "And here we are! And no matter what choice you decide, just remember: you have Hannah's stubbornness and fire in your blood. Don't let anyone dim it."
-
+    Mia "oh and here. order some pizza or something. Dinner is on me."
+    "Mia hands over 10 dollars to [Player]."
+    $ Global_Money += 10
     "Mia drove off."
 
-
+    if(chapter2continue == True):
+        jump chapter2scene1Enrollment
 
 
     "DEBUG NOTE: END OF CHAPTER1 SCENE3"

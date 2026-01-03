@@ -60,5 +60,5 @@ label chapter1Scene3_MeetingTheo:
     Theo "Why, of course, milady. And should you ever find yourself in need, don’t hesitate to contact me for my service—let this card be your beacon—a silent promise to answer your call."
 
     "He offers the business card with a warm, knowing smile and nod prior to leaving."
-    Theo_counter += 1
+    $ Theo_counter += 1
 return

@@ -3,8 +3,8 @@ default deck = []
 default player_hand = []
 default round_active = False
 default current_bet = 0
-#default player_money = 10000 #debug starting money
-default player_money = 25
+#default playerMoney = 10000 #debug starting money
+default playerMoney = 11
 default dealer_total = 0
 default game_over = False
 default message = ""
@@ -52,11 +52,11 @@ init -100 python:
     # Game control functions (without renpy.notify)
     def start_game(bet=10):
         # Include game_over and message in globals so we correctly reset them
-        global deck, player_hand, round_active, current_bet, player_money, dealer_total, game_over, message
-        if player_money < bet:
+        global deck, player_hand, round_active, current_bet, playerMoney, dealer_total, game_over, message
+        if playerMoney < bet:
             return False
         current_bet = bet
-        player_money -= bet
+        playerMoney -= bet
         deck = create_deck()
         player_hand = [deck.pop(), deck.pop()]
         round_active = True
@@ -88,25 +88,25 @@ init -100 python:
         return resolve_round()
 
     def resolve_round():
-        global player_money, current_bet
+        global playerMoney, current_bet
         p = create_hand(player_hand)
         d = dealer_total
         # Log state before payout for debugging
         try:
-            renpy.log(f"resolve_round BEFORE: p={p}, d={d}, current_bet={current_bet}, player_money={player_money}")
+            renpy.log(f"resolve_round BEFORE: p={p}, d={d}, current_bet={current_bet}, playerMoney={playerMoney}")
         except Exception:
             pass
         if d > 21 or p > d:
-            player_money += current_bet * 2
+            playerMoney += current_bet * 2
             result = "win"
         elif p == d:
-            player_money += current_bet
+            playerMoney += current_bet
             result = "push"
         else:
             result = "lose"
         # Log state after payout
         try:
-            renpy.log(f"resolve_round AFTER: result={result}, player_money={player_money}")
+            renpy.log(f"resolve_round AFTER: result={result}, playerMoney={playerMoney}")
         except Exception:
             pass
         current_bet = 0
@@ -139,7 +139,7 @@ init -100 python:
             message = "Total: " + str(total)
 
     def stand_game():
-        global round_active, dealer_total, player_money, current_bet, game_over, message
+        global round_active, dealer_total, playerMoney, current_bet, game_over, message
         
         if game_over or not round_active:
             return
@@ -151,21 +151,21 @@ init -100 python:
 
         # Safe renpy.log call
         if hasattr(renpy, "log"):
-            renpy.log(f"stand_game BEFORE: p={p}, d={d}, current_bet={current_bet}, player_money={player_money}")
+            renpy.log(f"stand_game BEFORE: p={p}, d={d}, current_bet={current_bet}, playerMoney={playerMoney}")
 
         # Game logic
         if d > 21 or p > d:
             message = "You win!"
-            player_money += current_bet * 2
+            playerMoney += current_bet * 2
         elif p == d:
             message = "Push."
-            player_money += current_bet
+            playerMoney += current_bet
         else:
             message = "Dealer wins."
 
         # Safe renpy.log
         if hasattr(renpy, "log"):
-            renpy.log(f"stand_game AFTER: message={message}, player_money={player_money}")
+            renpy.log(f"stand_game AFTER: message={message}, playerMoney={playerMoney}")
 
         current_bet = 0
         game_over = True
@@ -177,7 +177,7 @@ init -100 python:
     def reset_round():
         """Reset the round state so the player can place a new bet.
 
-        This does NOT modify `player_money` — wins/loses already updated
+        This does NOT modify `playerMoney` — wins/loses already updated
         by `stand_game` / `resolve_round` / `hit_card`.
         """
         global deck, player_hand, round_active, current_bet, game_over, message, dealer_total
@@ -197,10 +197,10 @@ init -100 python:
 
     def refund_and_leave():
         #Refund the current bet (if any) and reset round state.
-        global player_money, current_bet
+        global playerMoney, current_bet
         try:
             if current_bet and current_bet > 0:
-                player_money += current_bet
+                playerMoney += current_bet
                 current_bet = 0
         except Exception:
             pass

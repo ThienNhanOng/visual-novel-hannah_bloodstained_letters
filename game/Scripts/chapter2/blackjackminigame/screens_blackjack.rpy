@@ -3,7 +3,7 @@ screen blackjack_table():
     #Fixed. screen is static and does not change when introducing new elements.
     fixed:
         #Placeholder labels top left (made red)
-        text "Current Money: [player_money]" xalign 0.02 yalign 0.02 size 40 color "#f1de2e62"
+        text "Current Money: [playerMoney]" xalign 0.02 yalign 0.02 size 40 color "#f1de2e62"
         text "Bet: [current_bet]" xalign 0.28 yalign 0.02 size 50 color "#486e16"
         # Show the dealer's current total in the top-left area.
         text "Dealer: [dealer_total]" xalign 0.03 yalign 0.55 size 50 color "#ff0000"
@@ -34,13 +34,13 @@ screen blackjack_table():
                 text "Player hand:" size 22
                 hbox:
                     spacing 10
-                    textbutton "Bet 10" action Function(start_game, 10) sensitive (not round_active and player_money >= 10)
-                    textbutton "Bet 50" action Function(start_game, 50) sensitive (not round_active and player_money >= 50)
-                    textbutton "Bet 100" action Function(start_game, 100) sensitive (not round_active and player_money >= 100)
-                    textbutton "All-IN" action Function(start_game, player_money) sensitive (not round_active and player_money > 0)
+                    textbutton "Bet 10" action Function(start_game, 10) sensitive (not round_active and playerMoney >= 10)
+                    textbutton "Bet 50" action Function(start_game, 50) sensitive (not round_active and playerMoney >= 50)
+                    textbutton "Bet 100" action Function(start_game, 100) sensitive (not round_active and playerMoney >= 100)
+                    textbutton "All-IN" action Function(start_game, playerMoney) sensitive (not round_active and playerMoney > 0)
                     textbutton "Hit" action Function(hit_card) sensitive round_active
                     textbutton "Stand" action Function(stand_game) sensitive round_active
-                    textbutton "Leave" action [Function(refund_and_leave), Return()]
+                    textbutton "Leave" action [Function(refund_and_leave), Return()] sensitive (not round_active)
                     # When a round ends (game_over True), offer a button to
                     # reset the round so the player can place a new bet.
                     textbutton "New Round" action Function(reset_round) sensitive game_over

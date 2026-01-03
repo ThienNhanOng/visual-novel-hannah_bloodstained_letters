@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 47: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    stop music fadeout 2.0
-    ^
+File "game/Scripts/chapter2/shop/shopconfig.rpy", line 32: expected an indented block after function definition on line 19
+    def workPermitCondition():
+        ^^^
 
 Ren'Py Version: Ren'Py 8.5.0.25111603
-Sun Dec 28 15:23:56 2025
+Fri Jan  2 17:27:32 2026

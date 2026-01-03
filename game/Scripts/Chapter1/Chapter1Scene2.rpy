@@ -169,6 +169,9 @@ label Chapter1Scene2:
         call chapter1Scene3_MeetingTheo
     # MIA – peaceful route initiation. mia can have 2 possible points 1 from minigame or 1 from speech.
     else: #silas <= mia 
+        Mia "How you holding up, [Player]?"
+        Player "fine"
+
         call chapter1scene3Peaceful
     #stop music fadeout 2.0
 return

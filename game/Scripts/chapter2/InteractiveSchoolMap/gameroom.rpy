@@ -33,6 +33,7 @@ label gameroom:
         "Yes (cost $10)":
             if Global_Money >= 10:
                 $ Global_Money -= 10
+                $ jump_score = 0  # Reset score for new game
                 $ game = None  # Will be initialized below
 
                 # Initialize game safely
@@ -50,5 +51,7 @@ label gameroom:
         #if no   
         "no":
             "What a shame. Maybe next time."
-
+    #increase time after leaving the room
+    $ timeIncrease()
+    
     jump schoolmap

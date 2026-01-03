@@ -27,16 +27,32 @@ label CasinoRoom:
     scene expression im.Scale("blackjack/background.jpeg", config.screen_width, config.screen_height)
     "welcome to the casino"
     play music "Scripts/chapter2/jumping_game/ninja racer stuff/Pixel Highway.wav" loop
-    call screen blackjack_table
-    stop music fadeout 2.0
-
-    if(result == "win"):
-        $ Global_Money += player_money
     
-    elif(result == "lose"):
-        $ Global_Money -= player_money
-    else: 
-        $ Global_Money = player_money
-        
+    #first check: only available at night
+    if currentTime() == "Night":
+        "Please enjoy your stay"
+        #check if player has fake ID
+        if purchased_items.get("ITEM1", False):
+            $ playerMoney = Global_Money
+            call screen blackjack_table
+            stop music fadeout 2.0
 
+            if(result == "win"):
+                $ Global_Money += playerMoney
+            
+            elif(result == "lose"):
+                $ Global_Money -= playerMoney
+            else: 
+                $ Global_Money = playerMoney
+            
+            $ timeIncrease()
+
+        else:
+            "wait actually...can I see your ID?"
+            Player "i don't have one..."
+            "Sorry, you need a fake ID to enter the establishment."
+            "Please come back later with an ID."
+            $ timeIncrease()
+    else:
+        "The casino is currently closed. Please come back at night."
     jump schoolmap

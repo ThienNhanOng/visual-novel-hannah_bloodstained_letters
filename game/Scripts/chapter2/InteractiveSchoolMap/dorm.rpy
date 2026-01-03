@@ -25,5 +25,14 @@ init -90 python:
 #placeholder test
 label dormroom:
     scene bg room1
-    "welcome to the dorm"
+    "You are in your dorm room."
+
+    # Sleep is allowed at Night (2) or Bedtime (3).
+    if time_index < 2:
+        "It's not bedtime yet. Come back at night."
+    else:
+        "You go to sleep..."
+        $ advance_day_if_night()
+        "You wake up on [current_day_label()] - [currentTime()]."
+
     jump schoolmap
