@@ -61,6 +61,8 @@ label courtyardroom:
                 SideChar "Good morning! Don't forget we have a special lecture today at 9 AM sharp."
                 Player "Thank you for the reminder, Professor."
                 SideChar "You're welcome. See you in class!"
+                #TESTING unlock fake ID after talking to professor
+                #$ fakeidUnlocked = True
                 $ event2_professorLecture = True
             
             # Event 3: Club Advertiser
@@ -353,6 +355,14 @@ label courtyardroom:
                 SideChar "You're out late. Everything okay?"
                 Player "Just finishing up some studying."
                 SideChar "Alright, but don't stay too late. Campus can be eerie at night."
+                SideChar "you should live a bit maybe hit up the casino. dont tell anyone i said that though"
+                Player "I dont know i dont want to ruin my chances of graduating"
+                SideChar "pft overrated ill tell you a secret"
+                SideChar "go to the bookstore and say the code 'no games no life'"
+                SideChar "theyll hand you a fake id"
+                "in the morning {Player} went to the bookstore and said the code 'no games no life'"
+                #event will unlock fake ID after talking to guard
+                $ fakeidUnlocked = True
                 $ event7_nightGuard = True
             
             # Event 8: Philosophy Debate
@@ -546,7 +556,13 @@ label courtyardroom:
 
             else:
                 "The courtyard quiets down; only a few lights remain as the campus settles for the weekend."
-    
+                "{Player} reflects on the how school has been the joy that it brought."
+                "however she still think of the incident."
+                menu:
+                    "Search for Hannah one last time?":
+                        jump investigating_the_school
+                    "I should just go home and rest. I have already moved on":
+                        pass
     # ===== SUNDAY =====
     elif current_day == "Sun":
         if current_time == "Morning":

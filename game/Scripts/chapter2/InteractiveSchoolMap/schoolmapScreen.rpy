@@ -1,11 +1,20 @@
 
 # Label to show the map
 label schoolmapScreen:
+    #condition for letter number3
+    if(silas_counter >= 10 and 
+    Theo_counter >= 10 and 
+    workpermit_unlocked == True and
+    arcade_unlocked == True and
+    fakeid_unlocked == True):
+        $ quest_completed = True
+    
     show screen schoolmapScreen
     return  # returns control to whatever called this label
 
 # Map screen backup
 screen schoolmapScreen:
+
     # Robust background load with fallback + on-screen debug
     if renpy.loadable("images/map/schoolmapbackup.png"):
         add "images/map/schoolmapbackup.png"

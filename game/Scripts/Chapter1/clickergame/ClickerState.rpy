@@ -4,7 +4,7 @@ init python:
     
     class ClickerState:
        
-
+    #getters and setters
         #on click axe
         def click_target(self):
             return
@@ -21,12 +21,13 @@ init python:
             return self.__class__.__name__
 
 
-    #idle state
+    #idle state 
     class IdleState(ClickerState):
         def __init__(self, game):
             self.game = game  # store a reference to the game
 
         def click_target(self):
+
             # First click hits the target
             self.game.hit_target()
             # Change state to ClickingState (player is now actively clicking)

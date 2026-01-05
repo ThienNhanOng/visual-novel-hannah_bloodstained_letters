@@ -23,11 +23,13 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 1 # Player's start money
+define Global_Money = 100 # Player's start money
 
-#money limit to limit text overflowing
+#money limit to limit text overflowing or negative money
 if(Global_Money >= 999):
     $ Global_Money = 999
+elif(Global_Money <= 0):
+    $ Global_Money = 0
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
@@ -40,7 +42,7 @@ label start:
 
 #testing
     
-    call screen schoolmapScreen
+    #call screen schoolmapScreen
 
 #testing end
 

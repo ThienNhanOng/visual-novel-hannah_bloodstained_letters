@@ -9,7 +9,9 @@ mini games notes
 
 1: clicker:
 redesign to include a state pattern
-
+singleton instance 
+vector position
+timer
 
 
 2: puzzle sliding:
@@ -34,10 +36,30 @@ the screen act as the facade/controller allowing user to manipulate the game sta
 6:
 ------------------
 hud/interactive map for school:
-factory pattern to create each room.
-command pattern to open/call each room (themself)
-(might make it programmed as a singleton)
-state
+
+rooms:
+coordinates for ui location
+factory: creating a room
+command: execute call/jump room and to check if entered or not
+template: originally inherit predefined rooms but override.
+
+shop:
+facad
+enum 
+state of item (implicitely not fully structured)
+state pattern for ui display of item
+state is used with boolean flags
+dictionary
+text interpolation 
+
+courtyard: mainly text based.
+global variable states (money counters lock/unlocked)
+booleans
+state machine time
+
+KIND OF chain of responsibility/event manager? but tbh its really just lots of renpy dependence and if and else statements.
+
+
 
 
 

@@ -1,11 +1,11 @@
 image bg room1 = "images/bg room1.png"
 
-#restriction variables
+#restriction boolean variables
 default purchased_items = {}
-default quest_completed = False
-default arcade_unlocked = False
-default fakeid_unlocked = True
-default workpermit_unlocked = True
+default questCompleted = False
+default arcadeUnlocked = False
+default fakeidUnlocked = False
+default workpermitUnlocked = True
 
 
 
@@ -13,10 +13,10 @@ default workpermit_unlocked = True
 init python:
     from enum import Enum
 
-    #item list
+    #Enum for item labels
     class ShopItem(Enum):
-        ITEM1 = ("Fake ID", 50, "Access to the casino")
-        ITEM2 = ("Work Permit", 18, "Allow you to work at school")
+        ITEM1 = ("Fake ID", 250, "Access to the casino")
+        ITEM2 = ("Work Permit", 30, "Allow you to work at school")
         ITEM3 = ("Letter", 1000, "???")
         ITEM4 = ("Arcade Pass", 1000, "Access to the arcade")
         #ITEM5 = ("Lotto ticket", 1000, "Access to the arcade")
@@ -27,27 +27,27 @@ init python:
             self.desc = desc
 
 
-    #item conditions for each items
+    #Getters for conditions
     def fakeidCondition():
-        return fakeid_unlocked
+        return fakeidUnlocked
 
     def workPermitCondition():
-        return workpermit_unlocked
+        return workpermitUnlocked
 
     def letterCondition():
-        return quest_completed
+        return questCompleted
 
     def arcadePassCondition():
-        return arcade_unlocked
+        return arcadeUnlocked
 
 
     
-    # Condition Table
+    # Dictionary to items to conditions on/off
     ITEM_CONDITIONS = {
         ShopItem.ITEM1: fakeidCondition, #for casino
-        ShopItem.ITEM2: workPermitCondition,
-        ShopItem.ITEM3: letterCondition,
-        ShopItem.ITEM4: arcadePassCondition,
+        ShopItem.ITEM2: workPermitCondition, #for cleaning track
+        ShopItem.ITEM3: letterCondition, #for quest lead back to mystery
+        ShopItem.ITEM4: arcadePassCondition, #for arcade access
     }
 
 
@@ -60,8 +60,6 @@ init python:
 
     #Purchase system config
     def canbuy(item):
-        # Only check ownership and conditions, not money
-        # Money check happens in buyitem() with notification
         not_owned = not purchased_items.get(item.name, False)
         allowed = checkconditions(item)
 

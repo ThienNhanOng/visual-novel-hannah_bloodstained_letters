@@ -50,7 +50,7 @@ label CasinoRoom:
         else:
             "wait actually...can I see your ID?"
             Player "i don't have one..."
-            "Sorry, you need a fake ID to enter the establishment."
+            "Sorry, you need an ID to enter the establishment."
             "Please come back later with an ID."
             $ timeIncrease()
     else:
