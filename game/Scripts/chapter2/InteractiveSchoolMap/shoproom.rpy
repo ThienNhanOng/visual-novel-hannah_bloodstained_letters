@@ -2,7 +2,7 @@
 #
 init python: #dont need init -90 again since already in python block
 
-    # define the shop room using factory pattern
+    #define the shop room using factory pattern
     class ShopRoom(Room):
         def __init__(self):
             super().__init__(
@@ -29,13 +29,12 @@ default first_visit_shop = False
 #placeholder test
 label shoproom:
     scene bg room1
-    $ SideChar = Character("Sage", color="#5c3304")
     
     if first_visit_shop == False:
-        SideChar "welcome to the Community Store!"
-        SideChar "my name is Sage. I also run the journalist club!"
+        Sage "welcome to the Community Store!"
+        Sage "my name is Sage. I also run the journalist club!"
     else:
-        SideChar "welcome back to the Community Store!"
+        Sage "welcome back to the Community Store!"
     call screen Shopscreen
 
 

@@ -31,11 +31,11 @@ init python:
             player = self.player
             enemy = self.enemy
 
-            # Gravity.
+            #Gravity.
             player.Playervelocity_Y += 2
             player.Player_Y += player.Playervelocity_Y
 
-            # Floor collision for player
+            #Floor collision for player
             if player.Player_Y + player.PlayerHeight >= self.Floor_Y:
                 player.Player_Y = self.Floor_Y - player.PlayerHeight
                 player.Playervelocity_Y = 0
@@ -43,19 +43,19 @@ init python:
             else:
                 player.grounded = False
 
-            # Call update for Enemy movement
-            # This makes sure the enemy updates/moves within the window width.
+            #Call update for Enemy movement
+            #This makes sure the enemy updates/moves within the window width.
             enemy.update(self.Screen_Width)
 
-            # Scoring
-            # Check for enemy passed player
+            #Scoring
+            #Check for enemy passed player
             if not getattr(enemy, 'passed', False) and (enemy.Enemy_X + enemy.EnemyWidth) < player.Player_X:
                 enemy.passed = True
 
-                # keeping the score using renpy.store 
+                #keeping the score using renpy.store 
                 store.jump_score = getattr(store, 'jump_score', 0) + 10
 
-                # Increase enemy speed by 1 each time player jump over
+                #Increase enemy speed by 1 each time player jump over
                 if hasattr(enemy, 'Enemy_velocity_X'):
                     enemy.Enemy_velocity_X += -1 if enemy.Enemy_velocity_X < 0 else 1
                 if hasattr(enemy, 'vx'):
@@ -79,17 +79,12 @@ init python:
 #todo convert score to money later.
 
 
-    # Jump action - math stuff gravity bla bla it makes the jump at 32.
+    #Jump action - math stuff gravity bla bla it makes the jump at 32.
     def jumpGame_space():
         if not game.ended:
             game.player.jump(32)
             #play sound
             renpy.play("Scripts/chapter2/jumping_game/ninja racer stuff/jump noise.wav")
-
-# Lazy singleton. use with renpy existing creation since there can only
-# be one game state at a time.
-#TODO: replace with actual implemented singleton later
-
 
 default jump_score = 0
 default game = SimpleGameState()

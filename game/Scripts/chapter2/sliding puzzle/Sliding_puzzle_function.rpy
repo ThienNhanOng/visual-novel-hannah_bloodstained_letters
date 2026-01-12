@@ -1,25 +1,25 @@
 init python:
     import random
     
-    # Initialize puzzle state
+    #Initialize puzzle state
     def init_puzzle():
         global puzzle_state, puzzle_completed
-        puzzle_state = puzzle_images[:]  # Copy original image order
+        puzzle_state = puzzle_images[:]  #Copy original image order
         puzzle_completed = False
 
-    # Swap two tiles
+    #Swap two tiles
     def swap_tiles(index1, index2):
         puzzle_state[index1], puzzle_state[index2] = puzzle_state[index2], puzzle_state[index1]
 
-    # Find the blank tile
+    #Find the blank tile
     def find_blank():
         return puzzle_state.index(None)
 
-    # Check if puzzle is solved
+    #Check if puzzle is solved
     def is_puzzle_solved():
         return puzzle_state == puzzle_images
 
-    # Shuffle puzzle
+    #Shuffle puzzle
     def shuffle_puzzle():
         init_puzzle()
         blank = find_blank()
@@ -36,7 +36,7 @@ init python:
 
             swap_tiles(blank, random.choice(neighbors))
 
-    # Instantly solve puzzle
+    #Instantly solve puzzle
     def solve_puzzle_instantly():
         global puzzle_state, puzzle_completed
         puzzle_state = puzzle_images[:]

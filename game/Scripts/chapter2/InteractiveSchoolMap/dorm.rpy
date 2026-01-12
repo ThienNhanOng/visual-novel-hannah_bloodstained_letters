@@ -1,7 +1,7 @@
 #creating the room
 #
 init -90 python:
-    # `Room` and `register_room` are defined earlier (see schoolMapFactory.rpy, init -100).
+    #`Room` and `register_room` are defined earlier (see schoolMapFactory.rpy, init -100).
     class DormRoom(Room):
         def __init__(self):
             super().__init__(
@@ -27,12 +27,12 @@ label dormroom:
     scene bg room1
     "You are in your dorm room."
 
-    # Sleep is allowed at Night (2) or Bedtime (3).
+    #Sleep is allowed at Night (2) or Bedtime (3).
     if time_index < 2:
         "It's not bedtime yet. Come back at night."
     else:
         "You go to sleep..."
         $ advance_day_if_night()
-        "You wake up on [current_day_label()] - [currentTime()]."
+        "You wake up on [currentDay_label()] - [currentTime()]."
 
     jump schoolmap

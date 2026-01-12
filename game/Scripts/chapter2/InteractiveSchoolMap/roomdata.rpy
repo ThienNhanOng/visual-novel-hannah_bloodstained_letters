@@ -1,7 +1,7 @@
 #room subclasses using factory
 init -90 python:
 
-    # Courtyard Room
+    #Courtyard Room
     class CourtyardRoom(Room):
         def __init__(self):
             super().__init__(
@@ -14,7 +14,7 @@ init -90 python:
                 label_name="courtyardroom"
             )
 
-    # Cafeteria Room
+    #Cafeteria Room
     class CafeteriaRoom(Room):
         def __init__(self):
             super().__init__(
@@ -27,7 +27,7 @@ init -90 python:
                 label_name="cafeteriaroom"
             )
 
-    # Track Field Room
+    #Track Field Room
     class TrackRoom(Room):
         def __init__(self):
             super().__init__(
@@ -40,7 +40,7 @@ init -90 python:
                 label_name="trackroom"
             )
 
-    # Shop Room
+    #Shop Room
     class ShopRoom(Room):
         def __init__(self):
             super().__init__(
@@ -53,7 +53,7 @@ init -90 python:
                 label_name="shoproom"
             )
 
-    # Casino Room
+    #Casino Room
     class CasinoRoom(Room):
         def __init__(self):
             super().__init__(
@@ -66,7 +66,7 @@ init -90 python:
                 label_name="CasinoRoom"
             )
 
-    # Game Room
+    #Game Room
     class Gameroom(Room):
         def __init__(self):
             super().__init__(
@@ -79,7 +79,7 @@ init -90 python:
                 label_name="gameroom"
             )
 
-    # Dorm Room
+    #Dorm Room
     class DormRoom(Room):
         def __init__(self):
             super().__init__(

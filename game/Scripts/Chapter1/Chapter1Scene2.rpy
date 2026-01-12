@@ -64,7 +64,7 @@ label Chapter1Scene2:
     Player "{b}sigh...{/b} I suppose it is nice to see such a turnout. Despite not having a lot of family" 
     "Hannah still managed to make an impact in other's lives."  
 
-    # start the funeral service
+    #start the funeral service
     label scene_funeral_speech_intro:
 
     scene blackscreen
@@ -101,7 +101,7 @@ label Chapter1Scene2:
     "I take a deep breath and start my speech."
     
     #call speech with voice over.
-    menu optional_name:
+    menu a:
         "choose a speech to give"
         "reflective and hopeful":
             $ Mia_counter += 1
@@ -134,8 +134,8 @@ label Chapter1Scene2:
     
 
 
-    # THEO OVERRIDE – mystery route. skill influenced by clicker game
-    # requires player to get a score of 10 or more in the minigame to trigger.
+    #THEO OVERRIDE – mystery route. skill influenced by clicker game
+    #requires player to get a score of 10 or more in the minigame to trigger.
     if Theo_counter == 1:
         scene expression im.Scale("images/chapter1/detective/detectivewallLean.png", config.screen_width, config.screen_height) 
         "..."
@@ -167,7 +167,7 @@ label Chapter1Scene2:
         "Suddenly silas emerges from the shadows."
         call chapter1Scene3SilasInteraction
         call chapter1Scene3_MeetingTheo
-    # MIA – peaceful route initiation. mia can have 2 possible points 1 from minigame or 1 from speech.
+    #MIA – peaceful route initiation. mia can have 2 possible points 1 from minigame or 1 from speech.
     else: #silas <= mia 
         Mia "How you holding up, [Player]?"
         Player "fine"

@@ -10,9 +10,9 @@ label Chapter2Scene4_helpingSilas:
     #picture of messy dorm
     "[Player] helped Silas move his stuff around and unpack."
     centered "After a few hours of hard work Later:"
-    # add puzzle mini game
+    #add puzzle mini game
 
-# sliding_puzzle_labels.rpy
+#sliding_puzzle_labels.rpy
 
     $ shuffle_puzzle()
     "help Silas clean his room"

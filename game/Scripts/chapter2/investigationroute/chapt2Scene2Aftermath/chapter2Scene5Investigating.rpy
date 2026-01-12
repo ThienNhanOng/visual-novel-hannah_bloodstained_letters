@@ -13,7 +13,7 @@ label investigating_the_school:
     #Change player font to yell font
     $ Player = Character("Player", color="#25ffed", what_size=yellFont)
     Player "AHH FUCK THIS."
-    # Reset to normal talk font
+    #Reset to normal talk font
     $ Player = Character("Player", color="#25ffed", what_size=talkFont)
     "Player plan to return back to town. but first she made a stop at Silas dormitory."
     #todo play knocking sounds
@@ -27,11 +27,44 @@ label investigating_the_school:
     Silas "Oh alright [Player] get home safely!"
     Silas "It was nice seeing you. Thanks again for rescuing me."
    
-    "As she about to leave to dismiss any rumors, she saw a brochure."
-    "It was definitely one that belongs to {i}JT Jewelry{/i}."
-    "Is it a coincidence that Sylas is doing an assignment based on the jewelry store? Or is there more to it?"
-    "I need to find out more about this."
-    
+    if silas_counter < Theo_counter:
+        "As she about to leave to dismiss any rumors, she saw a brochure."
+        "It was definitely one that belongs to {i}JT Jewelry{/i}."
+        "Is it a coincidence that Sylas is doing an assignment based on the jewelry store? Or is there more to it?"
+        "I need to find out more about this."
+    else:
+        "As she about to leave she saw something that caught her attention. a gem like object."
+        Player "what is this Sy?"
+        Silas "to be honest no clue. it looks like a gem of some sort. but there is some sort of force"
+        Silas "or some sort of energy coming from it. I cant quite explain it."
+        Player "it looks like it can be opened"
+        Silas "it does doesnt it. i've tried but it wont budge."
+        Player "hm.. let me give it a go."
+
+        $ tttwin = False
+        call screen TicTacToeScreenF
+        if tttwin:
+            "the gem unravel and illuminate itself with red and glitter"
+            Player "Hey look! i did it!"
+            Silas "really? Lets see..."
+            "Inside the gem was a piece of paper."
+            "certificate of authenticity. gt auctions."
+            "seller of the 'Conan that Ran' a red and precious gem: Hannah"
+            "and bidder as well as new owner: mr Edward harper-Chapman"
+            "..."
+            Player "Chapman? where have i ever heard that name before..."
+            "chapman...chapman..."
+            Player "chapman...GASP"
+            "THEODORE EDWARD HARPER-CHAPMAN..."
+            Player "SILAS. I MUST GO IM SORRY."
+            "player rushes out after realizing the name."
+            "and that the detective may not just be a detective but "
+            "the very person behind all of this."
+        else:
+            #Restart scene if player lose.
+            "You lost."
+            jump investigating_the_school
+        
     'end of chapter 2'
     #end of chapter2. 
     #continuation chapter3 will include meeting back up with theo and discussing about her findings.

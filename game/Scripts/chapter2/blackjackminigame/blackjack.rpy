@@ -1,4 +1,4 @@
-# Game state variables (persisted by Ren'Py)
+#Game state variables (persisted by Ren'Py)
 default deck = []
 default player_hand = []
 default round_active = False
@@ -13,7 +13,7 @@ default result = "" #default result
 
 init -100 python:
     import random
-    # Deck/rank definitions
+    #Deck/rank definitions
     suits = ["hearts", "diamonds", "clubs", "spades"]
     ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
@@ -22,16 +22,14 @@ init -100 python:
             return 10
         elif rank == "A":
             return 11
-        else:
-            return int(rank)
 
-    # Deck creation
+    #Deck creation
     def create_deck():
         deck = [{"rank": r, "suit": s, "value": card_value(r)} for s in suits for r in ranks]
         random.shuffle(deck)
         return deck
 
-    # Hand evaluation
+    #Hand evaluation
     def create_hand(hand):
         total = sum(card["value"] for card in hand)
         aces = sum(1 for card in hand if card["rank"] == "A")
@@ -40,7 +38,7 @@ init -100 python:
             aces -= 1
         return total
 
-    # Image helper
+    #Image helper
     royal_card_names = {"A": "ace", "J": "jack", "Q": "queen", "K": "king"}
 
     def card_image_name(card):
@@ -49,9 +47,9 @@ init -100 python:
         return "blackjack/{}_of_{}.png".format(rank_name, card["suit"]) 
 
 
-    # Game control functions (without renpy.notify)
+    #Game control functions (without renpy.notify)
     def start_game(bet=10):
-        # Include game_over and message in globals so we correctly reset them
+        #Include game_over and message in globals so we correctly reset them
         global deck, player_hand, round_active, current_bet, playerMoney, dealer_total, game_over, message
         if playerMoney < bet:
             return False
@@ -61,9 +59,9 @@ init -100 python:
         player_hand = [deck.pop(), deck.pop()]
         round_active = True
         dealer_total = 0
-        # Clear any previous round state here so UI shows the new round
+        #Clear any previous round state here so UI shows the new round
         game_over = False
-        # Show the player's starting hand total in the message area
+        #Show the player's starting hand total in the message area
         message = f"Player total: {create_hand(player_hand)}"
         return
 
@@ -91,7 +89,7 @@ init -100 python:
         global playerMoney, current_bet
         p = create_hand(player_hand)
         d = dealer_total
-        # Log state before payout for debugging
+        #Log state before payout for debugging
         try:
             renpy.log(f"resolve_round BEFORE: p={p}, d={d}, current_bet={current_bet}, playerMoney={playerMoney}")
         except Exception:
@@ -104,13 +102,13 @@ init -100 python:
             result = "push"
         else:
             result = "lose"
-        # Log state after payout
+        #Log state after payout
         try:
             renpy.log(f"resolve_round AFTER: result={result}, playerMoney={playerMoney}")
         except Exception:
             pass
         current_bet = 0
-        # Ensure UI updates immediately to reflect the changed money/counts
+        #Ensure UI updates immediately to reflect the changed money/counts
         try:
             renpy.restart_interaction()
         except Exception:
@@ -149,11 +147,11 @@ init -100 python:
         p = create_hand(player_hand)
         d = dealer_total
 
-        # Safe renpy.log call
+        #Safe renpy.log call
         if hasattr(renpy, "log"):
             renpy.log(f"stand_game BEFORE: p={p}, d={d}, current_bet={current_bet}, playerMoney={playerMoney}")
 
-        # Game logic
+        #Game logic
         if d > 21 or p > d:
             message = "You win!"
             playerMoney += current_bet * 2
@@ -163,14 +161,14 @@ init -100 python:
         else:
             message = "Dealer wins."
 
-        # Safe renpy.log
+        #Safe renpy.log
         if hasattr(renpy, "log"):
             renpy.log(f"stand_game AFTER: message={message}, playerMoney={playerMoney}")
 
         current_bet = 0
         game_over = True
 
-        # Safe interaction refresh
+        #Safe interaction refresh
         if hasattr(renpy, "restart_interaction"):
             renpy.restart_interaction()
 
@@ -181,15 +179,15 @@ init -100 python:
         by `stand_game` / `resolve_round` / `hit_card`.
         """
         global deck, player_hand, round_active, current_bet, game_over, message, dealer_total
-        # Keep deck as-is (so remaining cards carry forward), but clear
-        # the player's hand and round flags so they can bet again.
+        #Keep deck as-is (so remaining cards carry forward), but clear
+        #the player's hand and round flags so they can bet again.
         player_hand = []
         round_active = False
         current_bet = 0
         game_over = False
         message = ""
         dealer_total = 0
-        # Refresh UI after resetting the round
+        #Refresh UI after resetting the round
         try:
             renpy.restart_interaction()
         except Exception:
@@ -204,7 +202,7 @@ init -100 python:
                 current_bet = 0
         except Exception:
             pass
-        # Reset UI/round state so the table clears cleanly
+        #Reset UI/round state so the table clears cleanly
         try:
             reset_round()
         except Exception:

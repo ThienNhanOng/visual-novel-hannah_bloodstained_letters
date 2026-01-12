@@ -1,7 +1,7 @@
 #creating the room
 #
 init -90 python:
-    # `Room` and `register_room` are defined earlier (see schoolMapFactory.rpy, init -100).
+    #`Room` and `register_room` are defined earlier (see schoolMapFactory.rpy, init -100).
     class TrackFieldRoom(Room):
         def __init__(self):
             super().__init__(
@@ -35,13 +35,11 @@ label trackroom:
     "welcome to the track"
     #increase time after leaving the room
 
-    $ current_time = currentTime()
-
-    if current_time == "Morning":
+    if currentTime() == "Morning":
         Silas "exercising before class?"
 
     
-    elif current_time == "Noon" and purchased_items.get("ITEM2", False):
+    elif currentTime() == "Noon" and purchased_items.get("ITEM2", False):
         $ SideChar = Character("Coach Paige", color="#5c3304")
         SideChar "Just in time! and welcome to work! grab a rake"
         Player "on it!"

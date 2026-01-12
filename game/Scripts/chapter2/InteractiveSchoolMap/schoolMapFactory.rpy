@@ -13,9 +13,9 @@ init -100 python:
             self.label_name = label_name or room_id.lower() #label for the room
             self.flag_name = flag_name or f"{room_id}Visited" #check if it has been clicked on yet
 
-    # global registry
+    #global registry
     SchoolmapRooms = {}
 
     def addroom(room):
-        # Add room
+        #Add room
         SchoolmapRooms[room.room_id] = room

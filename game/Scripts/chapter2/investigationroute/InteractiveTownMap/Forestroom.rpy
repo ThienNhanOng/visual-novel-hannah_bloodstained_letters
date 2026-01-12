@@ -18,7 +18,7 @@ label InteractiveForestRoom:
         hide theo b1
         show theo b2 at truecenter
         "There is nothing for you here"
-        # Show only her image here (replace the old placeholder)
+        #Show only her image here (replace the old placeholder)
         hide theo b2
         hide detective rock
         
@@ -30,7 +30,7 @@ label InteractiveForestRoom:
         show mc at truecenter
         hide theo b2 with pixellate
         Player "I met up with Mia. like you suggested"
-        # Replace plain hide/show with transitions
+        #Replace plain hide/show with transitions
         hide mc with pixellate
         Theo "And how did thy meeting fare?"
         show mc at left

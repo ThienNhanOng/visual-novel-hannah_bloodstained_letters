@@ -1,6 +1,6 @@
 #init -90 python:
 init -100 python:
-    # Command interface to enter a room
+    #Command interface to enter a room
     class RoomCommand:
             pass
 

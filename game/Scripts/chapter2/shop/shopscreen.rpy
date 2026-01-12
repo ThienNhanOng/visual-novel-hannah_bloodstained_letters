@@ -39,18 +39,18 @@ screen Shopscreen():
                         $ owned = purchased_items.get(item.name, False)
                         $ available = canbuy(item)
                         
-                        # Determine button text and color based on state
+                        #Determine button text and color based on state
                         if owned:
                             $ btn_text = "Purchased"
-                            $ color = "#c0c0c0"  # Gray for purchased
+                            $ color = "#c0c0c0"  #Gray for purchased
                             $ btn_action = NullAction()
                         elif available:
                             $ btn_text = "Buy [item.label]"
-                            $ color = "#3cd070"  # Green for available
+                            $ color = "#3cd070"  #Green for available
                             $ btn_action = Function(buyitem, item)
                         else:
                             $ btn_text = "Locked"
-                            $ color = "#d74343"  # Red for locked
+                            $ color = "#d74343"  #Red for locked
                             $ btn_action = NullAction()
                         
                         $ item_name = item.label

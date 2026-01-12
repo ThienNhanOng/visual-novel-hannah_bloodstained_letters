@@ -23,15 +23,19 @@ data structures usage:
 lists for the deck and hand generation
 dictionary for each card. this is so each card contain its correct rank suite and value
 uses a stack for drawing from top of deck once generated (lifo) 
-
-
-
 design pattern:
 the screen act as the facade/controller allowing user to manipulate the game state.
 
-4:
+jumping game:
+uses a 2d vector and gravity.
+velocity determines speed of jump. 
+has objects such as enemies.
+contain randomizations for object spawn
+collision checks
+relies on a in renpy timer to update frames for enemy movement.
+4: Ren'Py APIs extensively: renpy.store
 
-5:
+5:tic tac toe game:
 
 6:
 ------------------

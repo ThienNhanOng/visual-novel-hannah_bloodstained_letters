@@ -1,17 +1,17 @@
-# This file managed by the Ren'Py Launch and Sync Visual Studio Code extension.
+#This file managed by the Ren'Py Launch and Sync Visual Studio Code extension.
 #
-# This script provides a mechanism for your Ren'Py game to connect to VS Code
-# via a websocket server. It is automatically excluded from builds of your game.
-# You can delete this file if you do not want to use the features provided by
-# the extension.
+#This script provides a mechanism for your Ren'Py game to connect to VS Code
+#via a websocket server. It is automatically excluded from builds of your game.
+#You can delete this file if you do not want to use the features provided by
+#the extension.
 #
-# This file should not be checked into source control. You can add it to your
-# `.gitignore` file by adding the following line:
+#This file should not be checked into source control. You can add it to your
+#`.gitignore` file by adding the following line:
 #
-# renpy_warp_*.rpe*
+#renpy_warp_*.rpe*
 #
 
-import renpy  # type: ignore
+import renpy  #type: ignore
 from time import sleep
 import textwrap
 import threading
@@ -106,11 +106,11 @@ def socket_listener(websocket):
 
 def socket_producer(websocket):
     """produces messages to the socket server"""
-    from websockets.exceptions import ConnectionClosed  # type: ignore
+    from websockets.exceptions import ConnectionClosed  #type: ignore
 
     send = functools.partial(socket_send, websocket=websocket)
 
-    # report current line to warp server
+    #report current line to warp server
     def fn(event, interact=True, **kwargs):
         if not interact:
             return
@@ -130,7 +130,7 @@ def socket_producer(websocket):
             try:
                 send(message)
             except ConnectionClosed:
-                # socket is closed, remove the callback
+                #socket is closed, remove the callback
                 renpy.config.all_character_callbacks.remove(fn)
 
     renpy.config.all_character_callbacks.append(fn)
@@ -139,7 +139,7 @@ def socket_producer(websocket):
         try:
             send({"type": "current_label", "label": name})
         except ConnectionClosed:
-            # socket is closed, remove the callback
+            #socket is closed, remove the callback
             renpy.config.label_callbacks.remove(label_callback)
 
     renpy.config.label_callbacks.append(label_callback)
@@ -149,9 +149,9 @@ def socket_producer(websocket):
 
 def socket_service(port, version, checksum):
     """connects to the socket server. returns True if the connection has completed its lifecycle"""
-    # websockets module is bundled with renpy on versions >=8.2.0
-    from websockets.sync.client import connect  # type: ignore
-    from websockets.exceptions import (  # type: ignore
+    #websockets module is bundled with renpy on versions >=8.2.0
+    from websockets.sync.client import connect  #type: ignore
+    from websockets.exceptions import (  #type: ignore
         WebSocketException,
         ConnectionClosedOK,
         ConnectionClosedError
@@ -190,7 +190,7 @@ def socket_service(port, version, checksum):
             py_exec("renpy.notify(\"Connected to Ren'Py Launch and Sync\")")
 
             socket_producer(websocket)
-            socket_listener(websocket)  # this blocks until socket is closed
+            socket_listener(websocket)  #this blocks until socket is closed
 
             logger.info(f"socket service on :{port} exited")
 

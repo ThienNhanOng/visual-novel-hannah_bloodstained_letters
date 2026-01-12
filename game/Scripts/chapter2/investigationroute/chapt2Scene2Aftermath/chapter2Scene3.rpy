@@ -1,7 +1,7 @@
 transform fade_out:
     alpha 1.0
-    pause 2.0          # How long text stays fully visible
-    linear 2.0 alpha 0.0  # Fade out over 2 seconds
+    pause 2.0          #How long text stays fully visible
+    linear 2.0 alpha 0.0  #Fade out over 2 seconds
 label Chapter2Scene3_fishing:
     play audio "audio/MusicAndSoundtracks/audio [vocals].mp3" fadein 1.0
     "[Player] went to visit the woods."

@@ -1,43 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('images/bg room1.png') at 0x0000000020445460>:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/shoproom.rpy", line 39, in script
-    call screen Shopscreen
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 1, in execute
-    screen Shopscreen():
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 1, in execute
-    screen Shopscreen():
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 8, in execute
-    frame:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 16, in execute
-    vbox:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 29, in execute
-    viewport:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 35, in execute
-    vbox:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 38, in execute
-    for item in ShopItem:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 40, in execute
-    $ available = canbuy(item)
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 40, in <module>
-    $ available = canbuy(item)
-                  ~~~~~~^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 63, in canbuy
-    allowed = checkconditions(item)
-              ~~~~~~~~~~~~~~~^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 55, in checkconditions
-    return ITEM_CONDITIONS[item]()
-           ~~~~~~~~~~~~~~~~~~~~~^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 30, in fakeidCondition
-    return player_level >= 1
-           ^^^^^^^^^^^^     
-NameError: name 'player_level' is not defined
+While running game code:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 16, in execute
+    screen schoolmapScreen:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 16, in execute
+    screen schoolmapScreen:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 29, in execute
+    for room in SchoolmapRooms.values():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 31, in execute
+    if room.idle:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 33, in execute
+    $ is_night = currentTime() == "Bedtime"
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 33, in <module>
+    $ is_night = currentTime() == "Bedtime"
+                 ~~~~~~~~~~~^^             
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/shoproom.rpy", line 39, in script
-    call screen Shopscreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
+    call screen schoolmapScreen
   File "renpy/ast.py", line 2241, in execute
     self.call("execute")
     ~~~~~~~~~^^^^^^^^^^^
@@ -53,10 +38,10 @@ Traceback (most recent call last):
   File "renpy/exports/statementexports.py", line 348, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
+  File "renpy/ui.py", line 306, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2117, in interact
+  File "renpy/display/core.py", line 2154, in interact
     repeat, rv = self.interact_core(
                  ~~~~~~~~~~~~~~~~~~^
         preloads=preloads,
@@ -66,7 +51,7 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "renpy/display/core.py", line 2655, in interact_core
+  File "renpy/display/core.py", line 2700, in interact_core
     root_widget.visit_all(lambda d: d.per_interact())
     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/displayable.py", line 457, in visit_all
@@ -81,7 +66,7 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 503, in visit_all
     callback(self)
     ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2655, in <lambda>
+  File "renpy/display/core.py", line 2700, in <lambda>
     root_widget.visit_all(lambda d: d.per_interact())
                                     ~~~~~~~~~~~~~~^^ 
   File "renpy/display/screen.py", line 514, in per_interact
@@ -90,37 +75,22 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 715, in update
     self.screen.function(**self.scope)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 1, in execute
-    screen Shopscreen():
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 1, in execute
-    screen Shopscreen():
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 8, in execute
-    frame:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 16, in execute
-    vbox:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 29, in execute
-    viewport:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 35, in execute
-    vbox:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 38, in execute
-    for item in ShopItem:
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 40, in execute
-    $ available = canbuy(item)
-  File "game/Scripts/chapter2/shop/shopscreen.rpy", line 40, in <module>
-    $ available = canbuy(item)
-                  ~~~~~~^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 63, in canbuy
-    allowed = checkconditions(item)
-              ~~~~~~~~~~~~~~~^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 55, in checkconditions
-    return ITEM_CONDITIONS[item]()
-           ~~~~~~~~~~~~~~~~~~~~~^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 30, in fakeidCondition
-    return player_level >= 1
-           ^^^^^^^^^^^^     
-NameError: name 'player_level' is not defined
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 16, in execute
+    screen schoolmapScreen:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 16, in execute
+    screen schoolmapScreen:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 29, in execute
+    for room in SchoolmapRooms.values():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 31, in execute
+    if room.idle:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 33, in execute
+    $ is_night = currentTime() == "Bedtime"
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 33, in <module>
+    $ is_night = currentTime() == "Bedtime"
+                 ~~~~~~~~~~~^^             
+TypeError: 'str' object is not callable
 
 Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.5.0.25111603
+Ren'Py 8.5.2.26010301
 Thesis Hannah Bloodstained letters 1.0
-Fri Jan  2 17:29:28 2026
+Mon Jan 12 15:37:42 2026

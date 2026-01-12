@@ -1,4 +1,4 @@
-﻿## Screen with Stats Button
+﻿##Screen with Stats Button
 screen gameUI:
     imagebutton:
         xalign 1.0

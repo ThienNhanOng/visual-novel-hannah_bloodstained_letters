@@ -1,5 +1,5 @@
-# this scene contain the flashback of when hanna severed arm and jawbone was found.
-# 
+#this scene contain the flashback of when hanna severed arm and jawbone was found.
+#
 #
 #
 default flashback_seen = False

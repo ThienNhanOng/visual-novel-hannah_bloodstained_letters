@@ -15,7 +15,7 @@ label InteractiveMiaRoom:
         #knocking sounds
         Player "*Knock Knock* hey Mia im sorry to bother you but I have an important question to ask"
 
-        # knocking sounds
+        #knocking sounds
         "maybe she isnt here? [Player] thought to herself"
 
         Mia "{b} 'Opens the door' {/b}"
@@ -25,7 +25,7 @@ label InteractiveMiaRoom:
         Mia "So what brings you here cupcake?"
         Player "..."        
         Player "I..."
-        $ renpy.pause(2.5, hard=True)  # waits 2.5 seconds, hard=True prevents skipping
+        $ renpy.pause(2.5, hard=True)  #waits 2.5 seconds, hard=True prevents skipping
         "I thought about how I should approach this."
         menu:
             "Ask Mia directly about her work relationship with Hannah or be discrete about it?"

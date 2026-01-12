@@ -1,7 +1,7 @@
 #creating the room
 #
 init -90 python:
-    # define the casino room using factory pattern
+    #define the casino room using factory pattern
     class CasinoRoomDef(Room):
         def __init__(self):
             super().__init__(

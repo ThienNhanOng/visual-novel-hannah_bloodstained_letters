@@ -23,7 +23,7 @@ label InteractiveGTRoom:
         SideChar "Oh jeez, that'll be tough. Over the years they come and go.
         Let me see, there was a Jake, Colton, Sam, and Andrea, who previously worked here."
     
-        SideChar "as for regulars all I could think of is Ajani, Rita, Chapman, Krista, and Keenan."
+        SideChar "as for regulars all I could think of is Ajani, Rita, {color=#ff0000}{b}Chapman{/b}{/color}, Krista, and Keenan."
         "[Player] didnt get any information regarding Hannah here."
         Player "Thank you for your time, I must get going now."
         SideChar "No problem, have a great day!"
@@ -40,7 +40,7 @@ label InteractiveGTRoom:
         Player "Do you mind if I ask for the previous workers or potentially regulars?"
         SideChar "Oh jeez, that'll be tough. Over the years they come and go.
         Let me see, there was a Jake, Colton, Sam, and Andrea, who previously worked here."
-        SideChar "as for regulars all I could think of is Ajani, Rita, Chapman, Krista, and Keenan."
+        SideChar "as for regulars all I could think of is Ajani, Rita, Krista, and Keenan."
         "[Player] didnt get any information regarding Hannah here."
         Player "Thank you for your time, I must get going now."
         SideChar "No problem, have a great day!"
@@ -66,8 +66,8 @@ label InteractiveGTRoom:
         SideChar "Oh, Mia? She stepped out for a moment. do you need her?"
         Player "oh no. I have a favor though can you relist the previous names for me?"
         SideChar "I am a busy person but sure"
-        SideChar "Previous Employees: Jake, Colton, Sam, Andrea. \n 
-        Regulars: Ajani, Rita, Chapman, Krista, Keenan. Jessi"
+        SideChar "Previous Employees: Jake, Colton, Sam, Andrea. \n  
+        Regulars: Ajani, Rita, {color=#ff0000}{b}Chapman{/b}{/color}, Krista, Keenan. Jessi"
         Player "Thank you!"
     else:
         "[Player] Enters the store"
@@ -77,6 +77,6 @@ label InteractiveGTRoom:
         "I have a favor though can you relist the previous names for me?"
         SideChar "I am a busy person but sure"
         SideChar "Previous Employees: Jake, Colton, Sam, Andrea. \n 
-        Regulars: Ajani, Rita, Chapman, Krista, Keenan. Jessi"
+        Regulars: Ajani, Rita, {color=#ff0000}{b}Chapman{/b}{/color}, Krista, Keenan. Jessi"
         Player "Thank you!"
     jump map

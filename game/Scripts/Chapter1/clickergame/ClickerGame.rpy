@@ -2,27 +2,28 @@ init python:
     import random, math
 
     class ClickerGame:
-        _instance = None  # singleton
+        _instance = None  #singleton
 
         def __init__(self):
             #axe target position and size
-            self.target_x = 0.5
-            self.target_y = 0.5
-            self.size_pixels = 140
+            self.targetX = 0.5
+            self.targetY = 0.5
+            self.sizePixels = 140
 
-            #axe animation state
-            self.start_x = 0.5
-            self.start_y = 0.5
-            self.dest_x = 0.5
-            self.dest_y = 0.5
+            #start axe in the middle so it doesnt travel 
+            #past screen boundaries.
+            self.startX = 0.5
+            self.startY = 0.5
+            self.destX = 0.5
+            self.destY = 0.5
             self.progress = 0.0
-            self.is_sliding = False
-            self.slide_duration = 1.0
+            self.isSliding = False
+            self.slideDuration = 1.0
 
             #score and misses variables
             self.score = 0
             self.misclicks = 0
-            self.relocate_interval = 1.8
+            self.relocateaxe = 1.8
 
             self.state = IdleState(self)
 
@@ -58,64 +59,62 @@ init python:
             self.score += 1
             renpy.sound.play("audio/MusicAndSoundtracks/bell.wav", channel="sound")
 
-            # make target slightly smaller and faster
-            self.size_pixels = max(120, int(self.size_pixels * 0.95))
-            self.relocate_interval = max(0.5, self.relocate_interval * 0.99)
+            #make target slightly smaller and faster
+            self.sizePixels = max(120, int(self.sizePixels * 0.95))
+            self.relocateaxe = max(0.5, self.relocateaxe * 0.99)
 
-            # move target to a new location
+            #move target to a new location
             self.respawn_target()
 
         def miss_click(self):
             """player clicks background."""
             self.misclicks += 1
 
-        # ------------------------
-        # target movement
-        # ------------------------
         def respawn_target(self):
             """pick a new random target location and reset animation."""
             sw, sh = config.screen_width, config.screen_height
 
-            # keep target fully visible on screen
-            margin_x = max(0, self.size_pixels / sw * 0.5)
-            margin_y = max(0, self.size_pixels / sh * 0.5)
+            #keep target fully visible on screen
+            marginX = max(0, self.sizePixels / sw * 0.5)
+            marginY = max(0, self.sizePixels / sh * 0.5)
 
-            # set animation start and destination
-            self.start_x, self.start_y = self.target_x, self.target_y
-            self.dest_x = random.uniform(margin_x, 1 - margin_x)
-            self.dest_y = random.uniform(margin_y, 1 - margin_y)
+            #set animation start and destination
+            self.startX, self.startY = self.targetX, self.targetY
+            self.destX = random.uniform(marginX, 1 - marginX)
+            self.destY = random.uniform(marginY, 1 - marginY)
 
             self.progress = 0.0
-            self.is_sliding = True
+            self.isSliding = True
 
-            # slide duration based on distance (short hops faster)
-            dx = self.dest_x - self.start_x
-            dy = self.dest_y - self.start_y
+            #slide duration based on distance (short hops faster)
+            dx = self.destX - self.startX
+            dy = self.destY - self.startY
             distance = math.hypot(dx, dy)
-            self.slide_duration = max(0.35, min(1.2, distance * 1.8))
+            self.slideDuration = max(0.35, min(1.2, distance * 1.8))
 
         def update_animation(self):
             """update target position for smooth sliding."""
-            if not self.is_sliding:
+            if not self.isSliding:
                 return
 
-            # increment progress based on slide duration
-            step = 0.05 / self.slide_duration
+            #increment progress based on slide duration
+            step = 0.05 / self.slideDuration
             self.progress = min(1.0, self.progress + step)
 
-            # smooth interpolation (ease-in-out)
+            #Increase smoothness
+            #Slide base on time
             t = self.progress
-            t_smooth = t * t * (3 - 2 * t)
+            tSmooth = t * t * (3 - 2 * t)
 
-            # update target position
-            self.target_x = self.start_x + (self.dest_x - self.start_x) * t_smooth
-            self.target_y = self.start_y + (self.dest_y - self.start_y) * t_smooth
+            #update target position
+            self.targetX = self.startX + (self.destX - self.startX) * tSmooth
+            self.targetY = self.startY + (self.destY - self.startY) * tSmooth
 
-            # end of animation
+            #end of animation
             if self.progress >= 1.0:
-                self.is_sliding = False
-                self.target_x = self.dest_x
-                self.target_y = self.dest_y
+                self.isSliding = False
+                self.targetX = self.destX
+                self.targetY = self.destY
 
         def is_game_over(self):
             """check if player has missed 3 times."""

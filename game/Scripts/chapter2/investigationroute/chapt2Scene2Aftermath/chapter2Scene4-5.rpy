@@ -1,4 +1,4 @@
-label after_puzzle: 
+label after_puzzle_old: 
     "Phew! all clean and tidy now!"
     #https://www.youtube.com/watch?v=STgjUMPUVn0 idea for puzzle
     #$ puzzle_completed = True  # Set the flag to True

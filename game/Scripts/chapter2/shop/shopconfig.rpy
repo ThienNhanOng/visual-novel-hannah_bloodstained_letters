@@ -2,9 +2,9 @@ image bg room1 = "images/bg room1.png"
 
 #restriction boolean variables
 default purchased_items = {}
-default questCompleted = False
-default arcadeUnlocked = False
-default fakeidUnlocked = False
+default questCompleted = True
+default arcadeUnlocked = True
+default fakeidUnlocked = True
 default workpermitUnlocked = True
 
 
@@ -42,7 +42,7 @@ init python:
 
 
     
-    # Dictionary to items to conditions on/off
+    #Dictionary to items to conditions on/off
     ITEM_CONDITIONS = {
         ShopItem.ITEM1: fakeidCondition, #for casino
         ShopItem.ITEM2: workPermitCondition, #for cleaning track
@@ -69,22 +69,22 @@ init python:
     def buyitem(item):
         global Global_Money, purchased_items
 
-        # Check if already owned
+        #Check if already owned
         if purchased_items.get(item.name, False):
             renpy.notify("You already own %s." % item.label)
             return
 
-        # Check if condition is met
+        #Check if condition is met
         if not checkconditions(item):
             renpy.notify("You cannot purchase %s yet." % item.label)
             return
 
-        # Check if can afford
+        #Check if can afford
         if Global_Money < item.price:
             renpy.notify("You don't have enough money! Need %d." % item.price)
             return
 
-        # Purchase successful
+        #Purchase successful
         Global_Money -= item.price
         purchased_items[item.name] = True
         renpy.notify("Bought %s for $ %d." % (item.label, item.price))

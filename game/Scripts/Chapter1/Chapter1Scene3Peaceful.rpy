@@ -20,7 +20,7 @@ label chapter1scene3Peaceful:
     They said it was hers, and everyone just... accepted it. Closed the case. Buried an empty casket. Moved on.
     What if she’s not dead? What if there is more to this?"
 
-    # Gets cut off
+    #Gets cut off
     "Mia hugs [Player]"
 
     Mia "ENOUGH! You're not the only one that had Hannah around you your whole life. I did too."

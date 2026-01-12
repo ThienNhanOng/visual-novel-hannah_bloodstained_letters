@@ -1,4 +1,4 @@
-# Define the images for Forestroom scene
+#Define the images for Forestroom scene
 image detective rock = im.Scale("images/chapter2/forestroompictures/1.jpeg", config.screen_width, config.screen_height)
 image bg forestroom = "images/chapter2/forestroompictures/forest background.png"
 image theo b1 = "images/chapter2/forestroompictures/theob1.png"

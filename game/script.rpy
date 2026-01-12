@@ -14,16 +14,14 @@ define Player = Character("Player", color="#25ffed", what_size=talkFont)
 define Silas = Character("Silas", color="#ff0000", what_size=talkFont)  
 define Theo = Character("Theo", color="#ff9100", what_size=talkFont)  
 define Sage = Character("Sage", color="#1e9453", what_size=talkFont)  
-define Asher = Character("Asher", color="#ffff00", what_size=talkFont)  
 define Mia = Character("Mia", color="#ff00ff", what_size=talkFont)  
-define Lorenzo = Character("Geralt", color="#7b887b", what_size=talkFont)
 default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFont)
 
 #initiate character counters for routes
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 100 # Player's start money
+define Global_Money = 100 #Players start money
 
 #money limit to limit text overflowing or negative money
 if(Global_Money >= 999):
@@ -36,14 +34,18 @@ elif(Global_Money <= 0):
 default StoryDecision_Chapter1_Investigate = False #false = peaceful route
 default StoryDecision_Chapter1_Schoolname = "school"
 default chapter2continue = False #flag to continue chapter 2 after peaceful reroute.
+
+#event list
+default event_queue = []
+
 #start of game
 label start:
 
 
 #testing
     
-    #call screen schoolmapScreen
-
+    call screen schoolmapScreen
+    #call screen TicTacToeScreen
 #testing end
 
     stop music fadeout 2.0
@@ -51,13 +53,13 @@ label start:
     #summary: set up the Player prior to starting game. 
     #Player input name here.
 
-    scene black  # Setting the background to black (or replace with your desired background image)
+    scene black  #Setting the background to black (or replace with your desired background image)
     
     "Welcome to the story of Hannah. The Bloodstained Letters."
     "Little girl, What is your name?"
     
-    $ name = renpy.input("Enter your name:").strip() or "Leah"  # Default name if input is empty
-    $ name = name.capitalize()  # Capitalize the first letter of the name
+    $ name = renpy.input("Enter your name:").strip() or "Leah"  #Default name if input is empty
+    $ name = name.capitalize()  #Capitalize the first letter of the name
     "Ah! I remember now, your name is [name]! Anyhow, let's get started!"
     
     #override Player with input name
@@ -115,5 +117,5 @@ label start:
         
 
     #
-    # End of game
+    #End of game
     return

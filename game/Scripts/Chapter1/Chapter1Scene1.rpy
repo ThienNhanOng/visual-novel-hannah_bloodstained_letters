@@ -12,12 +12,12 @@ label Chapter1Scene1:
     centered "{i}{color=#FFFFFF}Here lies Hannah —\nBrave, kind, and endlessly devoted.\nGone too soon, never forgotten.{/color}{/i}"
 
 
-    # Flashback starts
+    #Flashback starts
     
     if not flashback_seen:
         call Chapter1Scene1Flashbacks
         $ flashback_seen = True
-    # Flashback ends
+    #Flashback ends
 
     scene forest2
     Player "To my right, I notice a silhouette emerge from the edge of the forest."
@@ -79,7 +79,7 @@ label Chapter1Scene1:
     scene black with fade
     show silas_comfort
     "Silas places a hand onto my shoulder,  examining my dejected disposition."
-    # Continue with church bell scene...
+    #Continue with church bell scene...
     "{i}The player and the mourners stood in silence, grief hanging heavy in the cold air. Soft sobs, whispered prayers, and the rustle of wind through trees were all that remained{/i}"
     "{b}A sudden, sharp toll that cut through the stillness like a knife.{/b}"
     centered "{i}{b}One chime.{/b}{/i}"
