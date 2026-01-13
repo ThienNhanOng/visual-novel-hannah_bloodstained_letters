@@ -15,10 +15,10 @@ init -90 python:
             )
 
             #use command pattern to call the room
-            self.command = CallRoom(self.label_name)
+            self.command = CallRoomCommand(self.label_name)
 
         def enter(self):
-            renpy.call_in_new_context(self.label_name)
+            self.command.execute()
 
     addroom(DormRoom())
 
@@ -28,11 +28,11 @@ label dormroom:
     "You are in your dorm room."
 
     #Sleep is allowed at Night (2) or Bedtime (3).
-    if time_index < 2:
+    if timeIndex < 2:
         "It's not bedtime yet. Come back at night."
     else:
         "You go to sleep..."
-        $ advance_day_if_night()
-        "You wake up on [currentDay_label()] - [currentTime()]."
+        $ advancedNextDay()
+        "You wake up on [currentDayLabel()] - [currentTime()]."
 
     jump schoolmap

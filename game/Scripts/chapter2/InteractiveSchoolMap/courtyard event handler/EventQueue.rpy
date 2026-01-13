@@ -11,7 +11,7 @@ init python:
         @staticmethod
         def build(events):
             queue = []
-            current_day = currentDay_label()
+            current_day = currentDayLabel()
             current_time = currentTime()
 
             for event in events:

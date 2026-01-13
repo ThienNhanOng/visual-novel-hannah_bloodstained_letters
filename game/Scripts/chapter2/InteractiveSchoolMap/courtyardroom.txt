@@ -27,7 +27,7 @@ label courtyardroom:
     scene bg room1
     
     #Check current day and time
-    $ currentDay = currentDay_label()
+    $ currentDay = currentDayLabel()
 
 
     #===== MONDAY =====

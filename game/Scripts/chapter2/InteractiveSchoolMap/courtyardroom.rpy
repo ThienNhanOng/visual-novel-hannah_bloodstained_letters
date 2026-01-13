@@ -17,10 +17,10 @@ init -90 python:
             )
 
             #use command pattern to call the room
-            self.command = CallRoom(self.label_name)
+            self.command = CallRoomCommand(self.label_name)
 
         def enter(self):
-            renpy.call_in_new_context(self.label_name)
+            self.command.execute()
 
     addroom(CourtyardRoom())
 

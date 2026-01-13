@@ -1,6 +1,6 @@
 label eventQueue:
 
-    $ current_day = currentDay_label()
+    $ current_day = currentDayLabel()
 
     #pick events from monday or friday
     if current_day == "Mon":

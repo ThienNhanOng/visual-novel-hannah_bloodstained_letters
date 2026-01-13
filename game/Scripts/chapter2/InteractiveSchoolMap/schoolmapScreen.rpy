@@ -45,7 +45,7 @@ screen schoolmapScreen:
     $ wallet_ui = "images/wallet.png"
     add wallet_ui xpos 1400 ypos 0 xsize 550 ysize 250
     text "$$: [Global_Money]" size 60 xpos 1590 ypos 130 color "#0d4610"
-    text "[currentDay_label()]" size 60 xpos 1470 ypos 60 color "#000000"
+    text "[currentDayLabel()]" size 60 xpos 1470 ypos 60 color "#000000"
     text "[currentTime()]" size 48 xpos 1440 ypos 125 color "#000000"
     
 

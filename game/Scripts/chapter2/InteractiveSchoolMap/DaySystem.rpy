@@ -1,5 +1,5 @@
-default day_index = 0     #0=Mon, 1=Wed, 2=Fri, 3=Weekend
-default time_index = 0    #0=Morning, 1=Noon, 2=Night
+default dayIndex = 0     #0=Mon, 1=Wed, 2=Fri, 3=Weekend
+default timeIndex = 0    #0=Morning, 1=Noon, 2=Night
 
 init python:
     days = ("Mon", "Fri", "Sun")
@@ -7,25 +7,20 @@ init python:
 
 
     def timeIncrease():
-        store.time_index += 1
-        if store.time_index >= len(TimeOfDay):
-            store.time_index = len(TimeOfDay) - 1  #cap at Night
+        store.timeIndex += 1
+        if store.timeIndex >= len(TimeOfDay):
+            store.timeIndex = len(TimeOfDay) - 1  #cap at Night
 
-    def advance_day_if_night():
+    def advancedNextDay():
+        """Reset day
         """
-        If the current time is Night or Bedtime, advance to the next day
-        and reset time to Morning.
-        """
-        if store.time_index >= 2:  #2 = Night, 3 = Bedtime
-            store.day_index = (store.day_index + 1) % len(days)
-            store.time_index = 0
+        if store.timeIndex >= 2:  #2 = Night, 3 = Bedtime
+            store.dayIndex = (store.dayIndex + 1) % len(days)
+            store.timeIndex = 0
 
-    def currentDay_label():
-        return days[store.day_index]
-
+    #return the current day stored in Renpy
+    def currentDayLabel():
+        return days[store.dayIndex]
+    #return the current time of day stored in Renpy
     def currentTime():
-        return TimeOfDay[store.time_index]
-
-    def currentTime_label():
-        #Kept for convenience; combines day and time of day.
-        return f"{currentDay_label()}  {currentTime()}"
+        return TimeOfDay[store.timeIndex]
