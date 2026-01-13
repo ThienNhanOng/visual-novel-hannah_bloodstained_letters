@@ -2,10 +2,10 @@ image bg room1 = "images/bg room1.png"
 
 #restriction boolean variables
 default purchased_items = {}
-default questCompleted = True
-default arcadeUnlocked = True
-default fakeidUnlocked = True
-default workpermitUnlocked = True
+default questCompleted = False
+default arcadeUnlocked = False
+default fakeidUnlocked = False
+default workpermitUnlocked = False
 
 
 

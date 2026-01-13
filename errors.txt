@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/tttscript/tttcontroller.rpy", line 110: f-string: single '}' is not allowed
-    renpy.notify(f"{{winner} wins!}")
-                               ^
+File "game/Scripts/chapter2/blackjackminigame/blackjack.rpy", line 163: unterminated string literal
+    """Refund the current bet and reset round state.
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sun Jan 11 18:21:33 2026
+Mon Jan 12 18:18:38 2026

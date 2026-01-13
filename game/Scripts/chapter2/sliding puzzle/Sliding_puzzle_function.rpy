@@ -19,7 +19,7 @@ init python:
     def is_puzzle_solved():
         return puzzle_state == puzzle_images
 
-    #Shuffle puzzle
+    #Shuffle puzzle using monte carlo shuffle.
     def shuffle_puzzle():
         init_puzzle()
         blank = find_blank()

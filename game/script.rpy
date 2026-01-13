@@ -21,11 +21,11 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 100 #Players start money
+define Global_Money = 1000 #Players start money
 
 #money limit to limit text overflowing or negative money
-if(Global_Money >= 999):
-    $ Global_Money = 999
+if(Global_Money >= 9999):
+    $ Global_Money = 9999
 elif(Global_Money <= 0):
     $ Global_Money = 0
 
