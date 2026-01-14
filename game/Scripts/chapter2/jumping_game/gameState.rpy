@@ -76,10 +76,8 @@ init python:
                 
                 #renpy.end_interaction() #end game then return
                 return "game over"
-#todo convert score to money later.
-
-
-    #Jump action - math stuff gravity bla bla it makes the jump at 32.
+            
+    #Jump action - math stuff gravity bla bla it makes the jump go up to 32.
     def jumpGame_space():
         if not game.ended:
             game.player.jump(32)

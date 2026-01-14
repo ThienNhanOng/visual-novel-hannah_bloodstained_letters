@@ -23,12 +23,6 @@ define Theo_counter = 0 #
 define Mia_counter = 0 
 define Global_Money = 1000 #Players start money
 
-#money limit to limit text overflowing or negative money
-if(Global_Money >= 9999):
-    $ Global_Money = 9999
-elif(Global_Money <= 0):
-    $ Global_Money = 0
-
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
 default StoryDecision_Chapter1_Investigate = False #false = peaceful route
@@ -41,9 +35,11 @@ default event_queue = []
 #start of game
 label start:
 
+#note make sure to turn off 
 
 #testing
     
+    #call screen clicker_minigame
     call screen schoolmapScreen
     #call screen TicTacToeScreen
 #testing end

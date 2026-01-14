@@ -1,12 +1,9 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 6, in execute_default
-    default arcadeUnlocked = Fa
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 6, in <module>
-    default arcadeUnlocked = Fa
-                             ^^
-NameError: name 'Fa' is not defined
+  File "game/Scripts/chapter2/blackjackminigame/blackjack.rpy", line 2, in execute_default
+    default deck = []
+Exception: store.deck is being given a default a second time.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -25,17 +22,11 @@ Traceback (most recent call last):
   File "renpy/exports/statementexports.py", line 375, in execute_default_statement
     i.execute_default(start)
     ~~~~~~~~~~~~~~~~~^^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 6, in execute_default
-    default arcadeUnlocked = Fa
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/shop/shopconfig.rpy", line 6, in <module>
-    default arcadeUnlocked = Fa
-                             ^^
-NameError: name 'Fa' is not defined
+  File "game/Scripts/chapter2/blackjackminigame/blackjack.rpy", line 2, in execute_default
+    default deck = []
+Exception: store.deck is being given a default a second time.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 Thesis Hannah Bloodstained letters 1.0
-Mon Jan 12 19:00:35 2026
+Wed Jan 14 12:06:34 2026

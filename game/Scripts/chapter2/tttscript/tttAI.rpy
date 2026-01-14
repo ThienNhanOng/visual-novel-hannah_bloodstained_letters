@@ -13,7 +13,7 @@ init python:
                         return
                     TttBoard[i] = None
 
-            #Block player after checking win con
+            #Block player after checking win con (first 3 pieces)
             for i in range(9):
                 if TttBoard[i] is None:
                     TttBoard[i] = tttPlayer
@@ -48,7 +48,7 @@ init python:
                         TttBoard[from_index] = tttAI
                         TttBoard[to_index] = None
 
-            #Try to block player from winning
+            #Try to block player from winning by using the last index piece
             for from_index in OPieces:
                 for to_index in range(9):
                     if TttBoard[to_index] is None:

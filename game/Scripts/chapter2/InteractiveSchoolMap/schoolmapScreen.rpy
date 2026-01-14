@@ -8,12 +8,15 @@ label schoolmapScreen:
     arcade_unlocked == True and
     fakeid_unlocked == True):
         $ quest_completed = True
-    
+
     show screen schoolmapScreen
     return  #returns control to whatever called this label
 
 #Map screen backup
 screen schoolmapScreen:
+
+    #money limit money
+    $ Global_Money = max(0, min(Global_Money, 9999))
 
     #Robust background load with fallback + on-screen debug
     if renpy.loadable("images/map/schoolmapbackup.png"):
@@ -39,7 +42,7 @@ screen schoolmapScreen:
                 ypos room.ypos
                 idle room.idle
                 hover room.hover
-                action If(can_enter, Function(room.command.execute), Show("night_restriction_popup"))
+                action If(can_enter, room.enter, Show("night_restriction_popup"))
 
     #wallet and dates ui
     $ wallet_ui = "images/wallet.png"
@@ -68,4 +71,3 @@ screen night_restriction_popup():
             text "It's too late at night!" size 32 xalign 0.5 color "#ff6b6b"
             text "Most facilities are closed.\nPlease return to your dorm." size 22 xalign 0.5
             textbutton "OK" action Hide("night_restriction_popup") xalign 0.5 text_size 24
-

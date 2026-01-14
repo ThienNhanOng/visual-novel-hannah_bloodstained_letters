@@ -29,6 +29,9 @@ init python:
             row = blank // puzzle_cols
             col = blank % puzzle_cols
 
+            #rows are up and down 
+            #cols are left and right
+
             if row > 0: neighbors.append(blank - puzzle_cols)
             if row < puzzle_rows - 1: neighbors.append(blank + puzzle_cols)
             if col > 0: neighbors.append(blank - 1)
