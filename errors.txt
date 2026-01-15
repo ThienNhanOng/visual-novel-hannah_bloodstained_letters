@@ -2,9 +2,221 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 31: stop requires a channel
-    stop
-        ^
+The label eventQueue is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 1:
+label eventQueue:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/EventHandler.rpy", line 1:
+label eventQueue:
+
+
+The label fri_morning_morningCheckIn is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 5:
+label fri_morning_morningCheckIn:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 5:
+label fri_morning_morningCheckIn:
+
+
+The label fri_morning_foundNotebook is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 16:
+label fri_morning_foundNotebook:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 16:
+label fri_morning_foundNotebook:
+
+
+The label fri_morning_coachStretch is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 27:
+label fri_morning_coachStretch:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 27:
+label fri_morning_coachStretch:
+
+
+The label fri_noon_jeopardy is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 40:
+label fri_noon_jeopardy:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 40:
+label fri_noon_jeopardy:
+
+
+The label fri_noon_groupNotes is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 66:
+label fri_noon_groupNotes:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 66:
+label fri_noon_groupNotes:
+
+
+The label fri_noon_snackCart is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 77:
+label fri_noon_snackCart:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 77:
+label fri_noon_snackCart:
+
+
+The label fri_night_clubCleanup is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 92:
+label fri_night_clubCleanup:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 92:
+label fri_night_clubCleanup:
+
+
+The label fri_night_silasWrapup is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 105:
+label fri_night_silasWrapup:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 105:
+label fri_night_silasWrapup:
+
+
+The label fri_night_meditation is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 116:
+label fri_night_meditation:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 116:
+label fri_night_meditation:
+
+
+The label fri_night_weekendReflection is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/fridaydialog.rpy", line 127:
+label fri_night_weekendReflection:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/fridaydialog.rpy", line 127:
+label fri_night_weekendReflection:
+
+
+The label mon_morning_breakfastWithSilas is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 3:
+label mon_morning_breakfastWithSilas:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 3:
+label mon_morning_breakfastWithSilas:
+
+
+The label mon_morning_professorLecture is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 15:
+label mon_morning_professorLecture:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 15:
+label mon_morning_professorLecture:
+
+
+The label mon_morning_clubAdvertiser is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 23:
+label mon_morning_clubAdvertiser:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 23:
+label mon_morning_clubAdvertiser:
+
+
+The label mon_morning_sageEncounter is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 35:
+label mon_morning_sageEncounter:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 35:
+label mon_morning_sageEncounter:
+
+
+The label mon_morning_lostStudent is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 43:
+label mon_morning_lostStudent:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 43:
+label mon_morning_lostStudent:
+
+
+The label mon_noon_mathLecture is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 57:
+label mon_noon_mathLecture:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 57:
+label mon_noon_mathLecture:
+
+
+The label mon_noon_lunchWithSilas is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 73:
+label mon_noon_lunchWithSilas:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 73:
+label mon_noon_lunchWithSilas:
+
+
+The label mon_noon_englishQuiz is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 87:
+label mon_noon_englishQuiz:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 87:
+label mon_noon_englishQuiz:
+
+
+The label mon_noon_studyGroup is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 102:
+label mon_noon_studyGroup:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 102:
+label mon_noon_studyGroup:
+
+
+The label mon_noon_artClubDemo is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 113:
+label mon_noon_artClubDemo:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 113:
+label mon_noon_artClubDemo:
+
+
+The label mon_noon_libraryTip is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 127:
+label mon_noon_libraryTip:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 127:
+label mon_noon_libraryTip:
+
+
+The label mon_noon_sportsPractice is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 135:
+label mon_noon_sportsPractice:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 135:
+label mon_noon_sportsPractice:
+
+
+The label mon_noon_scienceLab is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 147:
+label mon_noon_scienceLab:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 147:
+label mon_noon_scienceLab:
+
+
+The label mon_noon_musicPerformance is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 162:
+label mon_noon_musicPerformance:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 162:
+label mon_noon_musicPerformance:
+
+
+The label mon_noon_friendlyChat is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 174:
+label mon_noon_friendlyChat:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 174:
+label mon_noon_friendlyChat:
+
+
+The label mon_night_nightStudy is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 189:
+label mon_night_nightStudy:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 189:
+label mon_night_nightStudy:
+
+
+The label mon_night_silasStargazing is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 200:
+label mon_night_silasStargazing:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 200:
+label mon_night_silasStargazing:
+
+
+The label mon_night_historyQuestion is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 212:
+label mon_night_historyQuestion:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 212:
+label mon_night_historyQuestion:
+
+
+The label mon_night_lateLibrary is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 227:
+label mon_night_lateLibrary:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 227:
+label mon_night_lateLibrary:
+
+
+The label mon_night_nightShift is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 239:
+label mon_night_nightShift:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 239:
+label mon_night_nightShift:
+
+
+The label mon_night_astronomyClub is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 253:
+label mon_night_astronomyClub:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 253:
+label mon_night_astronomyClub:
+
+
+The label mon_night_nightGuard is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 265:
+label mon_night_nightGuard:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 265:
+label mon_night_nightGuard:
+
+
+The label mon_night_philosophyDebate is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 280:
+label mon_night_philosophyDebate:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 280:
+label mon_night_philosophyDebate:
+
+
+The label mon_night_midnightSnack is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 293:
+label mon_night_midnightSnack:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 293:
+label mon_night_midnightSnack:
+
+
+The label mon_night_mysteryShadow is defined twice, at File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/mondaydialog.rpy", line 307:
+label mon_night_mysteryShadow:
+and File "game/Scripts/chapter2/InteractiveSchoolMap/courtyard event handler/mondaydialog.rpy", line 307:
+label mon_night_mysteryShadow:
+
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Wed Jan 14 13:17:20 2026
+Wed Jan 14 21:40:50 2026
