@@ -3,17 +3,18 @@ default puzzle_completed = False
 #Screen to show 9-tile sliding puzzle
 init python:
     #Function to handle tile clicks
-    def click_tile(tile_index):
-        blank_index = find_blank()
-        row_tile = tile_index // puzzle_cols
-        col_tile = tile_index % puzzle_cols
-        row_blank = blank_index // puzzle_cols
-        col_blank = blank_index % puzzle_cols
+    def click_tile(tileIndex):
+        #set up clicktile space
+        blankIndex = find_blank()
+        row_tile = tileIndex // puzzle_cols
+        col_tile = tileIndex % puzzle_cols
+        row_blank = blankIndex // puzzle_cols
+        col_blank = blankIndex % puzzle_cols
 
         #Swap if adjacent
         if  (abs(row_tile - row_blank) == 1 and col_tile == col_blank) or \
             (abs(col_tile - col_blank) == 1 and row_tile == row_blank):
-            swap_tiles(tile_index, blank_index)
+            swap_tiles(tileIndex, blankIndex)
             
             #Check if puzzle is solved after the move
             if is_puzzle_solved():

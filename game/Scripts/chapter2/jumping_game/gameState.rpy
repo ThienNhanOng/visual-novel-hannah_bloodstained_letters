@@ -31,7 +31,7 @@ init python:
             player = self.player
             enemy = self.enemy
 
-            #Gravity.
+            #velocity is the speed of the jump when going up
             player.PlayervelocityY += 2
             player.PlayerY += player.PlayervelocityY
 

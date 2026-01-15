@@ -12,8 +12,8 @@ init python:
     #Check if puzzle is solved
     def is_puzzle_solved():
         return puzzleState == puzzleImages
-
-    #Shuffle puzzle using monte carlo shuffle.
+    
+    #Shuffle the puzzle tiles
     def shufflePuzzle():
         #make a copy of the original picture before shuffling
         store.puzzleState = store.puzzleImages[:]
@@ -29,10 +29,11 @@ init python:
             #rows are up and down 
             #cols are left and right
 
-            if row > 0: neighbors.append(blank - puzzle_cols)
-            if row < puzzle_rows - 1: neighbors.append(blank + puzzle_cols)
-            if col > 0: neighbors.append(blank - 1)
-            if col < puzzle_cols - 1: neighbors.append(blank + 1)
+            #determine the tile neighbors to swap with blank
+            if row > 0: neighbors.append(blank - puzzle_cols) #up
+            if row < puzzle_rows - 1: neighbors.append(blank + puzzle_cols) #down
+            if col > 0: neighbors.append(blank - 1) #left
+            if col < puzzle_cols - 1: neighbors.append(blank + 1) #right
 
             swap_tiles(blank, random.choice(neighbors))
 

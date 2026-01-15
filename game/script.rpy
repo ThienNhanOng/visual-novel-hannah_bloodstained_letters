@@ -40,8 +40,8 @@ label start:
 #testing
     
     #call screen clicker_minigame
-    call screen schoolmapScreen
-    #call screen TicTacToeScreen
+    #call screen schoolmapScreen
+    call screen TicTacToeScreen
 #testing end
 
     stop music fadeout 2.0

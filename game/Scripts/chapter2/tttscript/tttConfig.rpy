@@ -10,9 +10,12 @@ default XPieces = []
 default XPiecesPlaced = 0
 default OPieces = []
 default OPiecesPlaced = 0
+default tttPlayer = "X"
+default tttAI = "O"
+default tttAI_first = False
 
 #Track if player won the current session
-default tttwin = False
+default tttplayerWin = False
 
 #Current game state
 default TttState = TTTState.placement
@@ -35,6 +38,8 @@ init python:
     #3 | 4 | 5
     #6 | 7 | 8
 
+init python:
+    # Winning combinations (add this if missing)
     tttWin = (
         (0, 1, 2), #horizontal
         (3, 4, 5), #horizontal

@@ -21,7 +21,7 @@ init python:
 
         #jump method for player
         def jump(self, power=32):
-            if self.grounded:
+            if self.grounded: #Only allow jump if grounded
                 self.PlayervelocityY = -power
                 self.grounded = False
 
@@ -31,22 +31,23 @@ init python:
         def __init__(self, x, y, speed=-4, w=40, h=60):
             #position
             self.EnemyX = x
-            self.Enemy_Y = y
+            self.EnemyY = y
             #enemy size
             self.EnemyWidth = w
             self.EnemyHeight = h
             #speed moving left
             self.EnemyvelocityX = speed
 
-            #has player passed this enemy? for scoring
+            #has player passed this enemy? flag for scoring
             self.passed = False
 
         #move enemy
         def update(self, screen_width):
-            self.EnemyX += self.EnemyvelocityX
+            self.EnemyX += self.EnemyvelocityX #Make the enemy move left
 
-            #if enemy goes off screen, respawn on the right
+            #If enemy goes off screen, respawn on the right
             if self.EnemyX + self.EnemyWidth < 0:
+                #Set random spawn location of enemy 
                 offset = random.randint(-200, 500)
-                self.EnemyX = screen_width + offset
+                self.EnemyX = screen_width + offset #set the pixel position for spawning
                 self.passed = False

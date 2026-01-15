@@ -1,4 +1,5 @@
 #interface to enter rooms
+#must start early because its abstract
 init -100 python:
     from abc import ABC, abstractmethod
 

@@ -40,10 +40,10 @@ label investigating_the_school:
         Player "it looks like it can be opened"
         Silas "it does doesnt it. i've tried but it wont budge."
         Player "hm.. let me give it a go."
-
-        $ tttwin = False
-        call screen TicTacToeScreenF
-        if tttwin:
+        #if player win continue story otherwise redo scene
+        $ tttplayerWin = False
+        call screen TicTacToeScreen
+        if tttplayerWin:
             "the gem unravel and illuminate itself with red and glitter"
             Player "Hey look! i did it!"
             Silas "really? Lets see..."

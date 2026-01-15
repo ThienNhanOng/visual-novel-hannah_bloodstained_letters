@@ -1,16 +1,16 @@
 #Player controller
 
 init python:
-    #Win condition check
+    #check for winner ai vs player
     def CheckWinner():
         for line in tttWin:
             a = line[0]
             b = line[1]
             c = line[2]
 
-            first = TttBoard[a]  
-            second = TttBoard[b]
-            third = TttBoard[c]
+            first = store.TttBoard[a]  
+            second = store.TttBoard[b]
+            third = store.TttBoard[c]
 
             #Return the last piece played if win was not found
             if first is not None:
@@ -26,11 +26,11 @@ init python:
         # No need for global TttCurrentPlayer; Ren'Py store handles it
 
         #change between ai and player
-        if TttCurrentPlayer == tttPlayer:
-            TttCurrentPlayer = tttAI
-            renpy.invoke_in_new_context(aiMove)
+        if store.TttCurrentPlayer == store.tttPlayer:
+            store.TttCurrentPlayer = store.tttAI
+            renpy.invoke_in_new_context(store.aiMove)
         else:
-            TttCurrentPlayer = tttPlayer
+            store.TttCurrentPlayer = store.tttPlayer
 
 
 #Game Mechanic 
@@ -38,31 +38,31 @@ init python:
     def placePiece(index):
         
         #Check if cell is empty or not to prevent overwriting
-        if TttBoard[index] is not None:
+        if store.TttBoard[index] is not None:
             return
 
         #check player's piece
-        if TttCurrentPlayer == tttPlayer:
-            pieces = XPieces
+        if store.TttCurrentPlayer == store.tttPlayer:
+            pieces = store.XPieces
             #check for max 3 pieces
-            if XPiecesPlaced == 3:
+            if store.XPiecesPlaced == 3:
                 return
         else:
-        #check ai pieces
-            pieces = OPieces
+            #check ai pieces
+            pieces = store.OPieces
             #check for max 3 pieces
-            if OPiecesPlaced == 3:
+            if store.OPiecesPlaced == 3:
                 return
 
         #Place the piece onto the board. ui is handled in tttscreen
-        TttBoard[index] = TttCurrentPlayer
+        store.TttBoard[index] = store.TttCurrentPlayer
         pieces.append(index)
 
         #count for win
-        if TttCurrentPlayer == tttPlayer:
-            XPiecesPlaced += 1
+        if store.TttCurrentPlayer == store.tttPlayer:
+            store.XPiecesPlaced += 1
         else:
-            OPiecesPlaced += 1
+            store.OPiecesPlaced += 1
 
         afterTurn()
 
@@ -71,43 +71,38 @@ init python:
         
         #Rule and Boundary check for game board
         #this check if cell is empty to make play
-        if TttBoard[index] is not None:
+        if store.TttBoard[index] is not None:
             return
 
         #Determine which piece x or o to update
-        pieces = XPieces if TttCurrentPlayer == tttPlayer else OPieces
-
-        #Use selected piece if set (for AI), otherwise use first piece
-        if TttSelectedPiece is not None and TttSelectedPiece in pieces:
-            old = TttSelectedPiece
-        else:
-            old = pieces[0]
+        pieces = store.XPieces if store.TttCurrentPlayer == store.tttPlayer else store.OPieces
+        old = pieces[0]
             
-        TttBoard[old] = None  
-        TttBoard[index] = TttCurrentPlayer  
+        store.TttBoard[old] = None  
+        store.TttBoard[index] = store.TttCurrentPlayer  
 
         #after 3 tries remove oldest piece and make it the new last piece
         pieces.remove(old)        
         pieces.append(index) 
-        TttSelectedPiece = None
+        store.TttSelectedPiece = None
         afterTurn()
 
 init python:
     def afterTurn():
         
-        #Reset win flag each turn; will be set true only when player wins
-        tttwin = False
+        #Reset win flag each turn
+        store.tttplayerWin = False
 
         winner = CheckWinner()
         if winner:
-            tttwin = (winner == tttPlayer)
-            TttState = TTTState.game_over
+            store.tttplayerWin = (winner == store.tttPlayer)
+            store.TttState = store.TTTState.game_over
             renpy.notify(f"the gem opened! ") 
             return
 
         #Switch to movement phase if both players placed 3 pieces
-        if XPiecesPlaced >= 3 and OPiecesPlaced >= 3:
-            TttState = TTTState.movement
+        if store.XPiecesPlaced >= 3 and store.OPiecesPlaced >= 3:
+            store.TttState = store.TTTState.movement
 
         #Switch turn
         SwitchPlayer()
@@ -117,7 +112,7 @@ init python:
 #click handler
 init python:
     def CellClicked(index):
-        if TttState == TTTState.placement:
+        if store.TttState == store.TTTState.placement:
             placePiece(index)
-        elif TttState == TTTState.movement:
+        elif store.TttState == store.TTTState.movement:
             move(index)
