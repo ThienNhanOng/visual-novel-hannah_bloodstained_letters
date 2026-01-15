@@ -37,7 +37,7 @@ Event lists: mondayEvents and fridayEvents as lists of dicts.
 
 List
 Event queues: mondayEvents, fridayEvents — ordered lists of event metadata.
-Puzzle images: puzzle_images = [...] including None for blank tile.
+Puzzle images: puzzleImages = [...] including None for blank tile.
 
 Set
 Completed events: events_done = set() — fast O(1) lookup to prevent re-running events.

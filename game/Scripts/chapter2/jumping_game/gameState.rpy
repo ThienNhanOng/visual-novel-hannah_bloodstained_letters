@@ -90,7 +90,6 @@ default game = SimpleGameState()
 #reset game using hard python by reinitializing game state.
 init python:
     def reset_Jumpgame():
-        global game
         import renpy.store as store
         from renpy import exports as renpy
 
@@ -99,5 +98,5 @@ init python:
         
         #reset score 
         store.jump_score = 0
-        game = SimpleGameState()
+        store.game = SimpleGameState()
         renpy.restart_interaction()

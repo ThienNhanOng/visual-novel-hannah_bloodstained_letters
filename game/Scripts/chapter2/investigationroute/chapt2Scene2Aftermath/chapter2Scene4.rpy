@@ -14,7 +14,7 @@ label Chapter2Scene4_helpingSilas:
 
 #sliding_puzzle_labels.rpy
 
-    $ shuffle_puzzle()
+    $ shufflePuzzle()
     "help Silas clean his room"
     window hide
     call screen sliding_puzzle_screen()

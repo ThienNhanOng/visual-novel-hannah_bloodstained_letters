@@ -1,10 +1,8 @@
+# Event queue variables - persistent across saves
+default events_done = set()
+
+#note the empty event queue list is defined in script
 init python:
-    #Initialize event tracking variables
-    if 'events_done' not in globals():
-        events_done = set()
-    
-    if 'event_queue' not in globals():
-        event_queue = []
 
     class EventQueue:
 

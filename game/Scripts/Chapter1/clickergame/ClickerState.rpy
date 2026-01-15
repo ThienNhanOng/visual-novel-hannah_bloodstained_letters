@@ -6,7 +6,7 @@ init python:
        
     #getters and setters
         #on click axe
-        def click_target(self):
+        def clickTarget(self):
             return
 
         #click the background
@@ -26,7 +26,7 @@ init python:
         def __init__(self, game):
             self.game = game  #store a reference to the game
 
-        def click_target(self):
+        def clickTarget(self):
 
             #First click hits the target
             self.game.hit_target()
@@ -44,7 +44,7 @@ init python:
             #Track when the player last clicked the target
             self.lastClickTime = renpy.get_game_runtime()
 
-        def click_target(self):
+        def clickTarget(self):
             #reset last click timer
             self.lastClickTime = renpy.get_game_runtime()
             self.game.hit_target()

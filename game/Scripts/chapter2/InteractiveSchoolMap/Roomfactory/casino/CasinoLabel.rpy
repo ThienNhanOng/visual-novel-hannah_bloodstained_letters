@@ -11,12 +11,12 @@ label casinoroom:
         "Please enjoy your stay"
         #check if player has fake ID
         if purchased_items.get("fake_id", False):
-            $ playerMoney = Global_Money
+            $ player_money = Global_Money
             call screen blackjack_table
             stop music fadeout 2.0
 
             # Sync money back - blackjack already handled wins/losses
-            $ Global_Money = playerMoney
+            $ Global_Money = player_money
             
             $ timeIncrease()
 

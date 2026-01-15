@@ -4,7 +4,6 @@ default puzzle_completed = False
 init python:
     #Function to handle tile clicks
     def click_tile(tile_index):
-        global puzzle_completed
         blank_index = find_blank()
         row_tile = tile_index // puzzle_cols
         col_tile = tile_index % puzzle_cols
@@ -33,10 +32,10 @@ screen sliding_puzzle_screen():
         has grid puzzle_rows puzzle_cols spacing 5
 
         for i in range(puzzle_rows * puzzle_cols):
-            if puzzle_state[i] is not None:
+            if puzzleState[i] is not None:
                 imagebutton:
-                    idle puzzle_state[i]
-                    hover puzzle_state[i]
+                    idle puzzleState[i]
+                    hover puzzleState[i]
                     focus_mask True
                     action Function(click_tile, i)
             else:

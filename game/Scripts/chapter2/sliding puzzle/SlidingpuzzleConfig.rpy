@@ -2,7 +2,7 @@
 #Configuration for the 9-tile sliding puzzle
 
 #List of puzzle images
-define puzzle_images = [
+define puzzleImages = [
     "images/slidingpuzzle/game1/tile_1.png",
     "images/slidingpuzzle/game1/tile_2.png",
     "images/slidingpuzzle/game1/tile_3.png",

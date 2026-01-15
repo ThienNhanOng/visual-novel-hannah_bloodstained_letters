@@ -1,5 +1,5 @@
-default dayIndex = 0     #0=Mon, 1=Wed, 2=Fri, 3=Weekend
-default timeIndex = 0    #0=Morning, 1=Noon, 2=Night
+default dayIndex = 0
+default timeIndex = 0
 
 init python:
     days = ("Mon", "Fri", "Sun")

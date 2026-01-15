@@ -8,7 +8,6 @@ default hiddenletterUnlocked = False
 default arcadeUnlocked = False
 
 
-
 init python:
     # items for dictionary
     shopItems = [

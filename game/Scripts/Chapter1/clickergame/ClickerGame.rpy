@@ -38,8 +38,8 @@ init python:
             self.state.update()
 
         #input handlers
-        def click_target(self):
-            self.state.click_target()
+        def clickTarget(self):
+            self.state.clickTarget()
 
         def click_background(self):
             self.state.click_background()
@@ -56,13 +56,13 @@ init python:
             self.relocateaxe = max(0.5, self.relocateaxe * 0.99)
 
             #move target to a new location
-            self.respawn_target()
+            self.respawnTarget()
 
         def miss_click(self):
             """player clicks background."""
             self.misclicks += 1
 
-        def respawn_target(self):
+        def respawnTarget(self):
             """pick a new random target location and reset animation."""
             sw, sh = config.screen_width, config.screen_height
 

@@ -1,27 +1,24 @@
 init python:
     import random
     
-    #Initialize puzzle state
-    def init_puzzle():
-        global puzzle_state, puzzle_completed
-        puzzle_state = puzzle_images[:]  #Copy original image order
-        puzzle_completed = False
-
     #Swap two tiles
     def swap_tiles(index1, index2):
-        puzzle_state[index1], puzzle_state[index2] = puzzle_state[index2], puzzle_state[index1]
+        puzzleState[index1], puzzleState[index2] = puzzleState[index2], puzzleState[index1]
 
     #Find the blank tile
     def find_blank():
-        return puzzle_state.index(None)
+        return puzzleState.index(None)
 
     #Check if puzzle is solved
     def is_puzzle_solved():
-        return puzzle_state == puzzle_images
+        return puzzleState == puzzleImages
 
     #Shuffle puzzle using monte carlo shuffle.
-    def shuffle_puzzle():
-        init_puzzle()
+    def shufflePuzzle():
+        #make a copy of the original picture before shuffling
+        store.puzzleState = store.puzzleImages[:]
+        store.puzzle_completed = False
+        
         blank = find_blank()
         for i in range(100):
             blank = find_blank()
@@ -41,6 +38,5 @@ init python:
 
     #Instantly solve puzzle
     def solve_puzzle_instantly():
-        global puzzle_state, puzzle_completed
-        puzzle_state = puzzle_images[:]
-        puzzle_completed = True
+        store.puzzleState = store.puzzleImages[:]
+        store.puzzle_completed = True

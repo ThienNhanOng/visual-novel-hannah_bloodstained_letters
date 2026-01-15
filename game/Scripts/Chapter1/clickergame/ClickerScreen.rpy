@@ -33,7 +33,7 @@ screen clicker_minigame():
             text "State: [game.state.name()]" size 18 color "#888888"
 
         #timers for game updates
-        timer game.relocateaxe repeat True action Function(game.respawn_target)
+        timer game.relocateaxe repeat True action Function(game.respawnTarget)
         #relocate axe
         timer 0.05 repeat True action Function(game.update_animation)
         timer 0.05 repeat True action Function(game.update_state)
@@ -60,5 +60,5 @@ screen clicker_minigame():
                 #to debug renpy error if renpy fails to load image
                 add Solid("#0000")
 
-            action Function(game.click_target)
+            action Function(game.clickTarget)
 

@@ -23,7 +23,7 @@ init python:
 #Switch to ai after play
 init python:
     def SwitchPlayer():
-        global TttCurrentPlayer
+        # No need for global TttCurrentPlayer; Ren'Py store handles it
 
         #change between ai and player
         if TttCurrentPlayer == tttPlayer:
@@ -36,9 +36,7 @@ init python:
 #Game Mechanic 
 init python:
     def placePiece(index):
-        #using global variables and not renpy's
-        global TttBoard, TttCurrentPlayer, XPieces, XPiecesPlaced, OPieces, OPiecesPlaced
-
+        
         #Check if cell is empty or not to prevent overwriting
         if TttBoard[index] is not None:
             return
@@ -70,8 +68,7 @@ init python:
 
 init python:
     def move(index):
-        global TttBoard, TttCurrentPlayer, XPieces, OPieces, TttSelectedPiece
-
+        
         #Rule and Boundary check for game board
         #this check if cell is empty to make play
         if TttBoard[index] is not None:
@@ -97,8 +94,7 @@ init python:
 
 init python:
     def afterTurn():
-        global TttBoard, TttState, XPiecesPlaced, OPiecesPlaced, tttwin
-
+        
         #Reset win flag each turn; will be set true only when player wins
         tttwin = False
 

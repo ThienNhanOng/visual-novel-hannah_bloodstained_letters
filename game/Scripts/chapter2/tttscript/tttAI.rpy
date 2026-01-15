@@ -1,7 +1,6 @@
 init python:
     def aiMove():
-        global TttCurrentPlayer, TttState, TttBoard, OPieces, TttSelectedPiece
-
+    
         if TttState == TTTState.placement:
             #Check if placing will secure win
             for i in range(9):
