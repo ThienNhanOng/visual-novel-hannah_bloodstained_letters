@@ -4,7 +4,7 @@ label casinoroom:
     #from .interface import Enterable
     scene expression im.Scale("blackjack/background.jpeg", config.screen_width, config.screen_height)
     "welcome to the casino"
-    play music "Scripts/chapter2/jumping_game/ninja racer stuff/Pixel Highway.wav" loop
+    play music "audio/MusicAndSoundtracks/LobbyDrift.mp3" loop
     
     #first check: only available at night
     if currentTime() == "Night":
@@ -28,4 +28,6 @@ label casinoroom:
             $ timeIncrease()
     else:
         "The casino is currently closed. Please come back at night."
+    stop music fadeout 2.0
+    
     jump schoolmap

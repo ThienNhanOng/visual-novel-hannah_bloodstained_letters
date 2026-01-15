@@ -5,5 +5,5 @@ init -100 python:
     class Enterable(ABC):
         @abstractmethod
         def enter(self):
-            """All rooms must know how to be 'entered' from the map."""
+            """All rooms must inherit this to enter rooms"""
             pass

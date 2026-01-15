@@ -1,6 +1,6 @@
 #Wrapper label: call this to run the mini-game and get the final score back.
 label clickergame:
-    $ game = ClickerGame.get_instance()
+    $ game = clicker_game
     $ game.score = 0
     $ game.misclicks = 0
     $ game.sizePixels = 140

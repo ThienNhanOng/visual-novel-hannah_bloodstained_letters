@@ -7,10 +7,9 @@ init -100 python:
             SchoolmapRooms[room.room_id] = room
 
     class Room:
-        def __init__(self, room_id, name, bg=None, idle=None, hover=None,
-                    xpos=0, ypos=0, label_name=None, flag_name=None):
+        def __init__(self, room_id, label_name=None, bg=None, idle=None, hover=None,
+                    xpos=0, ypos=0, flag_name=None):
             self.room_id     = room_id
-            self.name        = name
             self.bg          = bg
             self.idle        = idle
             self.hover       = hover

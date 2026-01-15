@@ -69,5 +69,5 @@ screen night_restriction_popup():
         vbox:
             spacing 20
             text "It's too late at night!" size 32 xalign 0.5 color "#ff6b6b"
-            text "Most facilities are closed.\nPlease return to your dorm." size 22 xalign 0.5
-            textbutton "OK" action Hide("night_restriction_popup") xalign 0.5 text_size 24
+            text "Most facilities are closed.\nPlease return to your dorm." size 22 xalign 0.5 color "#ff6b6b"
+            textbutton "OK" action Hide("night_restriction_popup") xalign 0.5 text_size 24 text_color "#ff6b6b"

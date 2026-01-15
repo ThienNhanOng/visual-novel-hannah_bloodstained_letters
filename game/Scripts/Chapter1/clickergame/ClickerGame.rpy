@@ -2,7 +2,6 @@ init python:
     import random, math
 
     class ClickerGame:
-        _instance = None  #singleton
 
         def __init__(self):
             #axe target position and size
@@ -26,13 +25,6 @@ init python:
             self.relocateaxe = 1.8
 
             self.state = IdleState(self)
-
-        #singleton
-        @classmethod
-        def get_instance(cls):
-            if cls._instance is None:
-                cls._instance = cls()
-            return cls._instance
 
         #state change
         def change_state(self, new_state):
@@ -119,3 +111,6 @@ init python:
         def is_game_over(self):
             """check if player has missed 3 times."""
             return self.misclicks >= 3
+
+
+default clicker_game = ClickerGame()

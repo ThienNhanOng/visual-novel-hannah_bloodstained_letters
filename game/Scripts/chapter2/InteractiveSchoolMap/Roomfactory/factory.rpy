@@ -1,5 +1,5 @@
 init -50 python:
-    # Option B: factory creates + auto-registers (cleaner in many cases)
+    #factory to create the room for school map
     def create_room(roomType):
         roomType = roomType.lower().strip()
         room = None
@@ -18,7 +18,7 @@ init -50 python:
             room = DormRoom()
 
         if room is not None:
-            SchoolmapRooms[room.room_id] = room   # or call addroom(room)
+            SchoolmapRooms[room.room_id] = room   #
         else:
             renpy.notify(f"Unknown room: {roomType}")
 

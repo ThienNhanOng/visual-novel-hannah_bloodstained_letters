@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 13: if statement expects a non-empty block.
-    if(Global_Money >= 9999):
-                             ^
-
-File "game/Scripts/chapter2/InteractiveSchoolMap/schoolmapScreen.rpy", line 15: expected statement.
-    elif(Global_Money <= 0):
-                           ^
+File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 31: stop requires a channel
+    stop
+        ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Wed Jan 14 12:09:55 2026
+Wed Jan 14 13:17:20 2026

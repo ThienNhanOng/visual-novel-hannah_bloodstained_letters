@@ -3,12 +3,11 @@ init -90 python:
         def __init__(self):
             super().__init__(
                 room_id = "Gameroom",
-                name = "Game Room",
+                label_name = "gameroom",
                 idle = "images/map/schoolmap/gameroom2/idle_gameroom.png",
                 hover = "images/map/schoolmap/gameroom2/hover_gameroom.png",
                 xpos = 980,
-                ypos = 320,
-                label_name = "gameroom"
+                ypos = 320
             )
             # create command object
             self.command = CallRoomCommand(self.label_name)

@@ -30,5 +30,5 @@ label gameroom:
         "You checked out the gameroom but it seems to be locked."
     #increase time after leaving the room
     $ timeIncrease()
-    
+    stop music fadeout 2.0
     jump schoolmap

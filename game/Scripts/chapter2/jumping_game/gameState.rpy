@@ -32,13 +32,13 @@ init python:
             enemy = self.enemy
 
             #Gravity.
-            player.Playervelocity_Y += 2
-            player.Player_Y += player.Playervelocity_Y
+            player.PlayervelocityY += 2
+            player.PlayerY += player.PlayervelocityY
 
             #Floor collision for player
-            if player.Player_Y + player.PlayerHeight >= self.Floor_Y:
-                player.Player_Y = self.Floor_Y - player.PlayerHeight
-                player.Playervelocity_Y = 0
+            if player.PlayerY + player.PlayerHeight >= self.Floor_Y:
+                player.PlayerY = self.Floor_Y - player.PlayerHeight
+                player.PlayervelocityY = 0
                 player.grounded = True
             else:
                 player.grounded = False
@@ -48,25 +48,25 @@ init python:
             enemy.update(self.Screen_Width)
 
             #Scoring
-            #Check for enemy passed player
-            if not getattr(enemy, 'passed', False) and (enemy.Enemy_X + enemy.EnemyWidth) < player.Player_X:
+            #getter for enemy
+            if not getattr(enemy, 'passed', False) and (enemy.EnemyX + enemy.EnemyWidth) < player.PlayerX:
                 enemy.passed = True
 
                 #keeping the score using renpy.store 
                 store.jump_score = getattr(store, 'jump_score', 0) + 10
 
-                #Increase enemy speed by 1 each time player jump over
-                if hasattr(enemy, 'Enemy_velocity_X'):
-                    enemy.Enemy_velocity_X += -1 if enemy.Enemy_velocity_X < 0 else 1
+                #setter for enemy speed by 1 each time player jump over
+                if hasattr(enemy, 'EnemyvelocityX'):
+                    enemy.EnemyvelocityX += -1 if enemy.EnemyvelocityX < 0 else 1
                 if hasattr(enemy, 'vx'):
                     enemy.vx = enemy.velocity_x
 
             #Collision check for player and enemy
             if (
-                player.Player_X < enemy.Enemy_X + enemy.EnemyWidth and
-                player.Player_X + player.PlayerWidth > enemy.Enemy_X and
-                player.Player_Y < enemy.Enemy_Y + enemy.EnemyHeight and
-                player.Player_Y + player.PlayerHeight > enemy.Enemy_Y
+                player.PlayerX < enemy.EnemyX + enemy.EnemyWidth and
+                player.PlayerX + player.PlayerWidth > enemy.EnemyX and
+                player.PlayerY < enemy.Enemy_Y + enemy.EnemyHeight and
+                player.PlayerY + player.PlayerHeight > enemy.Enemy_Y
             ):
                 self.ended = True
                 renpy.hide_screen("jump_game")

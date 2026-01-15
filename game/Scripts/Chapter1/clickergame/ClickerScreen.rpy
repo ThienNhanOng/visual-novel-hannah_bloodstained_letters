@@ -1,6 +1,6 @@
 screen clicker_minigame():
     modal True
-    $ game = ClickerGame.get_instance()
+    $ game = clicker_game
 
     #lose condition
     if game.is_game_over():
@@ -19,7 +19,6 @@ screen clicker_minigame():
     #gameplay screen
     else:
         
-
         #hud: Score, Misses, State
         frame:
             xalign 0.02
