@@ -1,35 +1,999 @@
-2026-01-15 23:00:20 UTC
+2026-01-16 01:39:06 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.2.26010301
 
-Early init took 105 ms
-Loading error handling took 180 ms
-<unknown>:1: SyntaxWarning: invalid escape sequence '\T'
-Loading script took 2905 ms
-Loading save slot metadata took 567 ms
+Early init took 62 ms
+Loading error handling took 27 ms
+Loading script took 330 ms
+Loading save slot metadata took 65 ms
 Loading persistent took 0 ms
-Running init code took 97 ms
-Loading analysis data took 28 ms
-Analyze and compile ATL took 5 ms
+Running init code took 64 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
 Reloading save slot metadata took 47 ms
 Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
-Dump and make backups took 84 ms
+Dump and make backups took 70 ms
 Cleaning cache took 0 ms
 Making clean stores took 1 ms
-Initial gc took 61 ms
+Initial gc took 52 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 237 ms
+Creating interface object took 241 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 16 ms
+Save screen analysis took 34 ms
+Save pyanalysis took 0 ms
+Save bytecode took 45 ms
+Running _start took 1 ms
+Interface start took 320 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if silas_counter < Theo_counter:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if silas_counter < Theo_counter:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if silas_counter < Theo_counter:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if silas_counter < Theo_counter:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if Silas_counter < Theo_counter:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if Silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in script
+    if Silas_counter < Theo_counter:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 30, in <module>
+    if Silas_counter < Theo_counter:
+       ^^^^^^^^^^^^^                
+NameError: name 'silas_counter' is not defined. Did you mean: 'Silas_counter'?
+Resetting cache.
+Early init took 14 ms
+Loading error handling took 23 ms
+Loading script took 199 ms
+Loading save slot metadata took 54 ms
+Loading persistent took 1 ms
+Running init code took 51 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 68 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 66 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 199 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 268 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 16 ms
+Loading script took 338 ms
+Loading save slot metadata took 64 ms
+Loading persistent took 0 ms
+Running init code took 58 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 73 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 73 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
 Init translation took 1 ms
 Cleaning stores took 0 ms
-Load screen analysis took 8 ms
-Analyze screens took 31 ms
-Save screen analysis took 14 ms
-Save pyanalysis took 5 ms
-Save bytecode took 29 ms
+Load screen analysis took 0 ms
+Analyze screens took 15 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
 Running _start took 1 ms
-Interface start took 266 ms
+Interface start took 335 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+Resetting cache.
+Early init took 17 ms
+Loading error handling took 14 ms
+Loading script took 254 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 55 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 69 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 294 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 15 ms
+Loading script took 247 ms
+Loading save slot metadata took 56 ms
+Loading persistent took 0 ms
+Running init code took 55 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 67 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 68 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 14 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 300 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+
+Full traceback:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+
+While running game code:
+  File "game/script.rpy", line 44, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
+    call screen schoolmapScreen
+[Previous line repeated 3 more times]
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
+    call eventQueue
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
+    python:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
+    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 36 ms
+Loading script took 271 ms
+Loading save slot metadata took 88 ms
+Loading persistent took 1 ms
+Running init code took 68 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 49 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 74 ms
+Cleaning cache took 1 ms
+Making clean stores took 0 ms
+Initial gc took 76 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 14 ms
+Save screen analysis took 17 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 353 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 19 ms
+Loading error handling took 18 ms
+Loading script took 239 ms
+Loading save slot metadata took 58 ms
+Loading persistent took 0 ms
+Running init code took 54 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Dump and make backups took 58 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 73 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 29 ms
+Analyze screens took 2 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 301 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 17 ms
+Loading error handling took 19 ms
+Loading script took 261 ms
+Loading save slot metadata took 56 ms
+Loading persistent took 0 ms
+Running init code took 59 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 67 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 75 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 14 ms
+Save screen analysis took 19 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 382 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 14 ms
+Loading error handling took 15 ms
+Loading script took 255 ms
+Loading save slot metadata took 56 ms
+Loading persistent took 1 ms
+
+File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 73: expected python code
+    $
+     ^
+DPI scale factor: 1.000000
+Interface start took 121 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 14 ms
+Loading script took 256 ms
+Loading save slot metadata took 56 ms
+Loading persistent took 0 ms
+Running init code took 95 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 46 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 70 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 59 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 17 ms
+Save screen analysis took 18 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 301 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 17 ms
+Loading error handling took 15 ms
+Loading script took 253 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 55 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 48 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 67 ms
+Cleaning cache took 0 ms
+Making clean stores took 2 ms
+Initial gc took 70 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 14 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 299 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 14 ms
+Loading script took 229 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 56 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Dump and make backups took 57 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 73 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 28 ms
+Analyze screens took 3 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 301 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 14 ms
+Loading script took 254 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 55 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 47 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 69 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 70 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 290 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 15 ms
+Loading error handling took 14 ms
+Loading script took 246 ms
+Loading save slot metadata took 54 ms
+Loading persistent took 1 ms
+Running init code took 55 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 48 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 71 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 74 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 15 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 311 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 18 ms
+Loading error handling took 16 ms
+Loading script took 270 ms
+Loading save slot metadata took 57 ms
+Loading persistent took 0 ms
+Running init code took 58 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 51 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 70 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 71 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 14 ms
+Save screen analysis took 16 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 303 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 16 ms
+Loading error handling took 15 ms
+Loading script took 254 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 57 ms
+Loading analysis data took 5 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 48 ms
+Backing up script files to 'C:\\Users\\thien\\AppData\\Roaming/RenPy/backups\\Thesis Hannah Bloodstained letters':
+Dump and make backups took 71 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 72 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 13 ms
+Save screen analysis took 15 ms
+Save pyanalysis took 1 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 301 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1366, 768)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 560.94'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1239, 697) drawable=(1239, 697)
+Maximum texture size: 4096x4096
+controller: '03000000d620000011a7000000026800' 'Nintendo Switch Pro Controller' 1
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+Resetting cache.
+Early init took 15 ms
+Loading error handling took 15 ms
+Loading script took 225 ms
+Loading save slot metadata took 55 ms
+Loading persistent took 0 ms
+Running init code took 56 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 4 ms
+Reloading save slot metadata took 47 ms
+Dump and make backups took 61 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 75 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 29 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 308 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)

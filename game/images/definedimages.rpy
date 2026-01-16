@@ -75,4 +75,27 @@ image Player_L1overlay:
     xpos 0.15
     ypos 1.0
 
-        
+image sandyShop:
+    "images/chapter2/sandyshop.png"
+    xysize (config.screen_width, config.screen_height)
+
+image sandyshop2:
+    "images/chapter2/sandyshop2.png"
+    xysize (config.screen_width, config.screen_height)
+
+image sandyshop3:
+    "images/chapter2/sandyshop3.png"
+    xysize (config.screen_width, config.screen_height)
+    xpos .07
+
+image mcsleep:
+    "images/chapter2/sleep.png"
+    xysize (config.screen_width, config.screen_height)
+
+image mcsleep2:
+    "images/chapter2/sleep2.png"
+    xysize (config.screen_width, config.screen_height)
+
+image trackbg: 
+    "images/chapter2/track.png"
+    xysize (config.screen_width, config.screen_height)

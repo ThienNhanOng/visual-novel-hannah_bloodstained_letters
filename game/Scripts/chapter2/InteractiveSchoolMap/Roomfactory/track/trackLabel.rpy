@@ -1,13 +1,13 @@
 default raisesCounter = 10
 default payout = 15
 
-image bg room2 = "images/map/schoolmap/bg room2.png"
+#image bg room2 = "images/map/schoolmap/bg room2.png"
 
 #the room
 
 #placeholder test
 label trackroom:
-    scene bg room2
+    show trackbg
     "welcome to the track"
     #increase time after leaving the room
 

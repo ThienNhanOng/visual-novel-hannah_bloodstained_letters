@@ -33,7 +33,7 @@ init python:
 
                 queue.append(event)
 
-            #bubble sort for priority (higher first)
+            #bubble sort for priority (highest first)
             for i in range(len(queue)):
                 for j in range(i + 1, len(queue)):
                     if queue[j]["priority"] > queue[i]["priority"]:

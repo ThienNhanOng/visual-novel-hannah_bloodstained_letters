@@ -3,8 +3,7 @@ screen Shopscreen():
     modal True
     zorder 20
 
-    add "images/map/townmap/bg room1.png"
-
+    add "sandyshop3"
     frame:
         xalign 0.0
         yalign 0.5

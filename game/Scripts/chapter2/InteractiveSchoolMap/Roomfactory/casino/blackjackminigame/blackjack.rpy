@@ -1,10 +1,10 @@
-#Game state variables (persisted by Ren'Py)
+#Game state variables (persisted by Renpy)
 default deck = []
 default player_hand = []
 default round_active = False
 default current_bet = 0
-#default player_money = 10000 #debug starting money
-default player_money = 11
+#default CasinoMoney = 10000 #value will be override by global money
+default CasinoMoney = 11
 default dealer_total = 0
 default game_over = False
 #placeholder for win lose push
@@ -75,10 +75,10 @@ init -100 python:
     #Game control functions
     def start_game(bet=10):
         """Start a new blackjack round with the given bet amount."""
-        if store.player_money < bet:
+        if store.CasinoMoney < bet:
             return False
         
-        store.player_money -= bet
+        store.CasinoMoney -= bet
         store.current_bet = bet
         store.deck = make_new_deck()
         store.player_hand = [store.deck.pop(), store.deck.pop()]
@@ -117,17 +117,17 @@ init -100 python:
         if store.game_over or not store.round_active:
             return
 
-        store.dealer_total = random.randint(3, 4)
+        store.dealer_total = random.randint(16, 21)
         store.round_active = False
         player_total = calculate_hand_value(store.player_hand)
 
         if store.dealer_total > 21 or player_total > store.dealer_total:
             store.message = "You win!"
-            store.player_money += store.current_bet * 2
+            store.CasinoMoney += store.current_bet * 2
             store.result = "win"
         elif player_total == store.dealer_total:
             store.message = "Push."
-            store.player_money += store.current_bet
+            store.CasinoMoney += store.current_bet
             store.result = "push"
         else:
             store.message = "Dealer wins."
@@ -150,7 +150,7 @@ init -100 python:
     def refund_and_leave():
         """Refund the current bet and reset the round state."""
         if store.current_bet > 0:
-            store.player_money += store.current_bet
+            store.CasinoMoney += store.current_bet
             store.current_bet = 0
         reset_round()
         renpy.restart_interaction()

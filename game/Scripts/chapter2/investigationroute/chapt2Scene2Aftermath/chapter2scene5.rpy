@@ -9,7 +9,7 @@ label afterpuzzle:
         "Investigate" if Theocounter >= 5 or Silascounter >= 4:
             Player "Lets recall what that Detective said"
             Player "Ally lurks at school \n hm.."
-            jump investigatingtheschool #short ending
+            call investigatingtheschool #short ending
 
         "Prepare to go home for the day": #give up route and enroll player into school
             #this route will happen if player does not have enough theo counter or if selected by choice.

@@ -27,7 +27,7 @@ label investigating_the_school:
     Silas "Oh alright [Player] get home safely!"
     Silas "It was nice seeing you. Thanks again for rescuing me."
    
-    if silas_counter < Theo_counter:
+    if Silas_counter < Theo_counter:
         "As she about to leave to dismiss any rumors, she saw a brochure."
         "It was definitely one that belongs to {i}JT Jewelry{/i}."
         "Is it a coincidence that Sylas is doing an assignment based on the jewelry store? Or is there more to it?"
@@ -60,15 +60,18 @@ label investigating_the_school:
             "player rushes out after realizing the name."
             "and that the detective may not just be a detective but "
             "the very person behind all of this."
+
+            if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
+                jump Chapter2Date
         else:
-            #Restart scene if player lose.
+            #Restart scene if player lose. as well as ttt state
             "You lost."
+            $ resetTTTGame()
             jump investigating_the_school
         
     'end of chapter 2'
+    $ MainMenu()
     #end of chapter2. 
     #continuation chapter3 will include meeting back up with theo and discussing about her findings.
     #this will ultimately lead to chapter 3 and 4 where more notes will show up leading to the 
     #confrontation with the mystery man. 
-return
-

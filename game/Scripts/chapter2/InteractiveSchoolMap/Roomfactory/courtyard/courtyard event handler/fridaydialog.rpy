@@ -1,3 +1,5 @@
+# Ensure the question tracker is always defined
+default fri_noon_questions_asked = []
 #Friday Events - Individual labels for each event
 
 #===== FRIDAY MORNING EVENTS =====
@@ -126,7 +128,7 @@ label fri_night_meditation:
 
 label fri_night_weekendReflection:
     "The courtyard quiets down; only a few lights remain as the campus settles for the weekend."
-    "{Player} reflects on the how school has been the joy that it brought."
+    "you reflects on the how school has been the joy that it brought."
     "however she still think of the incident."
     menu:
         "Search for Hannah one last time?":

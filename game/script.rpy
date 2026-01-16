@@ -28,6 +28,7 @@ define Global_Money = 1000 #Players start money
 default StoryDecision_Chapter1_Investigate = False #false = peaceful route
 default StoryDecision_Chapter1_Schoolname = "school"
 default chapter2continue = False #flag to continue chapter 2 after peaceful reroute.
+default storyDecision_Chapter2_InvestigationRoute = False
 
 #event list
 default event_queue = []
@@ -39,9 +40,10 @@ label start:
 
 #testing
     
+    #call screen blackjack_table
     #call screen clicker_minigame
-    #call screen schoolmapScreen
-    call screen TicTacToeScreen
+    call screen schoolmapScreen
+    #call screen TicTacToeScreen
 #testing end
 
     stop music fadeout 2.0

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/test.rpy", line 2: end of line expected.
-    show bob image  
-             ^
+File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 73: expected python code
+    $
+     ^
 
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jan 15 22:19:45 2026
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Thu Jan 15 20:51:07 2026

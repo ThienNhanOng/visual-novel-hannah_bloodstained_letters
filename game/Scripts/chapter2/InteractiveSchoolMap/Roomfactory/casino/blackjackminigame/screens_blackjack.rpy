@@ -8,7 +8,7 @@ screen blackjack_table():
         background None
         vbox:
             spacing 6
-            text "Current Money: [player_money]" size 40 color "#f1de2e62"
+            text "Current Money: [CasinoMoney]" size 40 color "#f1de2e62"
             text "Bet: [current_bet]" size 50 color "#486e16"
             text "Dealer: [dealer_total]" size 50 color "#ff0000"
             if message:
@@ -17,18 +17,21 @@ screen blackjack_table():
 
     # Deck placeholder (centered stack)
     frame:
-        xalign 0.41
+        xalign 0.5
         yalign 0.485
         background None
         hbox:
-            spacing 4
+            xalign 0.5
+            spacing 20
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
-
+            
+    
+    
     # Extra hit cards (fixed positions)
-    for i, pos in enumerate([0.5, 0.6, 0.7, 0.8, 0.9]):
+    for i, pos in enumerate([0.382, 0.46, 0.54, 0.65,]):
         if len(player_hand) > 2 + i:
             add card_image_path(player_hand[2 + i]) xalign pos yalign 0.48 xysize (120, 180)
 
@@ -44,10 +47,10 @@ screen blackjack_table():
                 xalign 0.5
                 hbox:
                     spacing 15
-                    textbutton "Bet 10" action Function(start_game, 10) sensitive (not round_active and player_money >= 10) text_size 56 background "#b0b0b0"
-                    textbutton "Bet 50" action Function(start_game, 50) sensitive (not round_active and player_money >= 50) text_size 56 background "#b0b0b0"
-                    textbutton "Bet 100" action Function(start_game, 100) sensitive (not round_active and player_money >= 100) text_size 56 background "#b0b0b0"
-                    textbutton "All-IN" action Function(start_game, player_money) sensitive (not round_active and player_money > 0) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 10" action Function(start_game, 10) sensitive (not round_active and CasinoMoney >= 10) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 50" action Function(start_game, 50) sensitive (not round_active and CasinoMoney >= 50) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 100" action Function(start_game, 100) sensitive (not round_active and CasinoMoney >= 100) text_size 56 background "#b0b0b0"
+                    textbutton "All-IN" action Function(start_game, CasinoMoney) sensitive (not round_active and CasinoMoney > 0) text_size 56 background "#b0b0b0"
                 hbox:
                     spacing 15
                     textbutton "Hit" action Function(hit_card) sensitive round_active text_size 56 background "#b0b0b0"
