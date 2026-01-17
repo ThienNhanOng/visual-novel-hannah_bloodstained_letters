@@ -1,59 +1,75 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 44, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-[Previous line repeated 3 more times]
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
-    call eventQueue
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
-    python:
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
-    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
-    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
-NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+  File "game/script.rpy", line 45, in script
+    call screen say("Testing various screens", what_size=40)
+TypeError: missing a required argument: 'what'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 44, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script call
-    call screen schoolmapScreen
-[Previous line repeated 3 more times]
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyardLabel.rpy", line 9, in script call
-    call eventQueue
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy", line 15, in script call
-    python:
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in script
-    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
-  File "renpy/ast.py", line 2079, in execute
-    if renpy.python.py_eval(condition):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 64, in <module>
-    if storyDecision_Chapter2_InvestigationRoute == False and Silas_counter >= 15:
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
-NameError: name 'storyDecision_Chapter2_InvestigationRoute' is not defined
+  File "game/script.rpy", line 45, in script
+    call screen say("Testing various screens", what_size=40)
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2700, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2700, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/parameter.py", line 468, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/parameter.py", line 321, in apply
+    raise TypeError(msg) from None
+TypeError: missing a required argument: 'what'
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 Thesis Hannah Bloodstained letters 1.0
-Thu Jan 15 20:49:27 2026
+Fri Jan 16 21:40:07 2026

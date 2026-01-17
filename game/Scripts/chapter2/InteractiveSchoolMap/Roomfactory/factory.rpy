@@ -19,7 +19,7 @@ init -50 python:
             room = DormRoom()
 
         if room is not None:
-            SchoolmapRooms[room.room_id] = room   #
+            SchoolmapRooms[room.room_id] = room   
         else:
             renpy.notify(f"Unknown room: {roomType}")
 

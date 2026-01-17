@@ -40,9 +40,13 @@ label start:
 
 #testing
     
+    #$ shufflePuzzle()
+    #call screen sliding_puzzle_screen
+    
+    #call screen say(None, "Testing various screens")
     #call screen blackjack_table
     #call screen clicker_minigame
-    call screen schoolmapScreen
+    #call screen schoolmapScreen
     #call screen TicTacToeScreen
 #testing end
 
@@ -66,7 +70,7 @@ label start:
 #starting story.     
     call Chapter1Scene1
     #couunter debug
-    scene bg forestroom with fade
+    #scene bg forestroom with fade
     "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]|"
     
     #jump to scene 2: the school scene

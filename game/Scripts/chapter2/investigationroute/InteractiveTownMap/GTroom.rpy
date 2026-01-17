@@ -1,6 +1,6 @@
 label InteractiveGTRoom:
 #placeholder
-    scene bg room1
+    scene expression im.Scale("chapter1/side characters/jewler.jpeg", config.screen_width, config.screen_height)
     "welcome to room 3"
 
 #actual story:

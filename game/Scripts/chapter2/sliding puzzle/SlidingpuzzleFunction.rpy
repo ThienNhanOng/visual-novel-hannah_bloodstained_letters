@@ -1,5 +1,8 @@
+# Default puzzle state
+default puzzleState = []
 init python:
     import random
+
     
     #Swap two tiles
     def swap_tiles(index1, index2):
@@ -13,29 +16,14 @@ init python:
     def is_puzzle_solved():
         return puzzleState == puzzleImages
     
-    #Shuffle the puzzle tiles
+    #Shuffle the puzzle tiles using fisher yates algorithm
     def shufflePuzzle():
-        #make a copy of the original picture before shuffling
+        #make a copy of the original puzzle that is sorted
         store.puzzleState = store.puzzleImages[:]
-        store.puzzle_completed = False
+        store.puzzle_completed = False #flag puzzle as unsolved
         
-        blank = find_blank()
-        for i in range(100):
-            blank = find_blank()
-            neighbors = []
-            row = blank // puzzle_cols
-            col = blank % puzzle_cols
-
-            #rows are up and down 
-            #cols are left and right
-
-            #determine the tile neighbors to swap with blank
-            if row > 0: neighbors.append(blank - puzzle_cols) #up
-            if row < puzzle_rows - 1: neighbors.append(blank + puzzle_cols) #down
-            if col > 0: neighbors.append(blank - 1) #left
-            if col < puzzle_cols - 1: neighbors.append(blank + 1) #right
-
-            swap_tiles(blank, random.choice(neighbors))
+        #Call fisher yates from card shuffle file. renpy.random keep desyncing.
+        fisherYates(store.puzzleState)
 
     #Instantly solve puzzle
     def solve_puzzle_instantly():

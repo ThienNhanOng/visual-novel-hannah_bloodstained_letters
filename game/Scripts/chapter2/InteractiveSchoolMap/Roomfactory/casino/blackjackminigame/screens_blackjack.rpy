@@ -47,19 +47,19 @@ screen blackjack_table():
                 xalign 0.5
                 hbox:
                     spacing 15
-                    textbutton "Bet 10" action Function(start_game, 10) sensitive (not round_active and CasinoMoney >= 10) text_size 56 background "#b0b0b0"
-                    textbutton "Bet 50" action Function(start_game, 50) sensitive (not round_active and CasinoMoney >= 50) text_size 56 background "#b0b0b0"
-                    textbutton "Bet 100" action Function(start_game, 100) sensitive (not round_active and CasinoMoney >= 100) text_size 56 background "#b0b0b0"
-                    textbutton "All-IN" action Function(start_game, CasinoMoney) sensitive (not round_active and CasinoMoney > 0) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 10" action Function(start_game, 10) sensitive (round_active == False and CasinoMoney >= 10) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 50" action Function(start_game, 50) sensitive (round_active == False and CasinoMoney >= 50) text_size 56 background "#b0b0b0"
+                    textbutton "Bet 100" action Function(start_game, 100) sensitive (round_active == False and CasinoMoney >= 100) text_size 56 background "#b0b0b0"
+                    textbutton "All-IN" action Function(start_game, CasinoMoney) sensitive (round_active == False and CasinoMoney > 0) text_size 56 background "#b0b0b0"
                 hbox:
                     spacing 15
                     textbutton "Hit" action Function(hit_card) sensitive round_active text_size 56 background "#b0b0b0"
                     textbutton "Stand" action Function(stand_game) sensitive round_active text_size 56 background "#b0b0b0"
                     textbutton "New Round" action Function(reset_round) sensitive game_over text_size 56 background "#b0b0b0"
-                    textbutton "Leave" action [Function(refund_and_leave), Return()] sensitive (not round_active) text_size 56 background "#b0b0b0"
+                    textbutton "Leave" action [Function(refund_and_leave), Return()] sensitive (round_active == False) text_size 56 background "#b0b0b0"
 
     # Player hand display (bottom)
-    if not player_hand:
+    if bool(player_hand) == False:
         hbox:
             xalign 0.5
             yalign 0.9

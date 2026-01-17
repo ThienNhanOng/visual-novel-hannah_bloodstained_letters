@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2Scene5Investigating.rpy", line 73: expected python code
-    $
-     ^
+File "game/Scripts/bubbleGamble/tienLenscreen.rpy", line 12: 'droppable' is not a keyword argument or valid child of the for statement.
+    droppable:
+             ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Thu Jan 15 20:51:07 2026
+Fri Jan 16 21:30:28 2026

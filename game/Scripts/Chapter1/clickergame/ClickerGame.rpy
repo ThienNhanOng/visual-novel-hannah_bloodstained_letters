@@ -86,7 +86,7 @@ init python:
 
         def update_animation(self):
             """update target position for smooth sliding."""
-            if not self.isSliding:
+            if self.isSliding == False:
                 return
 
             #increment progress based on slide duration

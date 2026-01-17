@@ -47,9 +47,8 @@ init python:
             #This makes sure the enemy updates/moves within the window width.
             enemy.update(self.Screen_Width)
 
-            #Scoring
-            #getter for enemy
-            if not getattr(enemy, 'passed', False) and (enemy.EnemyX + enemy.EnemyWidth) < player.PlayerX:
+            #Scoring and flag for enemy passed player
+            if getattr(enemy, 'passed', False) == False and (enemy.EnemyX + enemy.EnemyWidth) < player.PlayerX:
                 enemy.passed = True
 
                 #keeping the score using renpy.store 
@@ -79,7 +78,7 @@ init python:
             
     #Jump action - math stuff gravity bla bla it makes the jump go up to 32.
     def jumpGame_space():
-        if not game.ended:
+        if game.ended == False:
             game.player.jump(32)
             #play sound
             renpy.play("Scripts/chapter2/jumping_game/ninja racer stuff/jump noise.wav")

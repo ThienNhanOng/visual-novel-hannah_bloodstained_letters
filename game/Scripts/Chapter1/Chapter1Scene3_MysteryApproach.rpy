@@ -15,6 +15,6 @@ label chapter1Scene3_MysteryApproach:
     Player "Please make haste. I have a lot on my mind right now."
     Theo "Call me Theo. And it is not what you can do for me, but what I can do for you. Let's talk more in private."
 
-    scene park_bench_night with dissolve
+    #scene park_bench_night with dissolve
     #call chapter1Scene3_MeetingTheo
 return 

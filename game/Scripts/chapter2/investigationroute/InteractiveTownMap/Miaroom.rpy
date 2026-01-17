@@ -1,7 +1,7 @@
 label InteractiveMiaRoom:
     #placeholder test
-    scene bg room1
-    "welcome to room 1"
+    #scene bg room1
+    scene expression im.Scale("chapter1/inside the church/haley.png", config.screen_width, config.screen_height)
 
 
     #actual story
@@ -95,6 +95,7 @@ label InteractiveMiaRoom:
         Mia "*as [Player] walks away*, I'm sorry. I wish I can help more."
 #exit once talked to everyone
     if (MapDecision_counter == 3):
+        show bg forestroom with fade
         return
     else:
         jump map

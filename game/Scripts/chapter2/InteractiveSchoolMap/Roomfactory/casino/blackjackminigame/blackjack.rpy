@@ -15,33 +15,15 @@ default result = ""
 init -100 python:
     import random
 
-    SUITS = ["hearts", "diamonds", "clubs", "spades"]
-    RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-
-    def card_value(rank):
-        """Get numeric value of a card rank."""
-        if rank in ["J", "Q", "K"]:
-            return 10
-        elif rank == "A":
-            return 11
-        else:
-            return int(rank)
-
-    #Create a new list of cards for the deck and shuffle
-    def make_new_deck():
-        """Create and shuffle a new deck of cards."""
-        new_deck = []
-        for suit in SUITS:
-            for rank in RANKS:
-                card = {
-                    "rank": rank,
-                    "suit": suit,
-                    "value": card_value(rank)
-                }
-                new_deck.append(card)
-        
-        renpy.random.shuffle(new_deck)
-        return new_deck
+    #for face cards
+    #dictionary to map face card names to image file names
+    FACE_CARD_NAMES = {"A": "ace", "J": "jack", "Q": "queen", "K": "king"}
+    
+    def card_image_path(card):
+        """Get the image path for a card."""
+        rank = card["rank"]
+        rank_name = FACE_CARD_NAMES.get(rank, rank)
+        return "blackjack/{}_of_{}.png".format(rank_name, card["suit"])
 
     def calculate_hand_value(hand):
         """Calculate the total value of a hand, adjusting for aces."""
@@ -60,18 +42,6 @@ init -100 python:
         
         return hand_value
 
-
-    #for face cards
-    #dictionary to map face card names to image file names
-    FACE_CARD_NAMES = {"A": "ace", "J": "jack", "Q": "queen", "K": "king"}
-    
-    def card_image_path(card):
-        """Get the image path for a card."""
-        rank = card["rank"]
-        rank_name = FACE_CARD_NAMES.get(rank, rank)
-        return "blackjack/{}_of_{}.png".format(rank_name, card["suit"]) 
-
-
     #Game control functions
     def start_game(bet=10):
         """Start a new blackjack round with the given bet amount."""
@@ -80,7 +50,7 @@ init -100 python:
         
         store.CasinoMoney -= bet
         store.current_bet = bet
-        store.deck = make_new_deck()
+        store.deck = createDeck()
         store.player_hand = [store.deck.pop(), store.deck.pop()]
         store.round_active = True
         store.dealer_total = 0
@@ -92,11 +62,11 @@ init -100 python:
 
     def hit_card():
         """Draw another card for the player."""
-        if not store.round_active or store.game_over:
+        if store.round_active == False or store.game_over:
             return
         
-        if not store.deck:
-            store.deck = make_new_deck()
+        if bool(store.deck) == False:
+            store.deck = createDeck()
         
         store.player_hand.append(store.deck.pop())
         total = calculate_hand_value(store.player_hand)
@@ -107,6 +77,8 @@ init -100 python:
             store.game_over = True
         elif total == 21:
             store.message = "BLACKJACK!"
+            store.CasinoMoney += store.current_bet * 2
+            store.result = "win"
             store.round_active = False
             store.game_over = True
         else:
@@ -114,7 +86,7 @@ init -100 python:
 
     def stand_game():
         """End the round and determine the winner."""
-        if store.game_over or not store.round_active:
+        if store.game_over or store.round_active == False:
             return
 
         store.dealer_total = random.randint(16, 21)

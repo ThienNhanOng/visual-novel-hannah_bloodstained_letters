@@ -16,13 +16,13 @@ label eventQueue:
         eventsFinish = False
         while True:
             event = EventQueue.pop()
-            if not event:
+            if event is None:
                 break
             eventsFinish = True
             renpy.call(event["name"])
 
     #Only show fallback if no events actually ran
-    if not eventsFinish:
+    if eventsFinish == False:
         if currentTime() == "Morning":
             "The courtyard is bustling with students preparing for classes."
         elif currentTime() == "Noon":

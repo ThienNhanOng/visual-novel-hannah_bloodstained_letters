@@ -114,12 +114,6 @@ screen say(who, what):
         text what id "what"
 
 
-    ##If there's a side image, display it above the text. Do not display on the
-    ##phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
-
-
 ##Make the namebox available for styling through the Character object.
 init python:
     config.character_id_prefixes.append('namebox')
@@ -919,7 +913,7 @@ screen history():
                 text what:
                     substitute False
 
-        if not _history_list:
+        if bool(_history_list) == False:
             label _("The dialogue history is empty.")
 
 

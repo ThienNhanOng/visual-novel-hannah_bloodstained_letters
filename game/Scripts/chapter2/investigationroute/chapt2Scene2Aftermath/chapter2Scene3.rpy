@@ -44,4 +44,5 @@ label Chapter2Scene3_fishing:
     centered "Ringing..."
     "RING"
     "Silas: Hey, [Player]. I need your help with something. can you drop by the school?"
+    stop audio fadeout 4.0
     jump Chapter2Scene4_helpingSilas

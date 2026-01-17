@@ -7,7 +7,7 @@ image BGnoir = "images/chapter1/forest scene/background/noir_background.jpg"
 
 #Single lightning image (normal definition)
 image BG_lightning = "images/chapter1/forest scene/background/lightning.jpg"
-image BG_lightning_generic = "D:\renpyProject\Thesis Hannah Bloodstained letters\game\images\chapter1\forest scene\background\lightning_generic.jpeg"
+image BG_lightning_generic = "images/chapter1/forest scene/background/lightning_generic.jpeg"
 
 #Define the animated background
 image bg church_animated = Movie(

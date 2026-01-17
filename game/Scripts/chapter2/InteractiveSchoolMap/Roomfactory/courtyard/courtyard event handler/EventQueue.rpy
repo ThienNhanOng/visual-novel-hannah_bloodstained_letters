@@ -19,10 +19,10 @@ init python:
 
                 #Check if the event belongs to today
                 if current_day == "Mon":
-                    if not event["name"].startswith("mon"):
+                    if event["name"].startswith("mon") == False:
                         continue
                 elif current_day == "Fri":
-                    if not event["name"].startswith("fri"):
+                    if event["name"].startswith("fri") == False:
                         continue
                 else: #In case if i need to add sunday events
                     continue

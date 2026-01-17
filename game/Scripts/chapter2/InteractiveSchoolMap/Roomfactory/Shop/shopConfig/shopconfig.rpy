@@ -47,7 +47,7 @@ init python:
         global Global_Money 
         can, reason = purchaseableItem(item) #line 22 return as already own if purchase
         #pop up notification using renpy library
-        if not can:
+        if can == False:
             if reason == "already owned":
                 renpy.notify("You already bought this!")
             #pop up if flag is not met

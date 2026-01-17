@@ -15,5 +15,5 @@ init python:
         {"time": "Night", "name": "fri_night_clubCleanup", "priority": 40},
         {"time": "Night", "name": "fri_night_silasWrapup", "priority": 30},
         {"time": "Night", "name": "fri_night_meditation", "priority": 20},
-        {"time": "Night", "name": "fri_night_weekendReflection", "priority": 50},
+        {"time": "Night", "name": "fri_night_weekendReflection", "priority": 10},
     ]

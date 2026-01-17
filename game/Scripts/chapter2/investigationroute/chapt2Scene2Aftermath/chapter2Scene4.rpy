@@ -1,5 +1,5 @@
 label Chapter2Scene4_helpingSilas:
-
+    scene expression im.Scale("slidingpuzzle/organized dormroom.jpg", config.screen_width, config.screen_height)
 
     "[Player] Arrived at the school."
     Silas "Thank god you're here. lets hurry to my dorm"
@@ -18,6 +18,6 @@ label Chapter2Scene4_helpingSilas:
     "help Silas clean his room"
     window hide
     call screen sliding_puzzle_screen()
-    jump after_puzzle
+    jump afterpuzzle
 
 

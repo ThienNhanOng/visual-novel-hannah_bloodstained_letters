@@ -10,5 +10,5 @@ label puzzle_complete_and_next:
     hide puzzle_complete_image
     #Tansitions
     scene bg room1
-    jump after_puzzle
+    jump afterpuzzle
     
