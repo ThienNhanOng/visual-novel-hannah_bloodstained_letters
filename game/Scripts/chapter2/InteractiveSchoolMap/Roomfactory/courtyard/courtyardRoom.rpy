@@ -11,7 +11,7 @@ init -90 python:
             )
 
             # create command object
-            self.command = CallRoomCommand(self.label_name, newScene=False)
+            self.command = CallRoomCommand(self.label_name)
 
         def enter(self):
             # execute the command (calls the label)

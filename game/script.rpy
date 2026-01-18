@@ -21,14 +21,13 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 1000 #Players start money
+define Global_Money = 9999 #Players start money
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
 default StoryDecision_Chapter1_Investigate = False #false = peaceful route
 default StoryDecision_Chapter1_Schoolname = "school"
 default chapter2continue = False #flag to continue chapter 2 after peaceful reroute.
-default storyDecision_Chapter2_InvestigationRoute = False
 
 #event list
 default event_queue = []
@@ -40,13 +39,8 @@ label start:
 
 #testing
     
-    #$ shufflePuzzle()
-    #call screen sliding_puzzle_screen
-    
-    #call screen say(None, "Testing various screens")
-    #call screen blackjack_table
     #call screen clicker_minigame
-    #call screen schoolmapScreen
+    call screen schoolmapScreen
     #call screen TicTacToeScreen
 #testing end
 
@@ -70,7 +64,7 @@ label start:
 #starting story.     
     call Chapter1Scene1
     #couunter debug
-    #scene bg forestroom with fade
+    scene bg forestroom with fade
     "Counter: mia | [Mia_counter] | silas [Silas_counter] | theo [Theo_counter]|"
     
     #jump to scene 2: the school scene

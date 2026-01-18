@@ -57,7 +57,6 @@ vector position
 timer
 
 2: puzzle sliding:
-fisher yates shuffle algorithm to randomize the puzzle pieces
 
 3:
 blackjack:
@@ -67,7 +66,7 @@ dictionary for each card. this is so each card contain its correct rank suite an
 uses a stack for drawing from top of deck once generated (lifo) 
 design pattern:
 the screen act as the facade/controller allowing user to manipulate the game state.
-fisher yates shuffle 
+
 4:
 jumping game:
 uses a 2d vector and gravity.

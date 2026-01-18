@@ -8,11 +8,12 @@ init python:
 
     def timeIncrease():
         store.timeIndex += 1
-        if store.timeIndex == len(TimeOfDay):
-            store.timeIndex = len(TimeOfDay) - 1  # Cap at Bedtime
+        if store.timeIndex >= len(TimeOfDay):
+            store.timeIndex = len(TimeOfDay) - 1  #cap at Night
 
-    def advancedNextDay(): #can sleep at night or bedtime
-        # Reset day
+    def advancedNextDay():
+        """Reset day
+        """
         if store.timeIndex >= 2:  #2 = Night, 3 = Bedtime
             store.dayIndex = (store.dayIndex + 1) % len(days)
             store.timeIndex = 0

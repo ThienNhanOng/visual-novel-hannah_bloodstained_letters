@@ -272,7 +272,7 @@ label mon_night_nightGuard:
     SideChar "pft overrated ill tell you a secret"
     SideChar "go to the bookstore and say the code 'no games no life'"
     SideChar "theyll hand you a fake id"
-    "in the morning You went to the bookstore and said the code 'no games no life'"
+    "in the morning {Player} went to the bookstore and said the code 'no games no life'"
     $ fakeidUnlocked = True
     $ events_done.add("mon_night_nightGuard")
     return

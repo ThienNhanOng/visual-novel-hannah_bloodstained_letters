@@ -1,7 +1,7 @@
 default raisesCounter = 10
 default payout = 15
 
-#image bg room2 = "images/map/schoolmap/bg room2.png"
+image bg room2 = "images/map/schoolmap/bg room2.png"
 
 #the room
 

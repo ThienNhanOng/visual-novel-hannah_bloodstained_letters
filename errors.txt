@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/bubbleGamble/tienLenscreen.rpy", line 12: 'droppable' is not a keyword argument or valid child of the for statement.
-    droppable:
-             ^
+File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/shooterinstructions.rpy", line 10: unterminated string literal
+    centered "{color=#ffffff}{b}Use the arrow keys to move your character.
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Fri Jan 16 21:30:28 2026
+Sat Jan 17 23:52:16 2026

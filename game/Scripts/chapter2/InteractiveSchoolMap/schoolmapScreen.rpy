@@ -35,7 +35,7 @@ screen schoolmapScreen:
             #Check if it's bedtime and not the dorm room
             $ is_night = currentTime() == "Bedtime"
             $ is_dorm = room.room_id == "Dorm"
-            $ can_enter = is_night == False or is_dorm
+            $ can_enter = not is_night or is_dorm
             
             imagebutton:
                 xpos room.xpos

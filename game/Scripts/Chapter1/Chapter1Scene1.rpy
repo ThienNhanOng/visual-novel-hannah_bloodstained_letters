@@ -14,7 +14,7 @@ label Chapter1Scene1:
 
     #Flashback starts
     
-    if flashback_seen == False:
+    if not flashback_seen:
         call Chapter1Scene1Flashbacks
         $ flashback_seen = True
     #Flashback ends

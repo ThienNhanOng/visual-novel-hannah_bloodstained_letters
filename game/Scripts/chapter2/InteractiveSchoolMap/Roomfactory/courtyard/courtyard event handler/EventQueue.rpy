@@ -19,10 +19,10 @@ init python:
 
                 #Check if the event belongs to today
                 if current_day == "Mon":
-                    if event["name"].startswith("mon") == False:
+                    if not event["name"].startswith("mon"):
                         continue
                 elif current_day == "Fri":
-                    if event["name"].startswith("fri") == False:
+                    if not event["name"].startswith("fri"):
                         continue
                 else: #In case if i need to add sunday events
                     continue
@@ -33,7 +33,7 @@ init python:
 
                 queue.append(event)
 
-            #bubble sort for priority (highest first)
+            #bubble sort for priority (higher first)
             for i in range(len(queue)):
                 for j in range(i + 1, len(queue)):
                     if queue[j]["priority"] > queue[i]["priority"]:

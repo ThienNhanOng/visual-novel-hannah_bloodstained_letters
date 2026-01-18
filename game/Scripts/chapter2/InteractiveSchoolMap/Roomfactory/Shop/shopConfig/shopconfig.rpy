@@ -5,7 +5,7 @@ default purchased_items = {} #dictionary to track purchased items
 default fakeidUnlocked = True
 default workpermitUnlocked = True
 default hiddenletterUnlocked = False
-default arcadeUnlocked = False
+default arcadeUnlocked = True
 
 
 init python:

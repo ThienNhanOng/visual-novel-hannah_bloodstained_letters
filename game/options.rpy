@@ -130,7 +130,18 @@ default preferences.afm_time = 15
 
 
 ##Save directory ##############################################################
+##
+##Controls the platform-specific place Ren'Py will place the save files for
+##this game. The save files will be placed in:
+##
 ##Windows: %APPDATA\RenPy\<config.save_directory>
+##
+##Macintosh: $HOME/Library/RenPy/<config.save_directory>
+##
+##Linux: $HOME/.renpy/<config.save_directory>
+##
+##This generally should not be changed, and if it is, should always be a
+##literal string, not an expression.
 
 define config.save_directory = "ThesisHannahBloodstainedletters-1749937051"
 

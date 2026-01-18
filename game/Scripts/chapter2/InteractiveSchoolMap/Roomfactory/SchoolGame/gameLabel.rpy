@@ -1,12 +1,14 @@
 #placeholder test
+default enemy_manager = None
+default projectileManager = None
 label gameroom:
     
-    scene blackscreen 
+    #scene blackscreen 
     stop music fadeout 2.0
     
     if (arcadeUnlocked == True):
         menu:
-            "Yes, I want to play (cost $10)":
+            "Play ninja jumper(cost $10)":
                 if Global_Money >= 10:
                     $ Global_Money -= 10
                     $ jump_score = 0  #Reset score for new game
@@ -24,8 +26,15 @@ label gameroom:
                     jump lostscreen
                 else:
                     "You need at least $10 to play."
-            "No, thanks":
-                "What a shame. Maybe next time."
+            "play cubic shooter(cost $20) no rewards":
+                if Global_Money >= 20:
+                    
+                    $ Global_Money -= 20                  
+                    call instructions_shootinggame
+                else:
+                    "You need at least $20 to play."
+            "no thank you":
+                "Thats a shame maybe next time."
     else:
         "You checked out the gameroom but it seems to be locked."
     #increase time after leaving the room

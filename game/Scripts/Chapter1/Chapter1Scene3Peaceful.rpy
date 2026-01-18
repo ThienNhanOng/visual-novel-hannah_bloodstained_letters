@@ -2,7 +2,6 @@
 
 
 label chapter1scene3Peaceful:
-    scene expression im.Scale("chapter1/side characters/miacar.png", config.screen_width, config.screen_height)
 #summary this scene focus on transitioning the player to a peaceful route with her going to school and moving on with her life.
     play music "audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 1.0 loop
     Mia "but ya know, You're not invincible, kid... don't go getting yourself killed now."
