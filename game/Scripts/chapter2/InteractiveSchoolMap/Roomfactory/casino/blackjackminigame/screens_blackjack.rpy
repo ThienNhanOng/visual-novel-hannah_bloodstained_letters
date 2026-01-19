@@ -11,24 +11,30 @@ screen blackjack_table():
             text "Current Money: [player_money]" size 40 color "#f1de2e62"
             text "Bet: [current_bet]" size 50 color "#486e16"
             text "Dealer: [dealer_total]" size 50 color "#ff0000"
+            
             if message:
                 $ msg_color = "#ff0000" if message.startswith("Player total:") else "#ffffff"
                 text message size 40 color msg_color
 
+
     # Deck placeholder (centered stack)
     frame:
-        xalign 0.41
+        xalign 0.5
         yalign 0.485
         background None
         hbox:
+            xalign 0.5
             spacing 4
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
             add "blackjack/card_back.png" xysize (120, 180)
 
+    # red debug card square (centered)
+    #add Solid("#ff000088", xysize=(120, 180)) xalign 0.5 yalign 0.49
+            
     # Extra hit cards (fixed positions)
-    for i, pos in enumerate([0.5, 0.6, 0.7, 0.8, 0.9]):
+    for i, pos in enumerate([0.325, 0.395, 0.462, 0.532]):
         if len(player_hand) > 2 + i:
             add card_image_path(player_hand[2 + i]) xalign pos yalign 0.48 xysize (120, 180)
 

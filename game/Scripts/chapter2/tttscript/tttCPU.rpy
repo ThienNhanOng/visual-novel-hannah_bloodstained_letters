@@ -60,6 +60,8 @@ init python:
         elif TttState == TTTState.movement:
             #Try to complete a win by moving a piece
             for from_index in OPieces:
+                if TttBoard[from_index] != tttAI:
+                    continue
                 for to_index in range(9):
                     if TttBoard[to_index] is None:
                         #Simulate the move
@@ -79,6 +81,8 @@ init python:
 
             #Try to block player from winning by using the last index piece
             for from_index in OPieces:
+                if TttBoard[from_index] != tttAI:
+                    continue
                 for to_index in range(9):
                     if TttBoard[to_index] is None:
                         #Simulate the move

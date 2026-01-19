@@ -21,7 +21,7 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 9999 #Players start money
+define Global_Money = 1000 #Players start money
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
@@ -39,9 +39,10 @@ label start:
 
 #testing
     
+    #call screen blackjack_table
     #call screen clicker_minigame
-    call screen schoolmapScreen
-    #call screen TicTacToeScreen
+    #call screen schoolmapScreen
+    call screen TicTacToeScreen
 #testing end
 
     stop music fadeout 2.0

@@ -1,25 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/gameLabel.rpy", line 33, in script call
-    call instructions_shootinggame
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/shooterinstructions.rpy", line 8, in script
-    ysize 1920
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 12, in execute
-    screen ShooterGameScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 12, in execute
-    screen ShooterGameScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 38, in execute
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 38, in <module>
-AttributeError: 'NoneType' object has no attribute 'shooterBullets'
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 15, in script
+    call screen blackjack_table
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
+    screen blackjack_table():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
+    screen blackjack_table():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 19, in execute
+    frame:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 23, in execute
+    hbox:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in execute
+    text blackjack/card_back.png xysize (120, 180)
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in <module>
+    text blackjack/card_back.png xysize (120, 180)
+NameError: name 'blackjack' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/gameLabel.rpy", line 33, in script call
-    call instructions_shootinggame
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/shooterinstructions.rpy", line 8, in script
-    ysize 1920
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 15, in script
+    call screen blackjack_table
   File "renpy/ast.py", line 2241, in execute
     self.call("execute")
     ~~~~~~~~~^^^^^^^^^^^
@@ -72,21 +74,27 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 715, in update
     self.screen.function(**self.scope)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 12, in execute
-    screen ShooterGameScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 12, in execute
-    screen ShooterGameScreen:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 38, in execute
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
+    screen blackjack_table():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
+    screen blackjack_table():
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 19, in execute
+    frame:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 23, in execute
+    hbox:
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in execute
+    text blackjack/card_back.png xysize (120, 180)
   File "renpy/python.py", line 1305, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1298, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/screen.rpy", line 38, in <module>
-AttributeError: 'NoneType' object has no attribute 'shooterBullets'
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in <module>
+    text blackjack/card_back.png xysize (120, 180)
+NameError: name 'blackjack' is not defined
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 Thesis Hannah Bloodstained letters 1.0
-Sat Jan 17 23:55:28 2026
+Mon Jan 19 18:15:45 2026

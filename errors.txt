@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/shooter/shooterinstructions.rpy", line 10: unterminated string literal
-    centered "{color=#ffffff}{b}Use the arrow keys to move your character.
+File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 14: 't' is not a keyword argument or valid child of the vbox statement.
+    t
+     ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Jan 17 23:52:16 2026
+Mon Jan 19 18:16:42 2026

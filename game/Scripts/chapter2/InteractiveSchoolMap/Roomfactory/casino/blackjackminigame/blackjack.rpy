@@ -1,4 +1,4 @@
-#Game state variables (persisted by Ren'Py)
+#Game state variables
 default deck = []
 default player_hand = []
 default round_active = False
@@ -7,41 +7,14 @@ default current_bet = 0
 default player_money = 11
 default dealer_total = 0
 default game_over = False
-#placeholder for win lose push
+
 default message = ""
 default result = ""
 
 # Deck/rank definitions (constants, not mutable state)
 init -100 python:
-    import random
-
-    SUITS = ["hearts", "diamonds", "clubs", "spades"]
-    RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-
-    def card_value(rank):
-        """Get numeric value of a card rank."""
-        if rank in ["J", "Q", "K"]:
-            return 10
-        elif rank == "A":
-            return 11
-        else:
-            return int(rank)
-
-    #Create a new list of cards for the deck and shuffle
-    def make_new_deck():
-        """Create and shuffle a new deck of cards."""
-        new_deck = []
-        for suit in SUITS:
-            for rank in RANKS:
-                card = {
-                    "rank": rank,
-                    "suit": suit,
-                    "value": card_value(rank)
-                }
-                new_deck.append(card)
-        
-        renpy.random.shuffle(new_deck)
-        return new_deck
+    #store import for game state access
+    import renpy.store as store
 
     def calculate_hand_value(hand):
         """Calculate the total value of a hand, adjusting for aces."""
@@ -77,15 +50,14 @@ init -100 python:
         """Start a new blackjack round with the given bet amount."""
         if store.player_money < bet:
             return False
-        
         store.player_money -= bet
         store.current_bet = bet
-        store.deck = make_new_deck()
+        # Use shared createDeck from CreateDeck.rpy
+        store.deck = store.createDeck()
         store.player_hand = [store.deck.pop(), store.deck.pop()]
         store.round_active = True
         store.dealer_total = 0
         store.game_over = False
-        
         hand_value = calculate_hand_value(store.player_hand)
         store.message = f"Player total: {hand_value}"
         renpy.restart_interaction()
@@ -94,13 +66,10 @@ init -100 python:
         """Draw another card for the player."""
         if not store.round_active or store.game_over:
             return
-        
         if not store.deck:
-            store.deck = make_new_deck()
-        
+            store.deck = store.createDeck()
         store.player_hand.append(store.deck.pop())
         total = calculate_hand_value(store.player_hand)
-
         if total > 21:
             store.message = "BUST!"
             store.round_active = False
