@@ -1,0 +1,70 @@
+visual novel notes:
+added layering
+voice overs
+font dynamic
+
+
+
+mini games notes
+
+1: clicker:
+redesign to include a state pattern
+singleton instance 
+vector position
+timer
+
+
+2: puzzle sliding:
+
+
+3:
+blackjack:
+data structures usage:
+lists for the deck and hand generation
+dictionary for each card. this is so each card contain its correct rank suite and value
+uses a stack for drawing from top of deck once generated (lifo) 
+design pattern:
+the screen act as the facade/controller allowing user to manipulate the game state.
+
+jumping game:
+uses a 2d vector and gravity.
+velocity determines speed of jump. 
+has objects such as enemies.
+contain randomizations for object spawn
+collision checks
+relies on a in renpy timer to update frames for enemy movement.
+4: Ren'Py APIs extensively: renpy.store
+
+5:tic tac toe game:
+
+6:
+------------------
+hud/interactive map for school:
+
+rooms:
+coordinates for ui location
+factory: creating a room
+command: execute call/jump room and to check if entered or not
+template: originally inherit predefined rooms but override.
+
+shop:
+facad
+enum 
+state of item (implicitely not fully structured)
+state pattern for ui display of item
+state is used with boolean flags
+dictionary
+text interpolation 
+
+courtyard: mainly text based.
+global variable states (money counters lock/unlocked)
+booleans
+state machine time
+
+KIND OF chain of responsibility/event manager? but tbh its really just lots of renpy dependence and if and else statements.
+
+
+
+
+
+

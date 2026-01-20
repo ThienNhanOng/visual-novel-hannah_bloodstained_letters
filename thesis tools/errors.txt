@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/Scripts/Chapter1/Chapter1Scene3Peaceful.rpy", line 7: expected 'image_name_component' not found.
+    show
+         ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Mon Jan 19 19:47:42 2026

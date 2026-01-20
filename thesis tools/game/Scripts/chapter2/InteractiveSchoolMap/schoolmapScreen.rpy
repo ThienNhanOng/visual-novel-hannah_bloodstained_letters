@@ -1,0 +1,73 @@
+
+#Label to show the map
+label schoolmapScreen:
+    #condition for letter number3
+    if(silas_counter >= 10 and 
+    Theo_counter >= 10 and 
+    workpermit_unlocked == True and
+    arcade_unlocked == True and
+    fakeid_unlocked == True):
+        $ quest_completed = True
+
+    show screen schoolmapScreen
+    return  #returns control to whatever called this label
+
+#Map screen backup
+screen schoolmapScreen:
+
+    #money limit money
+    $ Global_Money = max(0, min(Global_Money, 9999))
+
+    #Robust background load with fallback + on-screen debug
+    if renpy.loadable("images/map/schoolmapbackup.png"):
+        add "images/map/schoolmapbackup.png"
+    elif renpy.loadable("images/map/schoolmap/schoolmap.png"):
+        add "images/map/schoolmap/schoolmap.png"
+    elif renpy.loadable("images/map/schoolmap/schoolmap.jpg"):
+        add "images/map/schoolmap/schoolmap.jpg"
+    else:
+        add Solid("#222")
+        text "Missing: images/map/schoolmapbackup.png or schoolmap.(png/jpg)" xalign 0.5 yalign 0.5
+    
+    for room in SchoolmapRooms.values():
+        #Only create a button if an idle image is provided
+        if room.idle:
+            #Check if it's bedtime and not the dorm room
+            $ is_night = currentTime() == "Bedtime"
+            $ is_dorm = room.room_id == "Dorm"
+            $ can_enter = not is_night or is_dorm
+            
+            imagebutton:
+                xpos room.xpos
+                ypos room.ypos
+                idle room.idle
+                hover room.hover
+                action If(can_enter, room.enter, Show("night_restriction_popup"))
+
+    #wallet and dates ui
+    $ wallet_ui = "images/wallet.png"
+    add wallet_ui xpos 1400 ypos 0 xsize 550 ysize 250
+    text "$$: [Global_Money]" size 60 xpos 1590 ypos 130 color "#0d4610"
+    text "[currentDayLabel()]" size 60 xpos 1470 ypos 60 color "#000000"
+    text "[currentTime()]" size 48 xpos 1440 ypos 125 color "#000000"
+    
+
+screen schoolMapScreen():
+    use schoolmapScreen
+
+#Popup screen for night time restriction
+screen night_restriction_popup():
+    modal True
+    zorder 100
+    
+    frame:
+        xalign 0.5
+        yalign 0.5
+        padding (40, 30)
+        background "#000c"
+        
+        vbox:
+            spacing 20
+            text "It's too late at night!" size 32 xalign 0.5 color "#ff6b6b"
+            text "Most facilities are closed.\nPlease return to your dorm." size 22 xalign 0.5 color "#ff6b6b"
+            textbutton "OK" action Hide("night_restriction_popup") xalign 0.5 text_size 24 text_color "#ff6b6b"

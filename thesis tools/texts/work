@@ -1,0 +1,65 @@
+complete game
+firebase but need data base to save/   (maybe use local storage instead)
+sound/music/footstep/noises
+images - scene 1,2,3 and the map
+
+use design patterns 
+and more data structures
+add in 4 mini games that are more complex
+
+tic tac toe 
+black jack
+platformer game. collect coin static screen
+
+
+
+shooting game idea: bullet collides with enemy 
+
+platformer game idea: jump on platforms to get to the end
+
+meet back first week january(send full video of gameplay)
+
+-------------------
+notes
+pattern that ive used 
+
+state pattern:
+the reason and how my code implicitly use the state pattern 
+is because it uses counters to track rather they already interacted with the room yet or not
+this is done through 2 ways, the forst way is when i used a boolean system to check if they interacted with mia or theo
+and the second is through a counter system.
+
+factory pattern for the rooms (done)
+
+singleton(ish) 
+---------------------------------------
+
+todo today 11/3:
+fix blackjack (done) 
+add image(done)
+(need sound effects)   [   ]
+todo 11/13
+
+description: uses a 2d vector to set up a space and a timer to simulate a update field
+which update each individual frames manually for animation and x y cordinates. 
+this is a jumping mini game which uses renpy scoring system to keep track of score
+uses ai for images, music, and partially with the time system.
+finish up jump mini game (done)
+add mini game images(done)
+use a singleton(done)
+time manager(scrapped)
+create music, animation, and sound effects(done)
+need to set up money gain and money point system.
+
+next game:
+
+tic tac toe?
+
+maze?
+
+shooter?
+
+
+create day night cycle with a state ui for money
+
+implement the store
