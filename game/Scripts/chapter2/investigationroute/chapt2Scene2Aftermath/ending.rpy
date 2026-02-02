@@ -5,11 +5,13 @@ label ending:
         show redletter
         "As she about to leave she saw something that caught her attention. an envelope like object."
         Player "what is this Sy?"
+        play music "game/audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 3.0 loop
         Silas "to be honest, no clue. it looks like an envelope of some sort. but there is some sort of force"
         Silas "sap or resin that prevent me from opening it without damaging the content inside."
         Player "it looks like the seal can be broken there are some weird marks on it."
         Silas "it does doesnt it. i've tried but it wont budge."
         Player "hm.. let me give it a go."
+        
         #if player win continue story otherwise redo scene
         $ tttplayerWin = False
         call screen TicTacToeScreen
@@ -23,20 +25,28 @@ label ending:
             "and bidder as well as new owner: mr Edward harper-Chapman"
             "..."
             play movie "visualAnimation/TitleScreenLoop.webm"
-            play movie "visualAnimation/TitleScreenLoop.webm"
+            play sound "game/audio/thundernoises.mp3"
             Player "Chapman? where have i ever heard that name before..."
             "chapman...chapman..."
             Player "chapman...GASP"
+            play sound "game/audio/thundernoises.mp3"
+            play sound "game/audio/thundernoises.mp3"
             show reveal with pixellate
+            play sound "game/audio/thundernoises.mp3"
+            play sound "game/audio/thundernoises.mp3"
+            play sound "game/audio/thundernoises.mp3"
             "THEODORE EDWARD HARPER-CHAPMAN..."
             Player "SILAS. I MUST GO IM SORRY."
             "player rushes out after realizing the name."
             "the detective may not just be a detective but "
             "the very person behind all of this."
+            scene black
             $ Player = Character(what_size=whisperFont)
             Player "AND IM TAKING THIS WITH MEEEEE!"
             Silas "WAIT! hold on!"
-            "{Player} Disappears out of the dormatory before Silas could intervine."
+            "[Player] Disappears out of the dormatory before Silas could intervine."
+            scene black fadeout 2.0
+
             $ MainMenu()
         else:
             #Restart scene if player lose. as well as ttt state

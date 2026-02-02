@@ -8,7 +8,7 @@ image bg room2 = "images/map/schoolmap/bg room2.png"
 #placeholder test
 label trackroom:
     show trackbg
-    "welcome to the track"
+    #"welcome to the track"
     #increase time after leaving the room
 
     

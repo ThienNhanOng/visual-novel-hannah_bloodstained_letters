@@ -42,7 +42,7 @@ screen schoolmapScreen:
                 ypos room.ypos
                 idle room.idle
                 hover room.hover
-                action If(can_enter, room.enter, Show("night_restriction_popup"))
+                action If(can_enter, Jump(room.label_name), Show("night_restriction_popup"))
 
     #wallet and dates ui
     $ wallet_ui = "images/wallet.png"

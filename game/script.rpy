@@ -21,7 +21,7 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-default Global_Money = 15 #Players start money
+default Global_Money = 30 #Players start money
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on

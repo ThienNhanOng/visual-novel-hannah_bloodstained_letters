@@ -1,4 +1,4 @@
-default shooterHealth = 20
+default shooterHealth = 100
 
 init python:
     import pygame
