@@ -119,15 +119,9 @@
                 }
             },
             {
-                "scope": "renpy.meta.color.#f00",
+                "scope": "renpy.meta.color.#cfc",
                 "settings": {
-                    "foreground": "#f00"
-                }
-            },
-            {
-                "scope": "renpy.meta.color.#ff3333",
-                "settings": {
-                    "foreground": "#ff3333"
+                    "foreground": "#cfc"
                 }
             },
             {
@@ -135,37 +129,8 @@
                 "settings": {
                     "foreground": "#fff"
                 }
-            },
-            {
-                "scope": "renpy.meta.color.#f11",
-                "settings": {
-                    "foreground": "#f11"
-                }
-            },
-            {
-                "scope": "renpy.meta.color.#faa",
-                "settings": {
-                    "foreground": "#faa"
-                }
-            },
-            {
-                "scope": "renpy.meta.color.#eee",
-                "settings": {
-                    "foreground": "#eee"
-                }
-            },
-            {
-                "scope": "renpy.meta.color.#cfc",
-                "settings": {
-                    "foreground": "#cfc"
-                }
-            },
-            {
-                "scope": "renpy.meta.color.#ff0000",
-                "settings": {
-                    "foreground": "#ff0000"
-                }
             }
         ]
-    }
+    },
+    "renpyWarp.sdkPath": "c:/Users/thien/AppData/Roaming/Code/User/globalStorage/paisleysoftworks.renpywarp/file-downloader-downloads/8.5.0"
 }

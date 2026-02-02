@@ -1,0 +1,99 @@
+init python:
+    import random
+    
+    #search empty spot base on center pivot
+    def OPieceFallback():
+        pivot = 4  #pivot choice
+        #check left starting at the pivot
+        for i in range(pivot, -1, -1): #range(start, stop, step)
+            if TttBoard[i] is None:
+                to_index = i
+                break
+        else:
+            #Check right
+            for i in range(pivot + 1, 9, + 1): #range(start, stop, step)
+                if TttBoard[i] is None:
+                    to_index = i
+                    break
+        # Make sure to_index was found
+        if 'to_index' not in locals():
+            return  # or handle no moves possible
+
+        #Place new piece if less than 3 pieces
+        if len(OPieces) < 3:
+            placePiece(to_index)
+        else:
+            #move existing piece (oldest piece)
+            from_index = OPieces[0]
+            store.TttSelectedPiece = from_index
+            move(to_index)
+    
+    def aiMove():
+    
+        #check if cpu can win
+        if TttState == TTTState.placement:
+            #Check through all cells to see if legal play can be made
+            for i in range(9):
+                #if cell is empty to play
+                if TttBoard[i] is None:
+                    TttBoard[i] = tttAI
+                    #Check if simulated move wins. if so place piece
+                    if CheckWinner() == tttAI:
+                        TttBoard[i] = None
+                        placePiece(i)
+                        return
+                    #undo simulated move if no win
+                    TttBoard[i] = None
+
+            #Block player after checking win con (first 3 pieces)
+            for i in range(9):
+                if TttBoard[i] is None:
+                    TttBoard[i] = tttPlayer
+                    if CheckWinner() == tttPlayer:
+                        TttBoard[i] = None
+                        placePiece(i)
+                        return
+                    TttBoard[i] = None
+
+            # Fallback: using linear search to place new piece
+            OPieceFallback()
+
+        elif TttState == TTTState.movement:
+            # Only move the oldest piece (OPieces[0]) for all logic
+            if len(OPieces) == 0:
+                return
+            from_index = OPieces[0]
+            # Try to win by moving the oldest piece
+            for to_index in range(9):
+                if TttBoard[to_index] is None:
+                    #Simulate the move
+                    TttBoard[from_index] = None
+                    TttBoard[to_index] = tttAI
+                    if CheckWinner() == tttAI:
+                        #Win found! Make this move
+                        TttBoard[from_index] = None
+                        TttBoard[to_index] = None
+                        store.TttSelectedPiece = from_index
+                        move(to_index)
+                        return
+                    #Undo simulation
+                    TttBoard[from_index] = tttAI
+                    TttBoard[to_index] = None
+
+            # Try to block player from winning by moving the oldest piece
+            for to_index in range(9):
+                if TttBoard[to_index] is None:
+                    TttBoard[from_index] = None
+                    TttBoard[to_index] = tttPlayer
+                    if CheckWinner() == tttPlayer:
+                        #Block it
+                        TttBoard[from_index] = None
+                        TttBoard[to_index] = None
+                        store.TttSelectedPiece = from_index
+                        move(to_index)
+                        return
+                    TttBoard[from_index] = tttAI
+                    TttBoard[to_index] = None
+
+            # Fallback: using linear search to place old piece
+            OPieceFallback()
