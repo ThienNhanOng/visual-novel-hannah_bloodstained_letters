@@ -1,38 +1,37 @@
 label InteractiveGTRoom:
 #placeholder
     scene expression im.Scale("chapter1/side characters/jewler.jpeg", config.screen_width, config.screen_height)
-    "welcome to room 3"
+    #"welcome to room 3"
 
 #actual story:
     #interaction when player visit the detective without seeing mia
-    "[Player] Went to the Jewelry store where Mia and Hannah used to work."
+    "[Player] went to the jewelry store where she suspect Mia and Hannah used to work."
     #if player went to gt before
     if(mapDecisionGTfirstEncounter == False):
         $ SideChar = Character("Shop owner", color="#e5ffa7", what_size=talkFont)
-        SideChar "Hello! welcome to GT Jewelry. How can I assist you today?"
+        SideChar "Hello! Welcome to GT Jewelry. How can I assist you today?"
 
         SideChar "If you're looking for something specific, feel free to ask!"
 
         Player "right.. I was hoping to find out about a previous employee potentially by the name of Hannah?"
 
-        SideChar "Sorry, doesn't ring a bell. I'm the store owner and we never had a Hannah working here.
-        The only people that currently works here besides myself are Mia and Rudie."
+        SideChar "Sorry, doesn't ring a bell. I'm the store owner and we've never had a Hannah working here. The only people that currently work here besides myself are Mia and Rudie."
 
-        Player "Do you mind if I ask for the previous workers or potentially regulars?"
+        Player "Do you mind if I ask for information about your previous employee history or potentially any regulars?"
 
         SideChar "Oh jeez, that'll be tough. Over the years they come and go.
         Let me see, there was a Jake, Colton, Sam, and Andrea, who previously worked here."
     
-        SideChar "as for regulars all I could think of is Ajani, Rita, {color=#ff0000}{b}Chapman{/b}{/color}, Krista, and Keenan."
-        "[Player] didnt get any information regarding Hannah here."
-        Player "Thank you for your time, I must get going now."
+        SideChar "As for regulars, all I can think of are Ajani, Rita, {color=#ff0000}{b}Chapman{/b}{/color}, Krista, and Keenan."
+        "[Player] didn't get any information regarding Hannah here."
+        Player "Thank you for your time. I must get going now."
         SideChar "No problem, have a great day!"
         $ mapDecisionGTfirstEncounter = True
         jump map
     #if player went to gt aftrer meeting with mia
     if((MapDecision_counter == 1 and mapDecisionGTfirstEncounter == False)):
-        $ SideChar = Character("Shop owner", color="#e5ffa7", what_size=talkFont)
-        SideChar "Hello! welcome to GT Jewelry. How can I assist you today?"
+        $ SideChar = Character("Shop owner", color="#8e9625d0", what_size=talkFont)
+        SideChar "Hello! Welcome to GT Jewelry. How can I assist you today?"
         SideChar "If you're looking for something specific, feel free to ask!"
         Player "right.. I was hoping to find out about a previous employee potentially by the name of Hannah?"
         SideChar "Sorry, doesn't ring a bell. I'm the store owner and we never had a Hannah working here.

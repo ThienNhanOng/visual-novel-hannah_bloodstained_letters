@@ -1,3 +1,15 @@
+init python:
+    def resetTTTGame():
+        store.TttBoard = [None] * 9
+        store.TttCurrentPlayer = store.tttPlayer
+        store.TttSelectedPiece = None
+        store.XPieces = []
+        store.XPiecesPlaced = 0
+        store.OPieces = []
+        store.OPiecesPlaced = 0
+        store.tttplayerWin = False
+        store.TttState = store.TTTState.placement
+        
 #Board: empty slot for pieces
 default TttBoard = [None, None, None, None, None, None, None, None, None]
 #Track player moves

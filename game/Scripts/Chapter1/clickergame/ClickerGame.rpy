@@ -15,9 +15,9 @@ init python:
             self.startY = 0.5
             self.destX = 0.5
             self.destY = 0.5
-            self.progress = 0.0
+            self.progress = 0.0 #track progression during slide. 1.0 = done
             self.isSliding = False
-            self.slideDuration = 1.0
+            self.slideDuration = 1.0 #time to finish
 
             #score and misses variables
             self.score = 0
@@ -66,7 +66,7 @@ init python:
             """pick a new random target location and reset animation."""
             sw, sh = config.screen_width, config.screen_height
 
-            #keep target fully visible on screen
+            #keep axe in height and width in screen boarder
             marginX = max(0, self.sizePixels / sw * 0.5)
             marginY = max(0, self.sizePixels / sh * 0.5)
 

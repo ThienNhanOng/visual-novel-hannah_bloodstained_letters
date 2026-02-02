@@ -86,7 +86,7 @@ init -100 python:
         if store.game_over or not store.round_active:
             return
 
-        store.dealer_total = random.randint(3, 4)
+        store.dealer_total = random.randint(16, 21)
         store.round_active = False
         player_total = calculate_hand_value(store.player_hand)
 

@@ -119,9 +119,15 @@
                 }
             },
             {
-                "scope": "renpy.meta.color.#cfc",
+                "scope": "renpy.meta.color.#f00",
                 "settings": {
-                    "foreground": "#cfc"
+                    "foreground": "#f00"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ff3333",
+                "settings": {
+                    "foreground": "#ff3333"
                 }
             },
             {
@@ -129,8 +135,92 @@
                 "settings": {
                     "foreground": "#fff"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#f11",
+                "settings": {
+                    "foreground": "#f11"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#faa",
+                "settings": {
+                    "foreground": "#faa"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#eee",
+                "settings": {
+                    "foreground": "#eee"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#cfc",
+                "settings": {
+                    "foreground": "#cfc"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ff0000",
+                "settings": {
+                    "foreground": "#ff0000"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#e74c3c",
+                "settings": {
+                    "foreground": "#e74c3c"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#5d7",
+                "settings": {
+                    "foreground": "#5d7"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#25d",
+                "settings": {
+                    "foreground": "#25d"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#253c",
+                "settings": {
+                    "foreground": "#253c"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#23d7",
+                "settings": {
+                    "foreground": "#23d7"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#237",
+                "settings": {
+                    "foreground": "#237"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#231",
+                "settings": {
+                    "foreground": "#231"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#edc",
+                "settings": {
+                    "foreground": "#edc"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#123",
+                "settings": {
+                    "foreground": "#123"
+                }
             }
         ]
     },
-    "renpyWarp.sdkPath": "c:/Users/thien/AppData/Roaming/Code/User/globalStorage/paisleysoftworks.renpywarp/file-downloader-downloads/8.5.0"
+    "renpyWarp.sdkPath": "c:\\Users\\thien\\AppData\\Roaming\\Code\\User\\globalStorage\\paisleysoftworks.renpywarp\\file-downloader-downloads\\8.5.0"
 }

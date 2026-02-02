@@ -1,42 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 15, in script
-    call screen blackjack_table
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
-    screen blackjack_table():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
-    screen blackjack_table():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 19, in execute
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+  File "game/screens.rpy", line 1209, in execute
+    screen skip_indicator():
+  File "game/screens.rpy", line 1209, in execute
+    screen skip_indicator():
+  File "game/screens.rpy", line 1214, in execute
     frame:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 23, in execute
+  File "game/screens.rpy", line 1216, in execute
     hbox:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in execute
-    text blackjack/card_back.png xysize (120, 180)
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in <module>
-    text blackjack/card_back.png xysize (120, 180)
-NameError: name 'blackjack' is not defined
+  File "game/screens.rpy", line 1219, in execute
+    text _("Skipping")
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
+    call screen schoolmapScreen
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackRoom.rpy", line 17, in enter
+    self.command.execute()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/command/command.rpy", line 11, in execute
+    renpy.call_in_new_context(self.labelName)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+RecursionError: maximum recursion depth exceeded
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/CasinoLabel.rpy", line 15, in script
-    call screen blackjack_table
-  File "renpy/ast.py", line 2241, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+  File "renpy/ast.py", line 2925, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1565, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1220, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 902, in display_say
+    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/ui.py", line 306, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -74,27 +92,196 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 715, in update
     self.screen.function(**self.scope)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
-    screen blackjack_table():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 1, in execute
-    screen blackjack_table():
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 19, in execute
+  File "game/screens.rpy", line 1209, in execute
+    screen skip_indicator():
+  File "game/screens.rpy", line 1209, in execute
+    screen skip_indicator():
+  File "game/screens.rpy", line 1214, in execute
     frame:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 23, in execute
+  File "game/screens.rpy", line 1216, in execute
     hbox:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in execute
-    text blackjack/card_back.png xysize (120, 180)
+  File "game/screens.rpy", line 1219, in execute
+    text _("Skipping")
+  File "renpy/text/text.py", line 2211, in __init__
+    self.set_text(text, scope, substitute)  # type: ignore
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
+  File "renpy/text/text.py", line 2350, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
+  File "renpy/substitutions.py", line 328, in substitute
+    s = renpy.translation.translate_string(s)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "renpy/translation/__init__.py", line 616, in translate_string
+    return stl.translate(s)
+           ~~~~~~~~~~~~~^^^
+  File "renpy/translation/__init__.py", line 560, in translate
+    notags = re.sub(r"\{\#.*?\}", "", old)
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
+    call screen schoolmapScreen
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 3248, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 805, in event
+    rv = self.child.event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1185, in event
+    return handle_click(self.clicked)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1107, in handle_click
+    rv = run(action)
+         ~~~^^^^^^^^
+  File "renpy/display/behavior.py", line 411, in run
+    return action(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackRoom.rpy", line 17, in enter
+    self.command.execute()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/command/command.rpy", line 11, in execute
+    renpy.call_in_new_context(self.labelName)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/game.py", line 346, in call_in_new_context
+    return renpy.execution.run_context(False)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/execution.py", line 1036, in run_context
+    context.run()
+    ~~~~~~~~~~~^^
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
+    "welcome to the track"
+  File "renpy/display/error.py", line 135, in report_exception
+    renpy.game.invoke_in_new_context(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        call_exception_screen,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ignore_action=ignore_action,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/game.py", line 285, in invoke_in_new_context
+    return callable(*args, **kwargs)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/display/error.py", line 44, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2700, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2700, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/common/_errorhandling.rpym", line 783, in execute
+    screen _exception:
+  File "renpy/common/_errorhandling.rpym", line 783, in execute
+    screen _exception:
+  File "renpy/common/_errorhandling.rpym", line 789, in execute
+    default fmt_short = __simple_traceback(traceback_exception)
   File "renpy/python.py", line 1305, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1298, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 29, in <module>
-    text blackjack/card_back.png xysize (120, 180)
-NameError: name 'blackjack' is not defined
+  File "renpy/common/_errorhandling.rpym", line 789, in <module>
+    default fmt_short = __simple_traceback(traceback_exception)
+                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/_errorhandling.rpym", line 562, in _m1__errorhandling__simple_traceback
+    return traceback_exception.format(_ExceptionPrintContext(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        filter_private=True, emit_context=False))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/error.py", line 1564, in format
+    exc.stack.format(ctx)
+    ~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/error.py", line 1068, in format
+    frame_summary.format(ctx)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/error.py", line 901, in format
+    dedent_lines = textwrap.dedent("\n".join(original_lines)).split("\n")
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^            
+  File "lib/python3.12/textwrap.py", line 466, in dedent
+  File "lib/python3.12/re/__init__.py", line 186, in sub
+RecursionError: maximum recursion depth exceeded
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
-Thesis Hannah Bloodstained letters 1.0
-Mon Jan 19 18:15:45 2026
+The Bloodstained Letters of Hannah 1.0
+Mon Feb  2 13:28:04 2026

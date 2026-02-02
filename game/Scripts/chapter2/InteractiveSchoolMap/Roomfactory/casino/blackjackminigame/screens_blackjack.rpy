@@ -34,9 +34,9 @@ screen blackjack_table():
     #add Solid("#ff000088", xysize=(120, 180)) xalign 0.5 yalign 0.49
             
     # Extra hit cards (fixed positions)
-    for i, pos in enumerate([0.325, 0.395, 0.462, 0.532]):
+    for i, pos in enumerate([0.3957, 0.462, 0.5324, 0.602]):
         if len(player_hand) > 2 + i:
-            add card_image_path(player_hand[2 + i]) xalign pos yalign 0.48 xysize (120, 180)
+            add card_image_path(player_hand[2 + i]) xalign pos yalign 0.482 xysize (120, 180)
 
     # Player action buttons (top-center)
     frame:

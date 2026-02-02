@@ -2,8 +2,11 @@
 
 
 label chapter1scene3Peaceful:
+    # Player is not redefined here; uses global definition from script.rpy
 #summary this scene focus on transitioning the player to a peaceful route with her going to school and moving on with her life.
     play music "audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 1.0 loop
+    show miacar:
+        xysize (config.screen_width, config.screen_height)
     Mia "but ya know, You're not invincible, kid... don't go getting yourself killed now."
 
     Player "Mia, not now please..."

@@ -1,6 +1,6 @@
 label chapter1Scene3_MysteryApproach:
 
-    "I took a moment to compose myself."
+    "I take a moment to compose myself."
 
     Player "Thank you... and I'm sorry, but you are?"
 

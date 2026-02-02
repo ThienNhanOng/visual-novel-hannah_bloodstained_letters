@@ -3,12 +3,13 @@ label afterpuzzle:
     #https://www.youtube.com/watch?v=STgjUMPUVn0 idea for puzzle
     #$ puzzlecompleted = True  #Set the flag to True
     "now that we finish helping Silas, what now?"
-    
+    $ Player = Character(name, color="#25ffed", what_size=talkFont)
     #hidden menu requires theo counter or silas counter to be high enough.
     menu:
         "Investigate" if Theo_counter >= 5 or Silas_counter >= 4:
             Player "Lets recall what that Detective said"
             Player "Ally lurks at school \n hm.."
+            play music "audio/MusicAndSoundtracks/TitleScreenTrack.mp3"
             call investigating_the_school #short ending
 
         "Prepare to go home for the day": #give up route and enroll player into school

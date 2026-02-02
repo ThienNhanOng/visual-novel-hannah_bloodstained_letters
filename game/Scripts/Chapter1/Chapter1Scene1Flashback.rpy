@@ -7,7 +7,7 @@ image arm = im.Scale("images/chapter1/forest scene/background/minigame arm.jpeg"
 
 label Chapter1Scene1Flashbacks:
     scene noir_background with fade
-    centered "{color=#FFFFFF}{b}FLASHBACK XXX DAYS AGO{/b}{/color}"
+    centered "{size=140}{color=#FFFFFF}{b}FLASHBACK XXX DAYS AGO{/b}{/color}{/size}"
 
     #stop music fadeout 1.0
     #play sound "flashback_whoosh.ogg"

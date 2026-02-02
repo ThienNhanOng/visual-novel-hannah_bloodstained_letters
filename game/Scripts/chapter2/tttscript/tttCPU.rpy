@@ -25,18 +25,19 @@ init python:
         else:
             #move existing piece (oldest piece)
             from_index = OPieces[0]
-            TttSelectedPiece = from_index
+            store.TttSelectedPiece = from_index
             move(to_index)
     
     def aiMove():
     
+        #check if cpu can win
         if TttState == TTTState.placement:
             #Check through all cells to see if legal play can be made
             for i in range(9):
-                #if cell is empty the ai think of a move to play
+                #if cell is empty to play
                 if TttBoard[i] is None:
                     TttBoard[i] = tttAI
-                    #after simulating a move, check for win, if win condition met, undo simulation and place piece for real
+                    #Check if simulated move wins. if so place piece
                     if CheckWinner() == tttAI:
                         TttBoard[i] = None
                         placePiece(i)
@@ -58,46 +59,41 @@ init python:
             OPieceFallback()
 
         elif TttState == TTTState.movement:
-            #Try to complete a win by moving a piece
-            for from_index in OPieces:
-                if TttBoard[from_index] != tttAI:
-                    continue
-                for to_index in range(9):
-                    if TttBoard[to_index] is None:
-                        #Simulate the move
+            # Only move the oldest piece (OPieces[0]) for all logic
+            if len(OPieces) == 0:
+                return
+            from_index = OPieces[0]
+            # Try to win by moving the oldest piece
+            for to_index in range(9):
+                if TttBoard[to_index] is None:
+                    #Simulate the move
+                    TttBoard[from_index] = None
+                    TttBoard[to_index] = tttAI
+                    if CheckWinner() == tttAI:
+                        #Win found! Make this move
                         TttBoard[from_index] = None
-                        TttBoard[to_index] = tttAI
-                        if CheckWinner() == tttAI:
-                            #Win found! Make this move
-                            TttBoard[from_index] = None
-                            TttBoard[to_index] = None
-                            TttSelectedPiece = from_index
-                            store.OPiecesPlaced = 2
-                            placePiece(to_index)
-                            return
-                        #Undo simulation
-                        TttBoard[from_index] = tttAI
                         TttBoard[to_index] = None
+                        store.TttSelectedPiece = from_index
+                        move(to_index)
+                        return
+                    #Undo simulation
+                    TttBoard[from_index] = tttAI
+                    TttBoard[to_index] = None
 
-            #Try to block player from winning by using the last index piece
-            for from_index in OPieces:
-                if TttBoard[from_index] != tttAI:
-                    continue
-                for to_index in range(9):
-                    if TttBoard[to_index] is None:
-                        #Simulate the move
+            # Try to block player from winning by moving the oldest piece
+            for to_index in range(9):
+                if TttBoard[to_index] is None:
+                    TttBoard[from_index] = None
+                    TttBoard[to_index] = tttPlayer
+                    if CheckWinner() == tttPlayer:
+                        #Block it
                         TttBoard[from_index] = None
-                        TttBoard[to_index] = tttPlayer
-                        if CheckWinner() == tttPlayer:
-                            #Player would win here! Block it
-                            TttBoard[from_index] = None
-                            TttBoard[to_index] = None
-                            TttSelectedPiece = from_index
-                            store.OPiecesPlaced = 2
-                            placePiece(to_index)
-                            return
-                        TttBoard[from_index] = tttAI
                         TttBoard[to_index] = None
+                        store.TttSelectedPiece = from_index
+                        move(to_index)
+                        return
+                    TttBoard[from_index] = tttAI
+                    TttBoard[to_index] = None
 
             # Fallback: using linear search to place old piece
             OPieceFallback()

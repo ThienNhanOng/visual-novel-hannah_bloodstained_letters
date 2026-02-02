@@ -2,7 +2,7 @@ init python:
     import random
 
     #Player class
-    class JumpPlayer:
+    class JumpPlayer: #initial is 40 60
         def __init__(self, x, y, w=40, h=60):
             #position
             self.PlayerX = x

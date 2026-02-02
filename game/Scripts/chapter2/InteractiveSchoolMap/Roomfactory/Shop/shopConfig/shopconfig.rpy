@@ -2,25 +2,26 @@ image bg room1 = "images/bg room1.png"
 
 # restriction boolean variables
 default purchased_items = {} #dictionary to track purchased items
-default fakeidUnlocked = True
-default workpermitUnlocked = True
-default hiddenletterUnlocked = False
-default arcadeUnlocked = True
+default fakeidUnlocked = False #through courtroom night event
+default workpermitUnlocked = True #default for purchase
+default hiddenletterUnlocked = False #available once all 3 condition are true
+default arcadeUnlocked = False #when player get a raise to 7 dollars start at 5
+default fri_noon_questions_asked = []
 
 
 init python:
     # items for dictionary
     shopItems = [
-        {"name": "fake_id",     "label": "Fake ID",      "price": 250,  "desc": "Access to the casino",   "condition": "fakeid_unlocked"},
+        {"name": "fake_id",     "label": "Fake ID",      "price": 100,  "desc": "Access to the casino",   "condition": "fakeid_unlocked"},
         {"name": "work_permit", "label": "Work Permit",  "price": 30,   "desc": "Allow you to work at school", "condition": "workpermit_unlocked"},
-        {"name": "letter",      "label": "Letter",       "price": 1000, "desc": "???",                     "condition": "quest_completed"},
-        {"name": "arcade_pass", "label": "Arcade Pass",  "price": 1000, "desc": "Access to the arcade",    "condition": "arcade_unlocked"},
+        {"name": "letter",      "label": "Letter",       "price": 500, "desc": "???",                     "condition": "quest_completed"},
+        {"name": "arcade_pass", "label": "Arcade Pass",  "price": 50, "desc": "Access to the arcade",    "condition": "arcade_unlocked"},
     ]
 
 init python:
     #return item as already own, locked, too expensive or buy
     def purchaseableItem(item):
-        # already owned?
+        # already owned check
         if purchased_items.get(item["name"], False):
             return False, "already owned"
 

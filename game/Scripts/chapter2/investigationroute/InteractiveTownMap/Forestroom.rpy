@@ -1,10 +1,10 @@
 label InteractiveForestRoom:
     scene bg forestroom
-    "welcome to room 2"
+    #"welcome to room 2"
     #return back to the map after finish dialogue
 
     #actual story
-
+    play music "audio/MusicAndSoundtracks/shadowclues.mp3" fadein 1.0 loop
 
     #interaction when player visit the detective without seeing mia
     show detective rock 
@@ -39,7 +39,7 @@ label InteractiveForestRoom:
         Player "As you stated."
         hide mc
         show theoexcited with pixellate
-        Theo "Spended! \n SPENDED!"
+        Theo "Splended! \n SPLENDED!"
         hide theoexcited with pixellate
         show mc2
         Player "But...I didn't learn anything?"

@@ -12,6 +12,10 @@ init:
 screen ShooterGameScreen:
     #makes the screen capture all inputs
     modal True
+    
+    # Auto-return when health depleted
+    if shooterHealth <= 0:
+        timer 0.01 action Return()
 
     #debug/text label
     text "X: [shooterSquareX] Y: [shooterSquareY]" xpos 10 ypos 10
@@ -35,4 +39,8 @@ screen ShooterGameScreen:
 
     #map
     add "boarderline" xpos 250 ypos 0
-    
+
+    if shooterHealth <= 0:
+        # Game over state - show return button
+        text "Game Over!" xalign 0.5 yalign 0.5 size 60
+        textbutton "Return" action Return() xalign 0.5 yalign 0.6

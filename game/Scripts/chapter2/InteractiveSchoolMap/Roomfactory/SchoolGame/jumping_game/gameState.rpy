@@ -65,14 +65,14 @@ init python:
             if (
                 player.PlayerX < enemy.EnemyX + enemy.EnemyWidth and
                 player.PlayerX + player.PlayerWidth > enemy.EnemyX and
-                player.PlayerY < enemy.Enemy_Y + enemy.EnemyHeight and
-                player.PlayerY + player.PlayerHeight > enemy.Enemy_Y
+                player.PlayerY < enemy.EnemyY + enemy.EnemyHeight and
+                player.PlayerY + player.PlayerHeight > enemy.EnemyY
             ):
                 self.ended = True
                 renpy.hide_screen("jump_game")
                 renpy.notify("Game Over! You hit the enemy.")
                 renpy.notify(f"You scored: {store.jump_score}")
-                renpy.music.stop("Scripts/chapter2/jumping_game/ninja racer stuff/Pixel Highway.wav")
+                renpy.music.stop("Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/Pixel Highway.wav")
                 
                 #renpy.end_interaction() #end game then return
                 return "game over"
@@ -82,7 +82,7 @@ init python:
         if not game.ended:
             game.player.jump(32)
             #play sound
-            renpy.play("Scripts/chapter2/jumping_game/ninja racer stuff/jump noise.wav")
+            renpy.play("Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/jump noise.wav")
 
 default jump_score = 0
 default game = SimpleGameState()

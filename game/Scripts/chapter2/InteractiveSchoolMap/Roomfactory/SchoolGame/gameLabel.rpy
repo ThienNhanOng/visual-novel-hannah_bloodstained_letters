@@ -3,10 +3,11 @@ default enemy_manager = None
 default projectileManager = None
 label gameroom:
     
-    #scene blackscreen 
+    scene blackscreen 
     stop music fadeout 2.0
     
-    if (arcadeUnlocked == True):
+
+    if arcadeUnlocked and purchased_items.get("arcade_pass", False):
         menu:
             "Play ninja jumper(cost $10)":
                 if Global_Money >= 10:
@@ -17,7 +18,7 @@ label gameroom:
                     #Initialize game safely
                     $ game = SimpleGameState()
 
-                    play music "Scripts/chapter2/jumping_game/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
+                    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
 
                     call screen jump_game
                     stop music fadeout 2.0
@@ -31,6 +32,8 @@ label gameroom:
                     
                     $ Global_Money -= 20                  
                     call instructions_shootinggame
+                    $ renpy.notify("You earned no money from this game.")
+                    $ shooterHealth = 100
                 else:
                     "You need at least $20 to play."
             "no thank you":
@@ -40,4 +43,5 @@ label gameroom:
     #increase time after leaving the room
     $ timeIncrease()
     stop music fadeout 2.0
+    play music "audio/MusicAndSoundtracks/Quiet Dust in Sunbeams.mp3" loop
     jump schoolmap

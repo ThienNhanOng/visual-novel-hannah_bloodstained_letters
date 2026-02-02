@@ -4,7 +4,7 @@ default puzzle_completed = False
 init python:
     #Function to handle tile clicks
     def click_tile(tileIndex):
-        #set up clicktile space
+        global puzzle_completed
         blankIndex = find_blank()
         row_tile = tileIndex // puzzle_cols
         col_tile = tileIndex % puzzle_cols
@@ -15,7 +15,6 @@ init python:
         if  (abs(row_tile - row_blank) == 1 and col_tile == col_blank) or \
             (abs(col_tile - col_blank) == 1 and row_tile == row_blank):
             swap_tiles(tileIndex, blankIndex)
-            
             #Check if puzzle is solved after the move
             if is_puzzle_solved():
                 puzzle_completed = True

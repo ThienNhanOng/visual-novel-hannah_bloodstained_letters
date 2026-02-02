@@ -21,16 +21,16 @@ label eventQueue:
             eventsFinish = True
             renpy.call(event["name"])
 
-    #Only show fallback if no events actually ran
+    #Only show fallback if no events ran
     if not eventsFinish:
-        if currentTime() == "Morning":
+        #check if all flags are met to unlock the letter ending
+        if fakeidUnlocked and workpermitUnlocked and arcadeUnlocked and not hiddenletterUnlocked:
+            $ hiddenletterUnlocked = True
+            "Nothing special is happening right now."
+        elif currentTime() == "Morning":
             "The courtyard is bustling with students preparing for classes."
         elif currentTime() == "Noon":
             "The courtyard is empty. everyone must be in class."
         elif currentTime() == "Night":
             "The courtyard is quiet at night. Only a few students linger."
-        else:
-            #in case future implement trigger bedtime instead of night
-            "Nothing special is happening right now."
-
     return

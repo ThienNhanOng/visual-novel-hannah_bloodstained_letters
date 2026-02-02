@@ -272,9 +272,16 @@ label mon_night_nightGuard:
     SideChar "pft overrated ill tell you a secret"
     SideChar "go to the bookstore and say the code 'no games no life'"
     SideChar "theyll hand you a fake id"
-    "in the morning {Player} went to the bookstore and said the code 'no games no life'"
+    "in the morning I went to the bookstore and said the code 'no games no life'"
     $ fakeidUnlocked = True
     $ events_done.add("mon_night_nightGuard")
+    return
+
+label mon_noon_arcade:
+    Silas "You're out late. Everything okay?"
+    Player "Just finishing up some studying."
+    Player "I am behind in my work and need a break"
+    Silas "Ill let you be then. hopefully this is helping with the whole hannah thing"
     return
 
 label mon_night_philosophyDebate:

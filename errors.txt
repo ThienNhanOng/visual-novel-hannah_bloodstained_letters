@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/casino/blackjackminigame/screens_blackjack.rpy", line 14: 't' is not a keyword argument or valid child of the vbox statement.
-    t
-     ^
+File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/chapter2scene5.rpy", line 12: expected end of line
+    play music game\audio\MusicAndSoundtracks\TitleScreenTrack.mp3
+                   ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Mon Jan 19 18:16:42 2026
+Sun Feb  1 16:25:52 2026

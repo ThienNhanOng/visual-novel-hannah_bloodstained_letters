@@ -2,6 +2,7 @@
 init -50 python:
     #factory to create the room for school map
     def create_room(roomType):
+        #remove uppercases and spaces if I added any
         roomType = roomType.lower().strip()
         room = None
 

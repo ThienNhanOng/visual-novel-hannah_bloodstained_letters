@@ -21,7 +21,7 @@ default SideChar = Character("sideCharacter", color="#e5ffa7", what_size=talkFon
 define Silas_counter = 0 #
 define Theo_counter = 0 #
 define Mia_counter = 0 
-define Global_Money = 1000 #Players start money
+default Global_Money = 15 #Players start money
 
 #route decisions
 #1: chapter 1 player determine player choose investigate or move on
@@ -38,11 +38,11 @@ label start:
 #note make sure to turn off 
 
 #testing
-    
+    #call screen jump_game
     #call screen blackjack_table
     #call screen clicker_minigame
     #call screen schoolmapScreen
-    call screen TicTacToeScreen
+    #call screen TicTacToeScreen
 #testing end
 
     stop music fadeout 2.0
@@ -53,7 +53,7 @@ label start:
     scene black  #Setting the background to black (or replace with your desired background image)
     
     "Welcome to the story of Hannah. The Bloodstained Letters."
-    "Little girl, What is your name?"
+    "What is your name?"
     
     $ name = renpy.input("Enter your name:").strip() or "Leah"  #Default name if input is empty
     $ name = name.capitalize()  #Capitalize the first letter of the name
@@ -83,7 +83,7 @@ label start:
         "chapter1 concluded. decision: Justice" #debug
         "entering chapter2: investigation route"
         call Chapter2Scene2
-        "[Player] decided to not give up and walk around town to see if maybe if she can learn anything regarding mia’s job and if it connects to hannah being missing"
+        "[Player] decided to not give up and roam the hamlet to see if maybe if she can learn anything regarding mia’s job and if it connects to hannah being missing"
         
         
         
@@ -103,6 +103,7 @@ label start:
         Player "maybe it is time to just move on and try to live a normal life again."
         Player "well here we are...first day of school."
         window hide
+        play music "audio/MusicAndSoundtracks/Quiet Dust in Sunbeams.mp3" loop
         call screen schoolmapScreen
         
     #call Chapter2Scene2_Aftermath

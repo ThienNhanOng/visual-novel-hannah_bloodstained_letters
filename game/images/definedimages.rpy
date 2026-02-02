@@ -75,6 +75,9 @@ image Player_L1overlay:
     xpos 0.15
     ypos 1.0
 
+# Define talking_to_willy image for use in script
+image talking_to_willy = "images/chapter1/inside the church/talking_to_willy.png"
+
 image sandyShop:
     "images/chapter2/sandyshop.png"
     xysize (config.screen_width, config.screen_height)
@@ -94,6 +97,18 @@ image mcsleep:
 
 image mcsleep2:
     "images/chapter2/sleep2.png"
+    xysize (config.screen_width, config.screen_height)
+
+image redletter:
+    "images/the reveal/redletter.jpeg"
+    xysize (config.screen_width, config.screen_height)
+
+image reveal:
+    "images/the reveal/reveal.png"
+    xysize (config.screen_width, config.screen_height)
+
+image situp:
+    "images/the reveal/situp.jpeg"
     xysize (config.screen_width, config.screen_height)
 
 image trackbg: 

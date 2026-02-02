@@ -1,10 +1,12 @@
+$ prefix_ = ""
+
 #Friday Events - Individual labels for each event
 
 #===== FRIDAY MORNING EVENTS =====
 
 label fri_morning_morningCheckIn:
     $ SideChar = Character("Guidance Officer", color="#2c3e50")
-    SideChar "Morning, [Player]. Quick check-in: feeling ready for the day?"
+    SideChar "Morning, Quick check-in: feeling ready for the day?"
     menu:
         "I'm prepared":
             SideChar "Love the energy. Keep that focus in class."
@@ -124,14 +126,3 @@ label fri_night_meditation:
     $ events_done.add("fri_night_meditation")
     return
 
-label fri_night_weekendReflection:
-    "The courtyard quiets down; only a few lights remain as the campus settles for the weekend."
-    "{Player} reflects on the how school has been the joy that it brought."
-    "however she still think of the incident."
-    menu:
-        "Search for Hannah one last time?":
-            jump investigating_the_school
-        "I should just go home and rest. I have already moved on":
-            pass
-    $ events_done.add("fri_night_weekendReflection")
-    return

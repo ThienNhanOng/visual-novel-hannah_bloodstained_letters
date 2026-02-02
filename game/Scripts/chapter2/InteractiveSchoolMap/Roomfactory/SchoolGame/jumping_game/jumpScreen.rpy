@@ -15,14 +15,14 @@ screen jump_game():
     add Solid("#555555") xysize (8000, 8) ypos game.Floor_Y
 
     #pixel background (use correct path under Scripts)
-    add "Scripts/chapter2/jumping_game/ninja racer stuff/background.jpeg" xalign 0.55 yalign -0.15 xzoom 1.8
+    add "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/background.jpeg" xalign 0.55 yalign -0.15 xzoom 1.8
 
     #invoke jump state animation for standing and jumping
     add ("player_stand" if game.player.grounded else "player_jump") xysize (game.player.PlayerWidth, game.player.PlayerHeight) xpos int(game.player.PlayerX) ypos int(game.player.PlayerY)
 
     #Enemy car
     #add Solid("#cc0000") xysize (game.enemy.width, game.enemy.height) xpos int(game.enemy.pos.x) ypos int(game.enemy.pos.y)
-    add ("car") xysize (game.enemy.EnemyWidth+45, game.enemy.EnemyHeight+2) xpos int(game.enemy.EnemyX) ypos int(game.enemy.Enemy_Y + 10)
+    add ("car") xysize (game.enemy.EnemyWidth+45, game.enemy.EnemyHeight+2) xpos int(game.enemy.EnemyX) ypos int(game.enemy.EnemyY + 10)
     #Update the game every frame
     timer 0.016 repeat True action Function(lambda: game.update())
 

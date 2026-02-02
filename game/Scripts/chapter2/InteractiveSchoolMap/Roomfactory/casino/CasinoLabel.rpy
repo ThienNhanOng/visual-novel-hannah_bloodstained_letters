@@ -28,6 +28,7 @@ label casinoroom:
             $ timeIncrease()
     else:
         "The casino is currently closed. Please come back at night."
+        #override music back to idle music
     stop music fadeout 2.0
-    
+    play music "audio/MusicAndSoundtracks/Quiet Dust in Sunbeams.mp3" loop
     jump schoolmap

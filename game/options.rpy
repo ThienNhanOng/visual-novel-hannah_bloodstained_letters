@@ -12,7 +12,7 @@
 ##
 ##The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Thesis Hannah Bloodstained letters")
+define config.name = _("The Bloodstained Letters of Hannah")
 
 
 ##Determines if the title given above is shown on the main menu screen. Set
