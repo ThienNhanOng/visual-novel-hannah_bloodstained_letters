@@ -1,42 +1,141 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
-  File "game/screens.rpy", line 1209, in execute
-    screen skip_indicator():
-  File "game/screens.rpy", line 1209, in execute
-    screen skip_indicator():
-  File "game/screens.rpy", line 1214, in execute
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 590, in execute
+    use file_slots(_("Save"))
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 416, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 416, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 425, in execute
     frame:
-  File "game/screens.rpy", line 1216, in execute
+  File "game/screens.rpy", line 428, in execute
     hbox:
-  File "game/screens.rpy", line 1219, in execute
-    text _("Skipping")
+  File "game/screens.rpy", line 434, in execute
+    frame:
+  File "game/screens.rpy", line 437, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 472, in execute
+    transclude
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 606, in execute
+    fixed:
+  File "game/screens.rpy", line 613, in execute
+    button:
 RecursionError: maximum recursion depth exceeded
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
-    call screen schoolmapScreen
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackRoom.rpy", line 17, in enter
-    self.command.execute()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/command/command.rpy", line 11, in execute
-    renpy.call_in_new_context(self.labelName)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 28, in script
+    "you made $[payout] for raking the leaves"
 RecursionError: maximum recursion depth exceeded
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1273, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
+      ~~~~~~~~~~~^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2700, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+[Previous line repeated 1 more time]
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2700, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 590, in execute
+    use file_slots(_("Save"))
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 416, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 416, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 425, in execute
+    frame:
+  File "game/screens.rpy", line 428, in execute
+    hbox:
+  File "game/screens.rpy", line 434, in execute
+    frame:
+  File "game/screens.rpy", line 437, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 472, in execute
+    transclude
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 606, in execute
+    fixed:
+  File "game/screens.rpy", line 613, in execute
+    button:
+  File "renpy/sl2/slast.py", line 519, in keywords
+    context.keywords.update(eval(keyword_exprs, context.globals, context.scope))
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 28, in script
+    "you made $[payout] for raking the leaves"
   File "renpy/ast.py", line 2925, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
@@ -68,133 +167,31 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "renpy/display/core.py", line 2700, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2700, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 1209, in execute
-    screen skip_indicator():
-  File "game/screens.rpy", line 1209, in execute
-    screen skip_indicator():
-  File "game/screens.rpy", line 1214, in execute
-    frame:
-  File "game/screens.rpy", line 1216, in execute
-    hbox:
-  File "game/screens.rpy", line 1219, in execute
-    text _("Skipping")
-  File "renpy/text/text.py", line 2211, in __init__
-    self.set_text(text, scope, substitute)  # type: ignore
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/text/text.py", line 2350, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 328, in substitute
-    s = renpy.translation.translate_string(s)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-  File "renpy/translation/__init__.py", line 616, in translate_string
-    return stl.translate(s)
-           ~~~~~~~~~~~~~^^^
-  File "renpy/translation/__init__.py", line 560, in translate
-    notags = re.sub(r"\{\#.*?\}", "", old)
-             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-RecursionError: maximum recursion depth exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/Scripts/chapter2/InteractiveSchoolMap/schoolMap.rpy", line 4, in script
-    call screen schoolmapScreen
-  File "renpy/ast.py", line 2241, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 348, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 306, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2154, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
   File "renpy/display/core.py", line 3248, in interact_core
     rv = root_widget.event(ev, x, y, 0)
          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
   File "renpy/display/layout.py", line 1281, in event
     rv = i.event(ev, x - xo, y - yo, cst)
          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1281, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1281, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 805, in event
-    rv = self.child.event(ev, x, y, st)
-         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 1281, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/behavior.py", line 1185, in event
-    return handle_click(self.clicked)
-           ~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/display/behavior.py", line 1107, in handle_click
+  File "renpy/display/behavior.py", line 559, in event
     rv = run(action)
          ~~~^^^^^^^^
   File "renpy/display/behavior.py", line 411, in run
     return action(*args, **kwargs)
            ~~~~~~^^^^^^^^^^^^^^^^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackRoom.rpy", line 17, in enter
-    self.command.execute()
-    ~~~~~~~~~~~~~~~~~~~~^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/command/command.rpy", line 11, in execute
-    renpy.call_in_new_context(self.labelName)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/common/00gamemenu.rpy", line 130, in _invoke_game_menu
+    renpy.call_in_new_context('_game_menu')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
   File "renpy/game.py", line 346, in call_in_new_context
     return renpy.execution.run_context(False)
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
   File "renpy/execution.py", line 1036, in run_context
     context.run()
     ~~~~~~~~~~~^^
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
-  File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/track/trackLabel.rpy", line 11, in script
-    "welcome to the track"
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
   File "renpy/display/error.py", line 135, in report_exception
     renpy.game.invoke_in_new_context(
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
@@ -252,36 +249,44 @@ Traceback (most recent call last):
     screen _exception:
   File "renpy/common/_errorhandling.rpym", line 783, in execute
     screen _exception:
-  File "renpy/common/_errorhandling.rpym", line 789, in execute
-    default fmt_short = __simple_traceback(traceback_exception)
+  File "renpy/common/_errorhandling.rpym", line 792, in execute
+    frame:
+  File "renpy/common/_errorhandling.rpym", line 795, in execute
+    has side "t c b":
+  File "renpy/common/_errorhandling.rpym", line 821, in execute
+    hbox:
+  File "renpy/common/_errorhandling.rpym", line 822, in execute
+    vbox:
+  File "renpy/common/_errorhandling.rpym", line 823, in execute
+    hbox:
+  File "renpy/common/_errorhandling.rpym", line 833, in execute
+    if ignore_action and _errorhandling.ignore:
+  File "renpy/common/_errorhandling.rpym", line 834, in execute
+    textbutton _("Ignore"):
+  File "renpy/common/_errorhandling.rpym", line 834, in keywords
+    textbutton _("Ignore"):
+  File "renpy/common/_errorhandling.rpym", line 837, in keywords
+    if _ignore_action:
+  File "renpy/common/_errorhandling.rpym", line 839, in keywords
+    else:
   File "renpy/python.py", line 1305, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1298, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/_errorhandling.rpym", line 789, in <module>
-    default fmt_short = __simple_traceback(traceback_exception)
-                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/_errorhandling.rpym", line 562, in _m1__errorhandling__simple_traceback
-    return traceback_exception.format(_ExceptionPrintContext(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-        filter_private=True, emit_context=False))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/error.py", line 1564, in format
-    exc.stack.format(ctx)
-    ~~~~~~~~~~~~~~~~^^^^^
-  File "renpy/error.py", line 1068, in format
-    frame_summary.format(ctx)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "renpy/error.py", line 901, in format
-    dedent_lines = textwrap.dedent("\n".join(original_lines)).split("\n")
-                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^            
-  File "lib/python3.12/textwrap.py", line 466, in dedent
-  File "lib/python3.12/re/__init__.py", line 186, in sub
+  File "renpy/common/_errorhandling.rpym", line 840, in <module>
+    hovered tt.action(_("Ignores the exception, allowing you to continue. This often leads to additional errors."))
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/_errorhandling.rpym", line 694, in action
+    return __TooltipAction(self, value)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/common/_errorhandling.rpym", line 675, in __init__
+    self.tooltip = tooltip
+    ^^^^^^^^^^^^          
 RecursionError: maximum recursion depth exceeded
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 The Bloodstained Letters of Hannah 1.0
-Mon Feb  2 13:28:04 2026
+Mon Feb  2 13:31:44 2026
