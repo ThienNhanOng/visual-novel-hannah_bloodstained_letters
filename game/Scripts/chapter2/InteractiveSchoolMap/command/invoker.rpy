@@ -1,4 +1,6 @@
+
 init -90 python:
+    #invoke the command
     class PredictionInvoker:
         #initialize space for commands
         def __init__(self, commands=None):

@@ -1,5 +1,4 @@
 init python:
-    # Use shared shuffle from CreateDeck.rpy
     import renpy.store as store
 
     #Swap two tiles
@@ -18,15 +17,17 @@ init python:
     def is_solvable(puzzleState):
         # Assign numbers 1-8 to tiles, None is blank
         tile_numbers = []
+        #if tile is None skip it
         for tile in puzzleState:
             if tile is None:
                 continue
-            # Extract tile number from filename (expects .../tile_X.png)
+            #match image with its number 0-8
             try:
                 num = int(tile.split('_')[-1].split('.')[0])
             except Exception:
                 num = 0
             tile_numbers.append(num)
+        #invert list to see if solvable. if it is return
         inversions = 0
         for i in range(len(tile_numbers)):
             for j in range(i + 1, len(tile_numbers)):
@@ -35,7 +36,7 @@ init python:
         # For 3x3 grid, solvable if inversions is even
         return inversions % 2 == 0
 
-    #Shuffle the puzzle tiles using shared fisherYates, repeat until solvable
+    #Shuffle the puzzle tiles using shared fisherYates, repeat inversion until solvable
     def shufflePuzzle():
         #make a copy of the original picture before shuffling
         store.puzzle_completed = False

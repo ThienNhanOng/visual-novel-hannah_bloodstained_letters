@@ -4,7 +4,7 @@ init python:
     
     class ClickerState:
        
-    #getters and setters
+    
         #on click axe
         def clickTarget(self):
             return
@@ -69,5 +69,7 @@ init python:
 
         def update(self):
             #after penalty duration, return to Idle state
-            if renpy.get_game_runtime() - self.startTime > self.duration:
+
+            #calculate elapsed time. to exit penalty/click state if longer than duration
+            if renpy.get_game_runtime() - self.startTime > self.duration: 
                 self.game.state = IdleState(self.game)

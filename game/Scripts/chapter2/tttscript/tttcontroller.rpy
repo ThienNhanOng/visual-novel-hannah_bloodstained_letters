@@ -28,6 +28,7 @@ init python:
         #change between ai and player
         if store.TttCurrentPlayer == store.tttPlayer:
             store.TttCurrentPlayer = store.tttAI
+            #had to invoke using renpy otherwise any renpy other statement will fail.
             renpy.invoke_in_new_context(store.aiMove)
         else:
             store.TttCurrentPlayer = store.tttPlayer

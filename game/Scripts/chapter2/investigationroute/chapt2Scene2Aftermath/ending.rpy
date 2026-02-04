@@ -29,12 +29,7 @@ label ending:
             Player "Chapman? where have i ever heard that name before..."
             "chapman...chapman..."
             Player "chapman...GASP"
-            play sound "game/audio/thundernoises.mp3"
-            play sound "game/audio/thundernoises.mp3"
             show reveal with pixellate
-            play sound "game/audio/thundernoises.mp3"
-            play sound "game/audio/thundernoises.mp3"
-            play sound "game/audio/thundernoises.mp3"
             "THEODORE EDWARD HARPER-CHAPMAN..."
             Player "SILAS. I MUST GO IM SORRY."
             "player rushes out after realizing the name."

@@ -18,7 +18,7 @@ screen schoolmapScreen:
     #money limit money
     $ Global_Money = max(0, min(Global_Money, 9999))
 
-    #Robust background load with fallback + on-screen debug
+    #background load fallback + on-screen debug
     if renpy.loadable("images/map/schoolmapbackup.png"):
         add "images/map/schoolmapbackup.png"
     elif renpy.loadable("images/map/schoolmap/schoolmap.png"):
@@ -57,7 +57,9 @@ screen schoolMapScreen():
 
 #Popup screen for night time restriction
 screen night_restriction_popup():
+    #screen language keyword to block interaction behind it
     modal True
+    #layer keyword
     zorder 100
     
     frame:

@@ -17,6 +17,6 @@ init -100 python:
             self.ypos        = ypos
             self.label_name  = label_name or room_id.lower()
             self.flag_name   = flag_name or f"{room_id}Visited"
-
-        def __repr__(self):
-            return f"<Room {self.room_id}>"
+        #debug label
+        #def __repr__(self):
+        #    return f"<Room {self.room_id}>"

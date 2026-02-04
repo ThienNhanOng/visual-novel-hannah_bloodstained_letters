@@ -3,13 +3,14 @@ init python:
 
     class ClickerGame:
 
+        #constructor to setup initial variables
         def __init__(self):
-            #axe target position and size
+            #axe current position and size when drawn
             self.targetX = 0.5
             self.targetY = 0.5
             self.sizePixels = 140
 
-            #start axe in the middle so it doesnt travel 
+            #start axe position before sliding
             #past screen boundaries.
             self.startX = 0.5
             self.startY = 0.5
@@ -26,7 +27,7 @@ init python:
 
             self.state = IdleState(self)
 
-        #state change
+        #defining the state changes 
         def change_state(self, new_state):
             """switch to a new state and call enter/exit hooks."""
             self.state.on_exit(self)
@@ -82,20 +83,23 @@ init python:
             dx = self.destX - self.startX
             dy = self.destY - self.startY
             distance = math.hypot(dx, dy)
+            #to adjust speed based on distance needed to cover
             self.slideDuration = max(0.35, min(1.2, distance * 1.8))
 
         def update_animation(self):
             """update target position for smooth sliding."""
             if not self.isSliding:
                 return
-
-            #increment progress based on slide duration
+            
+            
+            #increment the number of step to progress the animation frames.
             step = 0.05 / self.slideDuration
             self.progress = min(1.0, self.progress + step)
 
             #Increase smoothness
             #Slide base on time
             t = self.progress
+            #smooth formula t^2(3-2t) maps linear t to smooth curve
             tSmooth = t * t * (3 - 2 * t)
 
             #update target position

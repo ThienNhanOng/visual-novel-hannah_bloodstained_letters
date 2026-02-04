@@ -13,7 +13,7 @@ default result = ""
 
 # Deck/rank definitions (constants, not mutable state)
 init -100 python:
-    #store import for game state access
+    #import renpy variables that are stored defined in renpy language
     import renpy.store as store
 
     def calculate_hand_value(hand):
@@ -21,6 +21,7 @@ init -100 python:
         hand_value = 0
         aces = 0
         
+        #sum cards value
         for card in hand:
             hand_value += card["value"]
             if card["rank"] == "A":
@@ -66,8 +67,7 @@ init -100 python:
         """Draw another card for the player."""
         if not store.round_active or store.game_over:
             return
-        if not store.deck:
-            store.deck = store.createDeck()
+
         store.player_hand.append(store.deck.pop())
         total = calculate_hand_value(store.player_hand)
         if total > 21:
@@ -82,7 +82,7 @@ init -100 python:
             store.message = f"Total: {total}"
 
     def stand_game():
-        """End the round and determine the winner."""
+        """prevent stand for round start/over"""
         if store.game_over or not store.round_active:
             return
 

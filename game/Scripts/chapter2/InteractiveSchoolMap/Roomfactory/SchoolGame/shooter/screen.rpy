@@ -18,7 +18,7 @@ screen ShooterGameScreen:
         timer 0.01 action Return()
 
     #debug/text label
-    text "X: [shooterSquareX] Y: [shooterSquareY]" xpos 10 ypos 10
+    #text "X: [shooterSquareX] Y: [shooterSquareY]" xpos 10 ypos 10
     text "Health" xpos 10 ypos 50
     text "[shooterHealth]" xpos 10 ypos 70
     text "Points" xpos 10 ypos 100

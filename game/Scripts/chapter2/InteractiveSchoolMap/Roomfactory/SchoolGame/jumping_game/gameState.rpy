@@ -18,12 +18,6 @@ init python:
             self.enemy = Enemy(self.Screen_Width, self.Floor_Y - 60)
             self.ended = False
 
-
-        #Time manager cant work outside renpy.
-        #Time manager breaks when trying to run in renpy.
-
-
-
         def update(self):
             if self.ended:
                 return
@@ -90,6 +84,8 @@ default game = SimpleGameState()
 #reset game using hard python by reinitializing game state.
 init python:
     def reset_Jumpgame():
+
+        #give python access to renpy api functions.
         import renpy.store as store
         from renpy import exports as renpy
 

@@ -25,6 +25,7 @@ screen Shopscreen():
                         text "Leave" style "quick_button_text" size 28 color "#3cd070" hover_color "#ff0000"
                     text "Money: [Global_Money]" style "gui_text" size 28 color "#3cd070"
 
+            #scroll ui
             viewport:
                 draggable True
                 mousewheel True

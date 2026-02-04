@@ -39,7 +39,7 @@ label InteractiveForestRoom:
         Player "As you stated."
         hide mc
         show theoexcited with pixellate
-        Theo "Splended! \n SPLENDED!"
+        Theo "Splendid! \n SPLENDID!"
         hide theoexcited with pixellate
         show mc2
         Player "But...I didn't learn anything?"

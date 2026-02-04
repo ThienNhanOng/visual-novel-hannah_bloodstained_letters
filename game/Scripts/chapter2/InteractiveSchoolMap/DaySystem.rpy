@@ -9,7 +9,7 @@ init python:
     def timeIncrease():
         store.timeIndex += 1
         if store.timeIndex >= len(TimeOfDay):
-            store.timeIndex = len(TimeOfDay) - 1  #cap at Night
+            store.timeIndex = len(TimeOfDay) - 1  #cap at bedtime
 
     def advancedNextDay():
         """Reset day
