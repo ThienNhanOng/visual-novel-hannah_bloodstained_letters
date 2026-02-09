@@ -53,8 +53,9 @@ init -100 python:
             return False
         store.player_money -= bet
         store.current_bet = bet
-        # Use shared createDeck from CreateDeck.rpy
+        #create deck from createdeck.rpy
         store.deck = store.createDeck()
+        #draw twice
         store.player_hand = [store.deck.pop(), store.deck.pop()]
         store.round_active = True
         store.dealer_total = 0
@@ -67,7 +68,7 @@ init -100 python:
         """Draw another card for the player."""
         if not store.round_active or store.game_over:
             return
-
+        #draw card
         store.player_hand.append(store.deck.pop())
         total = calculate_hand_value(store.player_hand)
         if total > 21:

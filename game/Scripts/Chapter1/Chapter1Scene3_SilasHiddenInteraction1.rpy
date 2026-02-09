@@ -38,7 +38,7 @@ label chapter1Scene3SilasInteraction:
     "Silas continues to escort me home. exiting the town and deep into the woods."
     Silas "Once youre home safe, try to get some rest."
     
-    scene blackscreen
+    scene black
 
     centered "{color=#fff}Silas walked me to my house, gave me a soft nod, and then turned to leave toward his own.{/color}" with dissolve
     centered "{color=#fff}Before I could open my door, I was once again approached from behind.{/color}" with dissolve

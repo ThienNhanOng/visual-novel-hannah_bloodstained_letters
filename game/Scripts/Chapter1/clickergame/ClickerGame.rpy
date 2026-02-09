@@ -27,13 +27,7 @@ init python:
 
             self.state = IdleState(self)
 
-        #defining the state changes 
-        def change_state(self, new_state):
-            """switch to a new state and call enter/exit hooks."""
-            self.state.on_exit(self)
-            self.state = new_state
-            self.state.on_enter(self)
-
+        #update the current state when called by screen timer
         def update_state(self):
             """update current state each frame."""
             self.state.update()
@@ -44,8 +38,6 @@ init python:
 
         def click_background(self):
             self.state.click_background()
-
-
 
         def hit_target(self):
             """player hits the target."""

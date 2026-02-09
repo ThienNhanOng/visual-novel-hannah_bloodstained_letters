@@ -1,11 +1,12 @@
-# Event queue variables - persistent across saves
-default events_done = set()
+# define with renpy. a list to track completed events
+default events_done = []
 
 #note the empty event queue list is defined in script
 init python:
 
     class EventQueue:
 
+        #no instance needed
         @staticmethod
         def build(events):
             queue = []

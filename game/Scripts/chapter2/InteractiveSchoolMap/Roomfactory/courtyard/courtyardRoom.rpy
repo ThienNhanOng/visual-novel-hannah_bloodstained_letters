@@ -10,10 +10,10 @@ init -90 python:
                 ypos = 700
             )
 
-            # create command object
-            self.command = CallRoomCommand(self.label_name)
-            #fixes recursion but breaks track entry
-            #self.command = CallRoomCommand(self.label_name, newScene=False)
+            # create invoker and add command
+            self.CourtyardInvoker = PredictionInvoker()
+            self.CourtyardInvoker.commands.append(CallRoomCommand(self.label_name))
+    
         def enter(self):
-            # execute the command (calls the label)
-            self.command.execute()
+            # execute all commands
+            self.CourtyardInvoker.executeCommands()

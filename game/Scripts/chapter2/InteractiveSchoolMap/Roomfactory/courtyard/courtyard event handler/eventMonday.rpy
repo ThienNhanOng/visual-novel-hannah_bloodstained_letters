@@ -25,7 +25,7 @@ init python:
         # {"time":"Noon", "name":"mon_noon_friendlyChat", "priority":10},
 
         #night
-        {"time":"Night", "name":"mon_night_nightStudy", "priority":100},
+        #{"time":"Night", "name":"mon_night_nightStudy", "priority":100},
         # {"time":"Night", "name":"mon_night_silasStargazing", "priority":90},
         {"time":"Night", "name":"mon_night_nightGuard", "priority":85},
         # {"time":"Night", "name":"mon_night_historyQuestion", "priority":80},

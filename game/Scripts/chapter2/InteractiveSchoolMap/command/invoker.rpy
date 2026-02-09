@@ -1,5 +1,4 @@
-
-init -90 python:
+init -100 python:
     #invoke the command
     class PredictionInvoker:
         #initialize space for commands

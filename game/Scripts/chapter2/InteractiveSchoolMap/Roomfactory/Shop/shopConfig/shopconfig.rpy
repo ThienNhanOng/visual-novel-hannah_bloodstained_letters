@@ -12,10 +12,10 @@ default fri_noon_questions_asked = []
 init python:
     # items for dictionary
     shopItems = [
-        {"name": "fake_id",     "label": "Fake ID",      "price": 100,  "desc": "Access to the casino",   "condition": "fakeid_unlocked"},
-        {"name": "work_permit", "label": "Work Permit",  "price": 30,   "desc": "Allow you to work at school", "condition": "workpermit_unlocked"},
-        {"name": "letter",      "label": "Letter",       "price": 500, "desc": "???",                     "condition": "quest_completed"},
-        {"name": "arcade_pass", "label": "Arcade Pass",  "price": 50, "desc": "Access to the arcade",    "condition": "arcade_unlocked"},
+        {"name": "fake_id",     "label": "Fake ID",      "price": 1,  "desc": "Access to the casino",   "condition": "fakeid_unlocked"}, #100
+        {"name": "work_permit", "label": "Work Permit",  "price": 1,   "desc": "Allow you to work at school", "condition": "workpermit_unlocked"}, #30
+        {"name": "letter",      "label": "Letter",       "price": 1, "desc": "???",                     "condition": "quest_completed"}, #200
+        {"name": "arcade_pass", "label": "Arcade Pass",  "price": 1, "desc": "Access to the arcade",    "condition": "arcade_unlocked"}, #50
     ]
 
 init python:
@@ -25,7 +25,7 @@ init python:
         if purchased_items.get(item["name"], False):
             return False, "already owned"
 
-        #check dictionary string and if it meets the flag condition.
+        #check dictionary and if it meets the flag for "condition".
         cond = item["condition"]
 
         if cond == "fakeid_unlocked" and fakeidUnlocked == False:
@@ -46,6 +46,7 @@ init python:
 
     def buy_item(item):
         global Global_Money 
+        #check if item can be purchased if not replace string.
         can, reason = purchaseableItem(item) #line 22 return as already own if purchase
         #pop up notification using renpy library
         if can == False:

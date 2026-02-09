@@ -2,15 +2,19 @@ default shooterScore = 0
 default shooterProjectileManager = None
 default shooterEnemyManager = None
 default shooterEnemySpeedCounter = 0
+
+
+
 init:
     image characterRed = Solid("#ff0000", xsize=50, ysize=50)
     image bullet = Solid("#ffff00", xsize=10, ysize=10)
     image enemy = Solid("#00e900", xsize=50, ysize=50)
-    image enemy2 = Solid("#00e900", xsize=20, ysize=20)
-    image enemy3 = Solid("#00e900", xsize=50, ysize=50)
     image boarderline = Solid("#6d3705", xsize=20, ysize=1080)
+
+
+    
 screen ShooterGameScreen:
-    #makes the screen capture all inputs
+    #lock input to the screen
     modal True
     
     # Auto-return when health depleted

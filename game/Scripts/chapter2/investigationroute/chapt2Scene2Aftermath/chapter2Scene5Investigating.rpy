@@ -37,7 +37,7 @@ label investigating_the_school:
    
     
 
-    call ending
+    jump ending
         
     #'end of chapter 2'
     #$ MainMenu()

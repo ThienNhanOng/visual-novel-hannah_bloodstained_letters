@@ -1,4 +1,4 @@
-default raisesCounter = 0
+default raisesCounter = 3 #default is 0 just made it easier for presentation
 default payout = 5
 default arcadecheck = False
 image bg room2 = "images/map/schoolmap/bg room2.png"
@@ -29,7 +29,7 @@ label trackroom:
         $ Global_Money += payout
         $ raisesCounter += 1
 
-        if raisesCounter % payout == 0:
+        if raisesCounter >= 5:
             $ payout += 1
             $ raisesCounter = 0 #reset counter for next raise
             SideChar "Nice work — you've earned a raise!"
@@ -38,7 +38,7 @@ label trackroom:
         SideChar "Hey! excuse me but please get off the track field"
         SideChar "this time is reserved for cleaning"
     
-    if payout >= 7 and arcadecheck == False:
+    if payout >= 6 and arcadecheck == False:
         $ arcadeUnlocked = True
         $ arcadecheck = True
         "You unlocked an item in the shop!"

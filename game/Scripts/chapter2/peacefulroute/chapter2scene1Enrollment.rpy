@@ -23,6 +23,7 @@ label chapter2scene1Enrollment:
     "Throughout the night, [Player] decided to heed Mia's warning and considered enrolling into [StoryDecision_Chapter1_Schoolname] "
 
     Player "well here we are...first day of school."
+    play music "audio/MusicAndSoundtracks/Quiet Dust in Sunbeams.mp3" loop
     call screen schoolmapScreen
     "debug mapscreen was called"
 

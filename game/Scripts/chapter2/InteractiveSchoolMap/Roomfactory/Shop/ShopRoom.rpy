@@ -9,9 +9,10 @@ init -90 python:
                 xpos = 640,
                 ypos = 300
             )
-            # create command object
-            self.command = CallRoomCommand(self.label_name)
+            # create invoker and add command
+            self.shopInvoker = PredictionInvoker()
+            self.shopInvoker.commands.append(CallRoomCommand(self.label_name))
 
         def enter(self):
-            # execute the command (calls the label)
-            self.command.execute()
+            # execute all commands
+            self.shopInvoker.executeCommands()

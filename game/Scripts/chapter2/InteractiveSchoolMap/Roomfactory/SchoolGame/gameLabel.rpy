@@ -3,7 +3,7 @@ default enemy_manager = None
 default projectileManager = None
 label gameroom:
     
-    scene blackscreen 
+    scene black
     stop music fadeout 2.0
     
 
@@ -18,7 +18,7 @@ label gameroom:
                     #Initialize game safely
                     $ game = SimpleGameState()
 
-                    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
+                    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/schoolGame/jumpingGame/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
 
                     call screen jump_game
                     stop music fadeout 2.0

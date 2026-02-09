@@ -9,9 +9,10 @@ init -90 python:
                 xpos = 51,
                 ypos = 170
             )
-            # create command object
-            self.command = CallRoomCommand(self.label_name)
+            # create invoker and add command
+            self.CasinoInvoker = PredictionInvoker()
+            self.CasinoInvoker.commands.append(CallRoomCommand(self.label_name))
 
         def enter(self):
-            # execute the command (calls the label)
-            self.command.execute()
+            # execute all commands
+            self.CasinoInvoker.executeCommands()

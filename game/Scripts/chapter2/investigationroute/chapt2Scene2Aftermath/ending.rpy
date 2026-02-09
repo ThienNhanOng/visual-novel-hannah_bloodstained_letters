@@ -40,7 +40,7 @@ label ending:
             Player "AND IM TAKING THIS WITH MEEEEE!"
             Silas "WAIT! hold on!"
             "[Player] Disappears out of the dormatory before Silas could intervine."
-            scene black fadeout 2.0
+            scene black with Dissolve(2.0)
 
             $ MainMenu()
         else:

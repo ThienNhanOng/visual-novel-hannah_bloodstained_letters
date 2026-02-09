@@ -14,12 +14,12 @@ init python:
             
             self.shooterSpaceClick = keys[pygame.K_SPACE]
             
-            #shoot right
+            #track the numbers of shot bullets and move them right
             for i in range(len(self.shooterBullets)):
                 bulletX, bulletY = self.shooterBullets[i]
                 self.shooterBullets[i] = (bulletX + self.shooterProjectileSpeed, bulletY)
             
-            # Remove bullets 
+            # Remove bullets if reach a specific distance.
             for bullet in self.shooterBullets[:]:
                 if bullet[0] >= 1700:
                     self.shooterBullets.remove(bullet)
