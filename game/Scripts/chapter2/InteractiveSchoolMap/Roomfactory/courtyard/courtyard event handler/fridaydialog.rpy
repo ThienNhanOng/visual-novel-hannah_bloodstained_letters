@@ -12,7 +12,7 @@ label fri_morning_morningCheckIn:
             SideChar "Love the energy. Keep that focus in class."
         "Not really":
             SideChar "Take a breath. You can still turn it around today."
-    $ events_done.add("fri_morning_morningCheckIn")
+    $ events_done.append("fri_morning_morningCheckIn")
     return
 
 label fri_morning_foundNotebook:
@@ -23,7 +23,7 @@ label fri_morning_foundNotebook:
             SideChar "Here you go. Maybe add a name tag next time."
         "No, but I'll turn it in":
             SideChar "Thanks. Lost and found is by the admin office."
-    $ events_done.add("fri_morning_foundNotebook")
+    $ events_done.append("fri_morning_foundNotebook")
     return
 
 label fri_morning_coachStretch:
@@ -34,7 +34,7 @@ label fri_morning_coachStretch:
             SideChar "Arms up, deep breath... that's it."
         "Maybe later":
             SideChar "Alright, just don't sit all day."
-    $ events_done.add("fri_morning_coachStretch")
+    $ events_done.append("fri_morning_coachStretch")
     return
 
 #===== FRIDAY NOON EVENTS =====
@@ -62,7 +62,7 @@ label fri_noon_jeopardy:
         "You earned $[reward]."
     else:
         Host "Close, but the right answer is [correct_answer]."
-    $ events_done.add("fri_noon_jeopardy")
+    $ events_done.append("fri_noon_jeopardy")
     return
 
 label fri_noon_groupNotes:
@@ -73,7 +73,7 @@ label fri_noon_groupNotes:
             SideChar "Thanks. Your handwriting is way cleaner."
         "I'll stick with mine":
             SideChar "No worries. Hope yours are solid!"
-    $ events_done.add("fri_noon_groupNotes")
+    $ events_done.append("fri_noon_groupNotes")
     return
 
 label fri_noon_snackCart:
@@ -86,7 +86,7 @@ label fri_noon_snackCart:
             "You lost $8."
         "Maybe later":
             SideChar "Deal lasts till the cart runs out."
-    $ events_done.add("fri_noon_snackCart")
+    $ events_done.append("fri_noon_snackCart")
     return
 
 #===== FRIDAY NIGHT EVENTS =====
@@ -101,7 +101,7 @@ label fri_night_clubCleanup:
             "You earned $12."
         "Can't tonight":
             SideChar "Alright, we'll manage."
-    $ events_done.add("fri_night_clubCleanup")
+    $ events_done.append("fri_night_clubCleanup")
     return
 
 label fri_night_silasWrapup:
@@ -112,7 +112,7 @@ label fri_night_silasWrapup:
             $ Silas_counter += 1
         "Exhausted":
             Silas "Rest this weekend. I'll text if something comes up."
-    $ events_done.add("fri_night_silasWrapup")
+    $ events_done.append("fri_night_silasWrapup")
     return
 
 label fri_night_meditation:
@@ -123,6 +123,7 @@ label fri_night_meditation:
             SideChar "Inhale... exhale... let the week go."
         "I'll pass":
             SideChar "All good. Find rest in your own way."
-    $ events_done.add("fri_night_meditation")
+    $ events_done.append("fri_night_meditation")
     return
+
 

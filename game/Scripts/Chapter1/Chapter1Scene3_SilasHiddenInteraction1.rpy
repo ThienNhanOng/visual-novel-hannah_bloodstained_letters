@@ -18,11 +18,12 @@ label chapter1Scene3SilasInteraction:
     Silas "Ha..."
     "..."
 
-    Silas "Remember when we were kids? we used to climb trees and doorbell ditch houses."
+    Silas "Remember when we were kids? we used to climb trees and ding dong ditch our neighbors?"
     Player "Yeah... those were the days."
-    Silas "and how Hannah always yell at us and make us go back and apologize."
+    Silas "yeah. I keep reminiscing of those peaceful times."
+    "and how Hannah always yell at us and make us go back and apologize."
     "Silas and I reminisce about our childhood memories for a moment."
-    Silas "I miss those times. Life was simpler back then."
+    Silas "I miss those days. Life was simpler back then. kind of wish time just stop and we just stop growing."
 
     Silas "Say it's getting late. Would it be okay if I walked you home?"
     Player "Sure... I would like that that."
@@ -36,7 +37,7 @@ label chapter1Scene3SilasInteraction:
     
     scene forest2
     "Silas continues to escort me home. exiting the town and deep into the woods."
-    Silas "Once youre home safe, try to get some rest."
+    Silas "Once you're home safe, try to get some rest."
     
     scene black
 

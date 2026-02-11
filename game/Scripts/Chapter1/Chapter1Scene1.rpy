@@ -17,6 +17,9 @@ label Chapter1Scene1:
         $ flashback_seen = True
     #Flashback ends
 
+    centered "{size=140}{color=#FFFFFF}{b}FLASHBACK ENDS{/b}{/color}{/size}" with fade
+    centered "{size=140}{color=#FFFFFF}{b}during Hannah's funeral.{/b}{/color}{/size}" 
+
     scene forest2
     Player "To my right, I notice a silhouette emerge from the edge of the forest."
 
@@ -34,36 +37,43 @@ label Chapter1Scene1:
 
     show silas talk at right
 
-    Silas "Look, [Player]... I know this is hard to accept.\nBut she's gone...\nAnd I get it, it's not fair of me to ask this of you."
-    Silas "But for me...\nfor all of us...\nPlease, accept the funeral we've arranged for Hannah. She deserves a place to rest."
-    Silas "..."
-    Silas "Are you okay?"
+    Silas "Look, [Player]... I know this is hard to accept.\n but you been crying for days now. this isnt good for you."
+    Silas "maybe it would be best if you let her go."
+    Silas "I know it isn't fair of me to ask that. but if not for me then for Hannah. She wouldnt want to see you like this."
+
     hide silas talk
     #scene lightning.jpg (Repeat lighting causes error commented out for now)
     scene black with fade
     show player_angryfrontpov at center
     menu:
-        "Response to Silas asking if I am okay"
-        "How can I be okay???":
-            Player "How can I be okay???"
-            Player "Hannah is out there! I know she is! And instead of preserving her arm, we are just burying it!"
-            Silas "Enough!\nI know it’s hard, but you need to let her go. She wouldn’t want you to suffer like this."
+        "Response to Silas"
+        "I got to figure out what happen to Hannah at the very least":
+            Player "Listen sy, I know you mean well but I can't just give up on her."
+            Player "At the very least. I need to figure out what happened to Hannah.\n to figure out who hurt her."
+            Silas "that could be dangerous."
+            Player "I KNOW."
             $ Silas_counter += 1
-        "I am not ready to give up on Hannah.":
+        "Hannah could be alive":
             $ Silas_counter += 1
             Player "I’m not ready to give up on Hannah."
+            Player "I know all the evidence points to her vanishing but i cant accept that."
+            Player "what if..."
+            Player "what if she's still alive?"
         "Yes... given time.":
-            Player "Yes... I'll be okay... given some time."
+            Player "You're right. i'll be okay given time."
 
     hide player_angryfrontpov
     show silas_sad at right
     Silas "..."
-    "He hesitates, seemingly regretting his question. He knows the pain I've been through, how many tears the death of my sister has brought me."
+    Silas "You know, I miss her too. She was like a sister to me as well."
+    Silas "she used to bring us treats from the bakery all the time after work. I miss those days."
 
-    Silas "I know it's not fair of me to ask that. I'm sorry.\nYou know, I still think about her a lot. Hannah was so kind."
+    Silas "hey, just know even if she's gone. you still have me. and other people who care about you."
+    Player "like who?"
+    Silas "well? there's Mia who's been Hannah's best friend. and look around. the whole town is here. not just for Hannah but for you."
 
     if Silas_counter == 1:
-        Player "I'm sorry I lashed out at you."
+        Player "Thank you for being here."
 
     Player "I just can't believe she's gone. I feel so useless."
 
@@ -72,7 +82,7 @@ label Chapter1Scene1:
     show silas_comfort
     "Silas places a hand on my shoulder, examining my dejected disposition."
     #Continue with church bell scene...
-    "{i}The player and the mourners stood in silence, grief hanging heavy in the cold air. Soft sobs, whispered prayers, and the rustle of wind through trees were all that remained.{/i}"
+    "{i}[Player] and the mourners stood in silence, grief hanging heavy in the cold air. Soft sobs, whispered prayers, and the rustle of wind through trees were all that remained.{/i}"
     "{b}A sudden, sharp toll cuts through the stillness like a knife.{/b}"
     centered "{i}{b}One chime.{/b}{/i}"
     #play sounds of bell audio.
@@ -87,11 +97,10 @@ label Chapter1Scene1:
     Silas "We should head inside. The service is about to start."
 
     #player monologue
-    "It tears me apart. Everyone's already given up and decided Hannah is gone. {i}Dead{/i}."
-    "And the worst part? We haven't even done the bare minimum to bring her justice."
+    ""
 
-    "And now... I'm expected to say my final goodbye."
-    "I glance down at the bed of roses one last time—soft petals draped in sorrow, a silent farewell that feels far too soon."
+    Player "I stare at her headstone for awhile before heading in."
+    Player "as i walk in I am trying to figuring out how I want to deliver the eulogy."
 
     Silas "Are you ready to walk into the reception?"
 
@@ -99,7 +108,7 @@ label Chapter1Scene1:
         "Will you go to the reception?"
         "Yes":
             Player "Okay, let's go."
-        "No":
+        "In a minute.":
             Player "I need a moment first."
 
     hide silas_comfort

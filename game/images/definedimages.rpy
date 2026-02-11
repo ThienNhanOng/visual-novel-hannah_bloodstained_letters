@@ -51,7 +51,7 @@ image scene2bgSilas:
 image scene2bgSilasSit:
     "images/chapter1/interaction with silas/ch2silassit.png"
     xysize (config.screen_width, config.screen_height)
-#-----------------------------------mc and detective-----------------------------------
+#-----------------------------------mc-----------------------------------
 image scene2detective1: #shadow image
     "images/chapter1/detective/detectivebgremoved.png"
     xysize (1655, 1150)
@@ -74,7 +74,33 @@ image Player_L1overlay:
     xysize (600, 350)
     xpos 0.15
     ypos 1.0
+    
 
+
+
+
+image Player_shocked1:
+    "images/chapter1/forest scene/player/player_shocked1.png"
+    xysize (config.screen_width, config.screen_height)
+
+image player_shocked2:
+    "images/chapter1/forest scene/player/player_shocked2.png"
+    xysize (config.screen_width, config.screen_height)
+    
+image Player_rightViewShadow:
+    "images/chapter1/forest scene/player/player right view shadow.png"
+    xysize (600, 350)
+    xpos 0.15
+    ypos 1.0
+
+image mcsleep:
+    "images/chapter2/sleep.png"
+    xysize (config.screen_width, config.screen_height)
+
+image mcsleep2:
+    "images/chapter2/sleep2.png"
+    xysize (config.screen_width, config.screen_height)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~side characters~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Define talking_to_willy image for use in script
 image talking_to_willy = "images/chapter1/inside the church/talking_to_willy.png"
 
@@ -90,14 +116,6 @@ image sandyshop3:
     "images/chapter2/sandyshop3.png"
     xysize (config.screen_width, config.screen_height)
     xpos .07
-
-image mcsleep:
-    "images/chapter2/sleep.png"
-    xysize (config.screen_width, config.screen_height)
-
-image mcsleep2:
-    "images/chapter2/sleep2.png"
-    xysize (config.screen_width, config.screen_height)
 
 image redletter:
     "images/the reveal/redletter.jpeg"

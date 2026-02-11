@@ -50,19 +50,33 @@ init python:
     #3 | 4 | 5
     #6 | 7 | 8
 
-init python:
-    # Winning combinations (add this if missing)
-    tttWin = (
-        (0, 1, 2), #horizontal
-        (3, 4, 5), #horizontal
-        (6, 7, 8), #horizontal
-        (0, 3, 6), #vertical
-        (1, 4, 7), #vertical
-        (2, 5, 8), #vertical
-        (0, 4, 8), #diagonal
-        (2, 4, 6), #diagonal
-    )
+    #Generate win board combinations
+    def winBoard():
+        #total win combinations
+        winCombinations = []
 
+        for row in range(3):
+            rowCombination = []  # hold combination for this row
+            for col in range(3): #iterate through the columns for the current row
+                index = row * 3 + col
+                rowCombination.append(index)  #store the combination 
+            winCombinations.append(rowCombination)  # add the combination to total combinations
+            
+        for col in range(3):
+            colCombination = []  # hold combination for this column
+            for row in range(3):  # iterate through rows for the current column
+                index = row * 3 + col  # convert row, col to flat list index
+                colCombination.append(index)  # store the combination
+            winCombinations.append(colCombination)  # add this column to total combinations
+
+        #2 Diagonals
+        winCombinations.append([0, 4, 8])
+        winCombinations.append([2, 4, 6])
+        
+        return winCombinations
+
+    #Generate win combinations based on board size
+    tttWin = winBoard()
     #Player marker
     tttPlayer = "X"
     #AI marker

@@ -9,7 +9,7 @@ label mon_morning_breakfastWithSilas:
             $ Silas_counter += 1
         "Maybe next time.":
             Silas "No worries, catch you later then."
-    $ events_done.add("mon_morning_breakfastWithSilas")
+    $ events_done.append("mon_morning_breakfastWithSilas")
     return
 
 label mon_morning_professorLecture:
@@ -17,7 +17,7 @@ label mon_morning_professorLecture:
     SideChar "Good morning! Don't forget we have a special lecture today at 9 AM sharp."
     Player "Thank you for the reminder, Professor."
     SideChar "You're welcome. See you in class!"
-    $ events_done.add("mon_morning_professorLecture")
+    $ events_done.append("mon_morning_professorLecture")
     return
 
 label mon_morning_clubAdvertiser:
@@ -29,7 +29,7 @@ label mon_morning_clubAdvertiser:
             Player "That sounds interesting. I'll think about it."
         "Not right now, thanks.":
             SideChar "No problem! If you change your mind, we're always welcoming new members."
-    $ events_done.add("mon_morning_clubAdvertiser")
+    $ events_done.append("mon_morning_clubAdvertiser")
     return
 
 label mon_morning_sageEncounter:
@@ -37,7 +37,7 @@ label mon_morning_sageEncounter:
     Player "Yeah, thought I'd get some fresh air before class starts."
     Sage "Same here. The courtyard is peaceful at this hour."
     "You both enjoy the quiet morning atmosphere together."
-    $ events_done.add("mon_morning_sageEncounter")
+    $ events_done.append("mon_morning_sageEncounter")
     return
 
 label mon_morning_lostStudent:
@@ -49,7 +49,7 @@ label mon_morning_lostStudent:
             SideChar "Thank you so much! I was getting really worried."
         "Sorry, I'm new here too":
             SideChar "Oh, okay... I'll keep looking then."
-    $ events_done.add("mon_morning_lostStudent")
+    $ events_done.append("mon_morning_lostStudent")
     return
 
 #===== MONDAY NOON EVENTS =====
@@ -67,7 +67,7 @@ label mon_noon_mathLecture:
             SideChar "Not quite. Review your calculus notes."
         "I don't know":
             SideChar "That's okay. Come to office hours if you need help."
-    $ events_done.add("mon_noon_mathLecture")
+    $ events_done.append("mon_noon_mathLecture")
     return
 
 label mon_noon_lunchWithSilas:
@@ -81,7 +81,7 @@ label mon_noon_lunchWithSilas:
             "You lost $10."
         "Already ate, sorry":
             Silas "No worries, maybe next time!"
-    $ events_done.add("mon_noon_lunchWithSilas")
+    $ events_done.append("mon_noon_lunchWithSilas")
     return
 
 label mon_noon_englishQuiz:
@@ -96,7 +96,7 @@ label mon_noon_englishQuiz:
             SideChar "Not quite. Shakespeare is the answer."
         "I'm not sure":
             SideChar "It's Shakespeare. Make sure to read the assigned materials!"
-    $ events_done.add("mon_noon_englishQuiz")
+    $ events_done.append("mon_noon_englishQuiz")
     return
 
 label mon_noon_studyGroup:
@@ -107,7 +107,7 @@ label mon_noon_studyGroup:
             SideChar "Awesome! We meet every Tuesday and Thursday."
         "I prefer studying alone":
             SideChar "Fair enough. Good luck with your studies!"
-    $ events_done.add("mon_noon_studyGroup")
+    $ events_done.append("mon_noon_studyGroup")
     return
 
 label mon_noon_artClubDemo:
@@ -121,7 +121,7 @@ label mon_noon_artClubDemo:
             "You lost $6."
         "Just watching is fine":
             SideChar "No problem! Enjoy the show!"
-    $ events_done.add("mon_noon_artClubDemo")
+    $ events_done.append("mon_noon_artClubDemo")
     return
 
 label mon_noon_libraryTip:
@@ -129,7 +129,7 @@ label mon_noon_libraryTip:
     SideChar "Did you know we have extended hours during exam week?"
     Player "Oh really? That's helpful to know!"
     SideChar "Yes! We're open until midnight. Take advantage of it!"
-    $ events_done.add("mon_noon_libraryTip")
+    $ events_done.append("mon_noon_libraryTip")
     return
 
 label mon_noon_sportsPractice:
@@ -141,7 +141,7 @@ label mon_noon_sportsPractice:
             "You play basketball for a while."
         "Not today":
             SideChar "Alright, maybe another time!"
-    $ events_done.add("mon_noon_sportsPractice")
+    $ events_done.append("mon_noon_sportsPractice")
     return
 
 label mon_noon_scienceLab:
@@ -156,7 +156,7 @@ label mon_noon_scienceLab:
             SideChar "Close, but it's Au from the Latin 'Aurum'."
         "I don't remember":
             SideChar "It's Au. Chemistry requires memorization!"
-    $ events_done.add("mon_noon_scienceLab")
+    $ events_done.append("mon_noon_scienceLab")
     return
 
 label mon_noon_musicPerformance:
@@ -168,7 +168,7 @@ label mon_noon_musicPerformance:
             "You listen to a beautiful piano performance."
         "Sorry, I'm in a hurry":
             SideChar "That's okay, thanks anyway!"
-    $ events_done.add("mon_noon_musicPerformance")
+    $ events_done.append("mon_noon_musicPerformance")
     return
 
 label mon_noon_friendlyChat:
@@ -181,7 +181,7 @@ label mon_noon_friendlyChat:
             SideChar "Awesome! Here's my number."
         "Maybe later":
             SideChar "No problem, just let me know!"
-    $ events_done.add("mon_noon_friendlyChat")
+    $ events_done.append("mon_noon_friendlyChat")
     return
 
 #===== MONDAY NIGHT EVENTS =====
@@ -194,7 +194,7 @@ label mon_night_nightStudy:
             SideChar "Let me explain momentum. It's mass times velocity."
         "I'm good, thanks":
             SideChar "Alright, good luck with your studies!"
-    $ events_done.add("mon_night_nightStudy")
+    $ events_done.append("mon_night_nightStudy")
     return
 
 label mon_night_silasStargazing:
@@ -206,7 +206,7 @@ label mon_night_silasStargazing:
             $ Silas_counter += 2
         "I should head back":
             Silas "Understandable. Don't stay out too late!"
-    $ events_done.add("mon_night_silasStargazing")
+    $ events_done.append("mon_night_silasStargazing")
     return
 
 label mon_night_historyQuestion:
@@ -221,7 +221,7 @@ label mon_night_historyQuestion:
             SideChar "Close, but it ended in 1945."
         "I'm not sure":
             SideChar "It's 1945. Important date to remember!"
-    $ events_done.add("mon_night_historyQuestion")
+    $ events_done.append("mon_night_historyQuestion")
     return
 
 label mon_night_lateLibrary:
@@ -233,7 +233,7 @@ label mon_night_lateLibrary:
             "You borrow a useful textbook."
         "I'm just browsing":
             SideChar "Take your time, but remember the closing time."
-    $ events_done.add("mon_night_lateLibrary")
+    $ events_done.append("mon_night_lateLibrary")
     return
 
 label mon_night_nightShift:
@@ -247,7 +247,7 @@ label mon_night_nightShift:
             "You earned $15."
         "Too tired tonight":
             SideChar "Understood. Have a good night!"
-    $ events_done.add("mon_night_nightShift")
+    $ events_done.append("mon_night_nightShift")
     return
 
 label mon_night_astronomyClub:
@@ -259,7 +259,7 @@ label mon_night_astronomyClub:
             "You view Jupiter through the telescope."
         "Maybe another time":
             SideChar "No worries, we do this every Monday!"
-    $ events_done.add("mon_night_astronomyClub")
+    $ events_done.append("mon_night_astronomyClub")
     return
 
 label mon_night_nightGuard:
@@ -274,7 +274,7 @@ label mon_night_nightGuard:
     SideChar "theyll hand you a fake id"
     "in the morning I went to the bookstore and said the code 'no games no life'"
     $ fakeidUnlocked = True
-    $ events_done.add("mon_night_nightGuard")
+    $ events_done.append("mon_night_nightGuard")
     return
 
 label mon_noon_arcade:
@@ -294,7 +294,7 @@ label mon_night_philosophyDebate:
             SideChar "Ah, a philosophical approach! I like it."
         "Let's not get into this":
             SideChar "Fair enough, it's late anyway!"
-    $ events_done.add("mon_night_philosophyDebate")
+    $ events_done.append("mon_night_philosophyDebate")
     return
 
 label mon_night_midnightSnack:
@@ -308,7 +308,7 @@ label mon_night_midnightSnack:
             "You lost $5."
         "Just window shopping":
             SideChar "Come back if you get hungry!"
-    $ events_done.add("mon_night_midnightSnack")
+    $ events_done.append("mon_night_midnightSnack")
     return
 
 label mon_night_mysteryShadow:
@@ -316,5 +316,6 @@ label mon_night_mysteryShadow:
     "It disappears before you can get a closer look."
     Player "What was that...?"
     "The night feels a bit more mysterious now."
-    $ events_done.add("mon_night_mysteryShadow")
+    $ events_done.append("mon_night_mysteryShadow")
     return
+

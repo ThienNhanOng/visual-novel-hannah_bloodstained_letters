@@ -80,5 +80,5 @@ label chapter1scene3Peaceful:
         jump chapter2scene1Enrollment
 
 
-    "DEBUG NOTE: END OF CHAPTER1 SCENE3"
+    #"DEBUG NOTE: END OF CHAPTER1 SCENE3"
 return

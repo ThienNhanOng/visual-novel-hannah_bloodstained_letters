@@ -4,25 +4,25 @@ init -50 python:
     def create_room(roomType):
         #remove uppercases and spaces if I added any
         roomType = roomType.lower().strip()
-        room = None
-
-        if roomType == "casino":
-            room = CasinoRoom()
-        elif roomType == "courtyard":
-            room = CourtyardRoom()
-        elif roomType == "track":
-            room = TrackRoom()
-        elif roomType == "shop":
-            room = ShopRoom()
-        elif roomType == "gameroom":
-            room = Gameroom()
-        elif roomType == "dorm":
-            room = DormRoom()
-
-        if room is not None:
-            SchoolmapRooms[room.room_id] = room   #
+        
+        #key to match room to class
+        roomTypes = {
+            "casino": CasinoRoom,
+            "courtyard": CourtyardRoom,
+            "track": TrackRoom,
+            "shop": ShopRoom,
+            "gameroom": Gameroom,
+            "dorm": DormRoom,
+        }
+        #return the room with the type of room it is.
+        room = roomTypes.get(roomType)
+        
+        #instantiates the room if it exist
+        if room:
+            room = room()
+            SchoolmapRooms[room.room_id] = room
         else:
-            renpy.notify(f"Unknown room: {roomType}")
+            room = None
 
         return room 
 

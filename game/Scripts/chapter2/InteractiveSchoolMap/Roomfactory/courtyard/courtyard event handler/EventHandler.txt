@@ -1,34 +1,12 @@
-init python:
-    import json
-
-    #function for json
-    def load_events(day):
-        #get event from the right file path
-        if day == "Mon":
-            loadEvent = "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/Event_Monday.json"
-        elif day == "Fri":
-            loadEvent = "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/Event_Friday.json"
-
-        #load events from json using renpy wrapper. 
-        with renpy.file(loadEvent) as file:
-            events = json.load(file)
-            if day == "Mon":
-                return events.get("mondayEvents", [])
-            if day == "Fri":
-                return events.get("fridayEvents", [])
-            return []
-
-
 label eventQueue:
 
     $ current_day = currentDayLabel()
 
+    #pick events from monday or friday
     if current_day == "Mon":
-        $ current_events = load_events("Mon")
+        $ current_events = mondayEvents
     elif current_day == "Fri":
-        $ current_events = load_events("Fri")
-    else:
-        $ current_events = []
+        $ current_events = fridayEvents
 
     #Build the queue for the current day/time
     $ EventQueue.build(current_events)

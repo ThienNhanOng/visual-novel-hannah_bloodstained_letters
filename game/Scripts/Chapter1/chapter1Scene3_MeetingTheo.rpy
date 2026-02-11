@@ -3,15 +3,19 @@ label chapter1Scene3_MeetingTheo:
 
     #onlayer overlay allows text over the textbox UI
     show detectivefaceleft at right onlayer overlay
-    Theo "I've been digging into Hannah's disappearance, and the evidence isn't as thin as it first appeared. There are too many missing pieces—puzzles, if you will—for this to be mere chance. And I believe I now hold the first."
-
-    centered "{size=104}{color=#f11}{b}Detective Theo reaches into his coat pocket and pulls out a slightly crumpled letter.{/b}{/color}{/size}"
+    Theo "I've been digging into Hannah's disappearance, and the evidence isn't as thin as it first appeared. There are too many missing pieces in our game of chess."
+    Theo "but mere chance if you will, I believe I have stumbled across the first played piece."
+    show redletter
+    centered "{size=104}{color=#f11}{b}Detective Theo reaches into his coat pocket and pulls out a slightly crumpled envelope.{/b}{/color}{/size}"
     show detectivefaceleft at right onlayer overlay
     Theo "There is something I have discovered. Prior to the young lass's disappearance, it appears she was involved in a jewelry business of some sort."
+    Player "hm..."
+    hide redletter
+    "I open the contents. and inside was a letter and a picture."
+    "I'm shocked. It's a picture of Hannah. and in the background it looks like Mia."
 
-    "I'm shocked. It's a picture of Hannah. And Mia... along with a letter."
     show detectivefaceleft at right onlayer overlay
-    Theo "January 32nd, 1**5. Two signatures are present: one belonging to the unfortunate lass, and the other to whom you know as Mia."
+    Theo "January 32nd, 1**5. Two signatures are present: one belonging to the unfortunate lass. and the other; signed Mia."
     show detectivefaceleft at right onlayer overlay
     Theo "From what I can gather, this seems to concern a business event. An auction invitation, perhaps."
     show detectivefaceleft at right onlayer overlay

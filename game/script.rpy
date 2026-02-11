@@ -41,7 +41,7 @@ label start:
     #call screen jump_game
     #call screen blackjack_table
     #call screen clicker_minigame
-    #call screen schoolmapScreen
+    call screen schoolmapScreen
     #call screen TicTacToeScreen
 #testing end
 

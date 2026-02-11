@@ -1,23 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Ending.rpy", line 71, in script
-    return
-Exception: Could not find return label ('game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene5Investigating.rpy', 936907981, 1598).
+  File "game/screens.rpy", line 270, in execute_default
+    default quick_menu = True
+Exception: store.quick_menu is being given a default a second time.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Ending.rpy", line 71, in script
-    return
-  File "renpy/ast.py", line 1703, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^ 
-  File "renpy/execution.py", line 799, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label ('game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Chapter2Scene5Investigating.rpy', 936907981, 1598).
+  File "renpy/common/00start.rpy", line 210, in script
+    python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1273, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00start.rpy", line 211, in <module>
+    renpy.execute_default_statement(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/exports/statementexports.py", line 375, in execute_default_statement
+    i.execute_default(start)
+    ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "game/screens.rpy", line 270, in execute_default
+    default quick_menu = True
+Exception: store.quick_menu is being given a default a second time.
 
-Windows-11-10.0.26100-SP0 AMD64
+Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 The Bloodstained Letters of Hannah 1.0
-Fri Feb  6 12:58:13 2026
+Tue Feb 10 23:08:08 2026

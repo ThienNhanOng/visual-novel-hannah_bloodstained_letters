@@ -2,6 +2,7 @@
 #
 #placeholder test
 label dormroom:
+    scene blackscreen
     show mcsleep
     "You are in your dorm room."
     

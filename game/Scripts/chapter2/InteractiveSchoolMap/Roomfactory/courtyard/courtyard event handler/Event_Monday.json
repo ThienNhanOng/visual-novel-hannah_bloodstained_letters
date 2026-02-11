@@ -1,0 +1,20 @@
+{
+  "mondayEvents": [
+    {
+      "time": "Morning",
+      "name": "mon_morning_breakfastWithSilas",
+      "priority": 50
+    },
+
+    {
+      "time": "Noon",
+      "name": "mon_noon_mathLecture",
+      "priority": 100
+    },
+    {
+      "time": "Night",
+      "name": "mon_night_nightGuard",
+      "priority": 85
+    }
+  ]
+}

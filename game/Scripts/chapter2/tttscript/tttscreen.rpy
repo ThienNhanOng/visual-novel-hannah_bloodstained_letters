@@ -125,3 +125,6 @@ screen TicTacToeScreen():
             $ x_pos = 0.4 + col * 0.1 #x positions for columns
             $ y_pos = [0.31, 0.5, 0.7][row] #y positions for rows
             text "[cell]" size 190 color "#FFF" xalign x_pos yalign y_pos
+
+    #dev exit
+    key "p" action Return()

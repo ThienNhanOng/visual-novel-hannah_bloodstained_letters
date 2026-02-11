@@ -15,7 +15,8 @@ label Chapter1Scene2:
 #player monologue
     stop music fadeout 1.0
     play music "audio/MusicAndSoundtracks/Through the Storm.mp3" loop
-    "Silas has been my best friend since before I can remember.\nHe's usually much less serious, always teasing and joking with me. We walk inside to attend the funeral."
+    "Silas has been my best friend since before I can remember.\nHe's usually much less serious, always teasing and joking with me."
+    "But today, he's quiet. which is understandable."
     #show image 1
     "I look around, taking in the sea of faces surrounding me. More people than I expected… 
     all here to give their blessings."
@@ -27,19 +28,23 @@ label Chapter1Scene2:
 
     "Each face tells its own story—some trying to be strong, others barely holding it together. Then, all at once, I’m surrounded. Hands on my arms, voices in my ears. A blur of condolences and apologies."
     hide podium
+    "many of the town folks come up to me to offer their condolences."
+    "It was a cultural respect that the town follows."
     show talking_to_willy
     $ SideChar = Character("Man", color="#5c3304")
-    SideChar "She was such a light to be around."
+    SideChar "She was such a light to be around. I’m so sorry for your loss."
+
     hide talking_to_willy
 
     show oldevelyn
     $ SideChar = Character("Woman", color="#c508c5")
-    SideChar "If there’s anything you need..."
+    SideChar "If there’s anything you need... I’m here for you."
+    SideChar "let me know if you need anything at all."
     hide oldevelyn
 
     show girl with irisin
     $ SideChar = Character("Little girl", color="#e4245d")
-    SideChar "Big sis Hannah didn’t deserve this."
+    SideChar "Big sis Hannah didn’t deserve this. I’m so sorry for your loss."
     hide girl with irisin
 
     show player_cry with fade
@@ -86,9 +91,12 @@ label Chapter1Scene2:
     "I take one last look around to seek comfort in the familiar faces."
     hide player2
     scene expression im.Scale("images/chapter1/inside the church/speachbackground.jpeg", config.screen_width, config.screen_height) with fade
-    "I notice Mia, who was Hannah's best friend her whole life."
-    "Silas is sitting in the front row."
-    "And even the agent who is in charge of investigating."
+    "I notice our old neighbor Mia, Hannah's best friend."
+
+    "and Silas, my neighbor and best friend since childhood."
+
+    "as well as some unfamiliar faces, such as a few forensic members and investigators."
+    "as weird as it may be, I am still glad to see them here. I guess they cared about Hannah too."
 
     "I take a deep breath and start my speech."
 
@@ -110,9 +118,11 @@ label Chapter1Scene2:
     #can be Theo or Silas influenced routes from here.
     $ Player = Character(name, color="#25ffed", what_size=talkFont)
     scene noir_background with zoomout
-    Player "After the reception, I stepped outside. The air was cold—sharper than before. I needed a moment to breathe. To feel something other than grief."
-    Player "The quiet hum of conversation inside faded behind me. Just the wind now... and my own thoughts."
-    play music "audio/MusicAndSoundtracks/shadowclues.mp3" loop
+    Player "After the long reception, I stepped outside for some air"
+    
+    "The air was cold. sharper than this morning. I took a breath and embraced a moment to breathe."
+    Player "quiet. Just the wind now and my own thoughts."
+    play music "audio/MusicAndSoundtracks/shadowclues.mp3" loop fadein 2.0
 
     $ SideChar = Character("???", color="#140f0f", what_size=talkFont)
     SideChar "step"
@@ -127,13 +137,17 @@ label Chapter1Scene2:
         scene expression im.Scale("images/chapter1/detective/detectivewallLean.png", config.screen_width, config.screen_height)
         "..."
         scene expression im.Scale("images/chapter1/detective/talking to her.png", config.screen_width, config.screen_height)
-        SideChar "{b}Leah, correct?{/b}"
+        SideChar "{b}[Player], correct?{/b}"
         Player "Yes... who are you?"
         SideChar "{b}I just wish to say, that was a wonderful speech,{/b} [Player]."
         "I continue to sit and comfort myself."
         "I look up to see who I was confronted by."
         Player "Why, thank you."
+        SideChar "Usually eulogies and speeches put me to slumber, but yours was quite captivating."
+        SideChar "No disrespect I should add."
+        "I look up and see that it has start to rain again."
         SideChar "Lo, the heavens weep without mercy, eh?"
+        SideChar "Raining all week no break. The roads has been muddy and treacherous."
         Player "..."
         scene expression im.Scale("images/chapter1/forest scene/background/lightning_generic.jpeg", config.screen_width, config.screen_height)
         scene expression im.Scale("images/chapter1/detective background.jpg", config.screen_width, config.screen_height) with fade
@@ -141,7 +155,7 @@ label Chapter1Scene2:
         scene expression im.Scale("images/chapter1/detective background.jpg", config.screen_width, config.screen_height) with fade
         #SideChar "Ah, forgive me but clock's ticking and I must be going."
         Player "Confused by the bizarre interaction... I nod."
-
+        scene redletter
         SideChar "Ah, forgive me for my idling, lass."
         call chapter1Scene3_MysteryApproach #talks about the case
         call chapter1Scene3_MeetingTheo
