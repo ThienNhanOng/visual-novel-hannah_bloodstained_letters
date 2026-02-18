@@ -106,7 +106,7 @@ screen TicTacToeScreen():
     if TttState == TTTState.game_over:
         frame:
             xalign 0.5
-            yalign 0.5
+            yalign 0.95
             background "#0008"
             padding (20, 20, 20, 20)
             vbox:

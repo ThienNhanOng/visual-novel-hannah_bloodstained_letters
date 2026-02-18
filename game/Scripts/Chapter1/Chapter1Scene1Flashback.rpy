@@ -64,7 +64,7 @@ label Chapter1Scene1Flashbacks:
     "the forensic captain pick the letter up from the ground"
     centered "{size=140}{color=#6E0F0F}{b}TO HA*NAH NH****. {/b}{/color}{/size}"
     SideChar "To Hannah .."
-    "the envelop was too distorted to read."
+    "the envelope was too distorted to read."
     show Player_L1overlay onlayer overlay
     Player "Notices the bracelet. that our mom gave to hannah. It was one of a kind"
     show player_shocked2

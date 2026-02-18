@@ -164,6 +164,8 @@ label Chapter1Scene2:
     elif Silas_counter > Mia_counter: #Silas influenced route, still mystery focus
         "Suddenly, Silas emerges from the shadows."
         call chapter1Scene3SilasInteraction
+        stop music fadeout 2.0
+        play music "audio/MusicAndSoundtracks/redEnvelope.mp3" loop 
         call chapter1Scene3_MeetingTheo
     #MIA – peaceful route initiation. Mia can have 2 possible points: 1 from minigame or 1 from speech.
     else: #Silas <= Mia

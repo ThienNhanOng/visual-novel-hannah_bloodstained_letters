@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandlerWithJson.rpy", line 52: Line with id eventQueue_254b8d53 appears twice. The other line is game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy:51
-
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandlerWithJson.rpy", line 54: Line with id eventQueue_a48377a1 appears twice. The other line is game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy:53
-
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandlerWithJson.rpy", line 56: Line with id eventQueue_89ab9d7f appears twice. The other line is game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy:55
-
-File "game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandlerWithJson.rpy", line 58: Line with id eventQueue_e70e112a appears twice. The other line is game/Scripts/chapter2/InteractiveSchoolMap/Roomfactory/courtyard/courtyard event handler/EventHandler.rpy:57
+File "game/Scripts/chapter2/investigationroute/chapt2Scene2Aftermath/Ending.rpy", line 67: end of line expected.
+    centered "{size=50}note: if reached, please replay and select "prepare to go home for the day" .{/size}"
+                                                                   ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Tue Feb 10 23:06:26 2026
+Tue Feb 17 19:19:40 2026

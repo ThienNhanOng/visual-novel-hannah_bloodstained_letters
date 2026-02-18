@@ -18,7 +18,7 @@ label gameroom:
                     #Initialize game safely
                     $ game = SimpleGameState()
 
-                    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/schoolGame/jumpingGame/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
+                    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/Pixel Highway.wav" fadein 1.0 loop
 
                     call screen jump_game
                     stop music fadeout 2.0
@@ -30,7 +30,8 @@ label gameroom:
             "play cubic shooter(cost $20) no rewards":
                 if Global_Money >= 20:
                     
-                    $ Global_Money -= 20                  
+                    $ Global_Money -= 20 
+
                     call instructions_shootinggame
                     $ renpy.notify("You earned no money from this game.")
                     $ shooterHealth = 100

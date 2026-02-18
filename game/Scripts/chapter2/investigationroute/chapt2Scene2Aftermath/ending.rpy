@@ -5,7 +5,7 @@ label ending:
         show redletter
         "As she about to leave she saw something that caught her attention. an envelope like object."
         Player "what is this Sy?"
-        play music "game/audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 3.0 loop
+        play music "audio/MusicAndSoundtracks/TitleScreenTrack.mp3" fadein 3.0 loop
         Silas "to be honest, no clue. it looks like an envelope of some sort. but there is some sort of force"
         Silas "sap or resin that prevent me from opening it without damaging the content inside."
         Player "it looks like the seal can be broken there are some weird marks on it."
@@ -20,6 +20,7 @@ label ending:
             Player "Hey look! i did it!"
             Silas "really? Lets see..."
             "Inside the envelope was another crusty crumbly piece of paper."
+            play music "audio/MusicAndSoundtracks/redEnvelope.mp3" loop fadein 5.0
             "certificate of authenticity. gt auctions."
             "seller of the 'Conan that Ran' a red and precious gem: Hannah"
             "and bidder as well as new owner: mr Edward harper-Chapman"
@@ -35,9 +36,10 @@ label ending:
             "player rushes out after realizing the name."
             "the detective may not just be a detective but "
             "the very person behind all of this."
-            scene black
+            show redletter with fade
             $ Player = Character(what_size=whisperFont)
             Player "AND IM TAKING THIS WITH MEEEEE!"
+            scene black
             Silas "WAIT! hold on!"
             "[Player] Disappears out of the dormatory before Silas could intervine."
             scene black with Dissolve(2.0)
@@ -62,8 +64,11 @@ label ending:
         #note cliff hanger ending planned heavily for ch 4. canceled due to time.
         scene black with fade
         centered "{size=50}note: This path wouldve ultimately lead to mia being framed. if the story continues on{/size}"
-        centered "{size=50}note: if reached, please replay and make sure silas affection isnt higher than theo's.{/size}"
-    
+        centered "{size=50}note: if reached, please right click -> load save -> A, '.{/size}"
+        centered "{size=50}note: select recent save and choose to go home '.{/size}"
+        
+
+
         
     'end of chapter 2'
     $ MainMenu()

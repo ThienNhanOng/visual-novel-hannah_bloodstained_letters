@@ -9,7 +9,7 @@ label instructions_shootinggame:
     centered "{color=#ffffff}{b}Shooting Game Instructions{/b}{/color}"
     centered "{color=#ffffff}{b}Use the arrow keys to move your character.
     \nPress the spacebar to shoot" 
-    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/schoolGame/jumpingGame/ninja racer stuff/Pixel Highway.wav" fadein 10.0 loop
+    play music "Scripts/chapter2/InteractiveSchoolMap/Roomfactory/SchoolGame/jumping_game/ninja racer stuff/Pixel Highway.wav" fadein 5.0 loop
     # Initialize managers
     $ shooterProjectileManager = ShooterProjectileManager()
     $ shooterEnemyManager = ShooterEnemyManager()
